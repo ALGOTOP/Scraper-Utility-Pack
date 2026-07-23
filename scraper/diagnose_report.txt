@@ -1,0 +1,360 @@
+Total Library ID nodes: 29
+
+LibraryID             Type                            parser-status   final_url
+--------------------------------------------------------------------------------------------------------------
+943898378024454       VIDEO(imgs=1,shim=False)        needs_review    
+1520682079427212      IMG+CTA(imgs=2)                 ok              https://www.heartcenteredapprentice.com/manu-gupta
+1365908701652796      VIDEO(imgs=1,shim=False)        needs_review    
+1007084865077613      VIDEO(imgs=1,shim=False)        needs_review    
+1369416538580992      VIDEO(imgs=1,shim=True)         ok              https://solvexmedia.com/pages/landing-page
+873200255821543       VIDEO(imgs=1,shim=True)         ok              https://solvexmedia.com/pages/landing-page
+876149345110854       IMG+CTA(imgs=2)                 ok              https://scale.axisbrandsco.com/
+994207930029628       VIDEO(imgs=1,shim=True)         ok              https://www.youtube.com/@kamhossieny?sub_confirmation=1
+1715845306087173      VIDEO(imgs=1,shim=True)         ok              https://www.bulletproofentrepreneur.io/profit-c
+2172441310272748      IMG+CTA(imgs=2)                 ok              https://lucenia-funnel-website.vercel.app/sovereignty
+962910286633004       VIDEO(imgs=1,shim=True)         ok              https://www.7figuredocs.co/free-playbook-x
+2059095024671856      IMG+CTA(imgs=2)                 ok              https://calendly.com/flowtiger/flowtiger-intro-call-ads
+2011133782820519      VIDEO(imgs=1,shim=False)        needs_review    
+1444760330625564      VIDEO(imgs=1,shim=False)        needs_review    
+1643957676796033      VIDEO(imgs=1,shim=True)         ok              https://growth-mate.com/
+1527166865867941      IMG+CTA(imgs=2)                 ok              https://adboostads.com/growth
+1388212906357814      VIDEO(imgs=1,shim=True)         ok              https://scale.gigabrands.ai/
+1044340921720930      VIDEO(imgs=1,shim=True)         ok              https://www.weddingbusinessmastermind.co/book
+1788996435802029      VIDEO(imgs=1,shim=True)         ok              https://funnels.com/audit
+2251450002045527      VIDEO(imgs=1,shim=False)        needs_review    
+901388215838701       VIDEO(imgs=1,shim=True)         ok              http://RapidScaleMastery.com/apply
+2003153330612989      VIDEO(imgs=1,shim=True)         ok              http://RapidScaleFramework.com/apply
+1937960920417752      VIDEO(imgs=1,shim=True)         ok              https://www.instagram.com/_u/dahausdigital
+1656146202322538      VIDEO(imgs=1,shim=True)         ok              https://www.acceleratedagency.com/start-video
+27283393171303913     IMG+CTA(imgs=2)                 ok              https://www.maggiegiele.com/hidden-revenue-audit.html
+949354388085601       VIDEO(imgs=1,shim=True)         ok              https://go.kingkong.co/strategy
+838505819099998       IMG+CTA(imgs=2)                 ok              https://www.algofy.com/industry/pets
+1310574290821917      VIDEO(imgs=1,shim=True)         ok              https://go.clientascension.ai/youtube/these-ai-agency-o
+955775760788775       VIDEO(imgs=1,shim=True)         ok              https://www.organicmarketing.com/funnels/meta-scale-v1-
+
+Non-text/link cards: 22 of 29 total
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 943898378024454
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Sales Funnel Marketing'                  dest=https://www.facebook.com/SalesFM/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1365908701652796
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Kari Poppleton'                          dest=https://www.facebook.com/karipoppletonconsulting/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1007084865077613
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='RoofIgnite'                              dest=https://www.facebook.com/61553287388321/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1369416538580992
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://solvexmedia.com/pages/landing-page
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUCdy5H-TvnV-_
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='CEO of Solvexmedia - Kam Hossieny'       dest=https://www.facebook.com/kamhossieny/
+    [SHIM    ] text='Meet The Mind Behind 400+ High Converting PagesBac'  dest=https://solvexmedia.com/pages/landing-page
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 873200255821543
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://solvexmedia.com/pages/landing-page
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUCdy5H-TvnV-_
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='CEO of Solvexmedia - Kam Hossieny'       dest=https://www.facebook.com/kamhossieny/
+    [SHIM    ] text='Meet The Mind Behind 400+ High Converting PagesBac'  dest=https://solvexmedia.com/pages/landing-page
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 994207930029628
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.youtube.com/@kamhossieny?sub_confirmation=1
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2F%40kamhossieny%3Fsub_confirmation%3D1
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='CEO of Solvexmedia - Kam Hossieny'       dest=https://www.facebook.com/kamhossieny/
+    [SHIM    ] text='WWW.YOUTUBE.COMMeet The Mind Behind 400+ High Conv'  dest=https://www.youtube.com/@kamhossieny?sub_confirmation=1
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1715845306087173
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.bulletproofentrepreneur.io/profit-c
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bulletproofentrepreneur.io%2Fprofit-c&h=AUCdy5H-Tvn
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='John Whiting'                            dest=https://www.facebook.com/johnwhitingofficial/
+    [SHIM    ] text='BULLETPROOFENTREPRENEUR.IO6 & 7 Figure Online Coac'  dest=https://www.bulletproofentrepreneur.io/profit-c
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 962910286633004
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.7figuredocs.co/free-playbook-x
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.7figuredocs.co%2Ffree-playbook-x&h=AUCdy5H-TvnV-_2A
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='7FigureDocs'                             dest=https://www.facebook.com/7figuredoctors/
+    [SHIM    ] text='WWW.7FIGUREDOCS.COSteal Our Patient Acquisition Sy'  dest=https://www.7figuredocs.co/free-playbook-x
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 2011133782820519
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Tina Sandford Video Ads'                 dest=https://www.facebook.com/tinasandfordvideoads/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1444760330625564
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Shamina Taylor INC'                      dest=https://www.facebook.com/61580392092362/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1643957676796033
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://growth-mate.com/
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fgrowth-mate.com%2F&h=AUCdy5H-TvnV-_2AGL4EgNZgCzSdpuuwCb
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Growth Mate'                             dest=https://www.facebook.com/GrowthMate.Agency/
+    [SHIM    ] text='Learn More'                              dest=https://growth-mate.com/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1388212906357814
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://scale.gigabrands.ai/
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.gigabrands.ai%2F&h=AUCdy5H-TvnV-_2AGL4EgNZgCzSdpu
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='GigaBrands'                              dest=https://www.facebook.com/61565525925201/
+    [SHIM    ] text='(no text)'                               dest=https://scale.gigabrands.ai/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1044340921720930
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.weddingbusinessmastermind.co/book
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.weddingbusinessmastermind.co%2Fbook&h=AUCdy5H-TvnV-
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Wedding Business Mastermind'             dest=https://www.facebook.com/wbm.book.weddings/
+    [SHIM    ] text='https://www.weddingbusinessmastermind.co/book'  dest=https://www.weddingbusinessmastermind.co/book
+    [SHIM    ] text='WWW.WEDDINGBUSINESSMASTERMIND.COAds to Bookings Sy'  dest=https://www.weddingbusinessmastermind.co/book
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1788996435802029
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://funnels.com/audit
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Ffunnels.com%2Faudit&h=AUCdy5H-TvnV-_2AGL4EgNZgCzSdpuuwC
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Shaqir Hussyin - CEO of Funnels.com'     dest=https://www.facebook.com/ceooffunnelsdotcom/
+    [SHIM    ] text='3 Qualified Calls A Day. No Ads Agency. No Cold Ou'  dest=https://funnels.com/audit
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 2251450002045527
+Card type  : VIDEO(imgs=1,shim=False)
+
+  parse_ad_cards() ► status=needs_review  advertiser_name='\u200b'  final_url=None
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Dr. Marquel Russell'                     dest=https://www.facebook.com/ceomarquelrussell/
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 901388215838701
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=http://RapidScaleMastery.com/apply
+                     raw_href=https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleMastery.com%2Fapply&h=AUCdy5H-TvnV-_2AGL4EgNZg
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Hernan Vazquez'                          dest=https://www.facebook.com/hernanvazquezim/
+    [SHIM    ] text='RapidScaleMastery.com/apply'             dest=http://RapidScaleMastery.com/apply
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 2003153330612989
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=http://RapidScaleFramework.com/apply
+                     raw_href=https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleFramework.com%2Fapply&h=AUCdy5H-TvnV-_2AGL4EgN
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Hernan Vazquez'                          dest=https://www.facebook.com/hernanvazquezim/
+    [SHIM    ] text='RapidScaleFramework.com/apply'           dest=http://RapidScaleFramework.com/apply
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1937960920417752
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.instagram.com/_u/dahausdigital
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fdahausdigital&h=AUCdy5H-TvnV-_
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Mark Mei - Ecommerce Email Marketing'    dest=https://www.facebook.com/100090859693091/
+    [SHIM    ] text='dahausdigital'                           dest=https://www.instagram.com/_u/dahausdigital
+    [SHIM    ] text='(no text)'                               dest=https://dahausdigital.com/free-audit-2
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1656146202322538
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.acceleratedagency.com/start-video
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.acceleratedagency.com%2Fstart-video&h=AUCdy5H-TvnV-
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Carl Weische'                            dest=https://www.facebook.com/100089702830763/
+    [SHIM    ] text='Get Growth Audit nowLearn More'          dest=https://www.acceleratedagency.com/start-video
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 949354388085601
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://go.kingkong.co/strategy
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.kingkong.co%2Fstrategy&h=AUCdy5H-TvnV-_2AGL4EgNZgCzS
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='King Kong Co.'                           dest=https://www.facebook.com/kingkongco/
+    [SHIM    ] text='https://go.kingkong.co/strategy'         dest=https://go.kingkong.co/strategy
+    [SHIM    ] text='https://go.kingkong.co/strategy'         dest=https://go.kingkong.co/strategy
+    [SHIM    ] text='GO.KINGKONG.COFree “Cheat Codes” Gets 90-480+ Lead'  dest=https://go.kingkong.co/strategy
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 1310574290821917
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://go.clientascension.ai/youtube/these-ai-agency-offers-are-working-right-now-(steal-them)
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.clientascension.ai%2Fyoutube%2Fthese-ai-agency-offer
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Daniel Fazio'                            dest=https://www.facebook.com/61576998668044/
+    [SHIM    ] text='GO.CLIENTASCENSION.AIWatch Full VideoClick "Watch '  dest=https://go.clientascension.ai/youtube/these-ai-agency-offers-are-working-right-now-(steal-them)
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Library ID : 955775760788775
+Card type  : VIDEO(imgs=1,shim=True)
+
+  parse_ad_cards() ► status=ok  advertiser_name='\u200b'  final_url=https://www.organicmarketing.com/funnels/meta-scale-v1-vsl
+                     raw_href=https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.organicmarketing.com%2Ffunnels%2Fmeta-scale-v1-vsl&
+
+  All hrefs in _find_card_container() result:
+    [FB-PROF ] text='Organicmarketing.com'                    dest=https://www.facebook.com/61560357671341/
+    [SHIM    ] text='WWW.ORGANICMARKETING.COMIf Your Brand Is Stuck Und'  dest=https://www.organicmarketing.com/funnels/meta-scale-v1-vsl
+
+  Cross-contamination: NONE
+
+  Raw HTML: omitted (no anomaly detected)
+
+────────────────────────────────────────────────────────────────────────
+Done.

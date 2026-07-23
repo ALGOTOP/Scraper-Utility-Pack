@@ -1,0 +1,80 @@
+# Replit build prompt — Phase 1: Ad Library scraper
+
+Paste this into Replit's agent as its own task. Don't combine with later
+phases — this is deliberately scoped to one thing so bugs are easy to
+isolate.
+
+---
+
+## What to build
+
+A Python module that scrapes Meta's public Ad Library website (not the
+official API) for ads matching a keyword and/or a list of advertiser page
+IDs, and returns normalized ad records ready for the scoring engine.
+
+## Files to bring in as-is (already written and unit-tested — do not
+rewrite their logic, only wire them together)
+
+- `scraper.py` — orchestration: hybrid GraphQL-interception + DOM fallback,
+  multi-URL looping across keyword + page_ids, rate limiting, blocked/budget
+  detection.
+- `dom_parser.py` — fallback DOM parser anchored on stable text markers.
+- `link_unwrapper.py` — unwraps Meta's `l.facebook.com` redirect shim links.
+- `rate_limiter.py` — delay + session budget enforcement.
+- `url_builder.py` — builds search URLs for keyword mode, page-ID mode, or
+  both combined.
+- `test_orchestration.py` — mocked-Playwright tests proving the control
+  flow (multi-URL loop, per-URL fallback, blocked/budget handling) works.
+  Run this first (`python3 test_orchestration.py`) to confirm the logic
+  survived the copy intact before touching anything else.
+
+## What YOU (Replit agent) need to do that couldn't be done in the
+sandbox that produced these files (no live network there)
+
+1. **Install deps**: `pip install playwright beautifulsoup4`, then
+   `playwright install chromium`.
+2. **Live capture step**: follow `CAPTURE_INSTRUCTIONS.md` in this folder
+   exactly. This confirms/updates `GRAPHQL_URL_PATTERN` and the field paths
+   in `_parse_graphql_payload()` in `scraper.py` against Meta's real
+   response — the one part that could only be verified with real network
+   access.
+3. **Wire up a real Playwright browser** and call `run_scrape()`:
+   ```python
+   from playwright.sync_api import sync_playwright
+   from scraper import run_scrape
+   from rate_limiter import RateLimiter
+
+   with sync_playwright() as p:
+       browser = p.chromium.launch(headless=True)
+       page = browser.new_page()
+       limiter = RateLimiter()  # defaults: 4-9s delay, 40 req/session budget
+       session = run_scrape(page, limiter, keyword="funnel audit",
+                             country="US", page_ids=[])
+       print(session.session_status, len(session.results))
+       browser.close()
+   ```
+4. **Manual spot-check**: run this against ONE keyword/country combo,
+   manually compare 5-10 returned results against what you see on the
+   actual Ad Library page in a browser. Do not scale up until this checks
+   out — this is the accuracy gate for the whole pipeline.
+5. **Persist results** to whatever storage Phase 5 will use (for now, even
+   writing `session.results` to a local JSON file is fine — just don't
+   lose this output, since Phase 3 (scoring) consumes it next).
+
+## What NOT to do in this phase
+
+- Don't build the scoring engine here (that's the already-built separate
+  module from before — Phase 3).
+- Don't wire the Claude judgment layer yet (Phase 4).
+- Don't set up the database or web interface yet (Phase 5).
+- Don't add new search modes or parameters beyond keyword + page_ids
+  unless something in step 4's spot-check reveals a gap.
+
+## Done criteria for this phase
+
+- `test_orchestration.py` passes.
+- One real keyword search + one real page-ID search each return results
+  with `session_status == "ok"` and manually-verified-correct landing
+  page URLs for at least 8/10 sampled results.
+- `GRAPHQL_URL_PATTERN` and `_parse_graphql_payload()` have been updated
+  to match a real captured payload, not left as placeholders.

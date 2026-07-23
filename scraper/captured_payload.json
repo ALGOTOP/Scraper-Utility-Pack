@@ -1,0 +1,379 @@
+[
+  {
+    "url": "https://www.facebook.com/api/graphql/",
+    "payload": {
+      "data": {
+        "ad_library_main": {
+          "dynamic_filter_options": {
+            "content_languages": [
+              {
+                "count": 100,
+                "key": "en",
+                "display_name": "English"
+              }
+            ],
+            "disclaimers": [],
+            "pages": [
+              {
+                "count": 1,
+                "key": "1233745166479104",
+                "display_name": "8 East Agency"
+              },
+              {
+                "count": 1,
+                "key": "102537889154307",
+                "display_name": "Ad Boost"
+              },
+              {
+                "count": 1,
+                "key": "678785458643879",
+                "display_name": "Advero Ads Agency"
+              },
+              {
+                "count": 1,
+                "key": "1223468674181663",
+                "display_name": "AnalyticsFlow"
+              },
+              {
+                "count": 1,
+                "key": "512111919308677",
+                "display_name": "Cameron Digital Consulting"
+              },
+              {
+                "count": 1,
+                "key": "1045726778634976",
+                "display_name": "Coast Summit Growth"
+              },
+              {
+                "count": 1,
+                "key": "285853591287354",
+                "display_name": "Content Clicks"
+              },
+              {
+                "count": 1,
+                "key": "758364664030094",
+                "display_name": "Convert Sail"
+              },
+              {
+                "count": 1,
+                "key": "102133425672429",
+                "display_name": "Corbi"
+              },
+              {
+                "count": 1,
+                "key": "118155101245089",
+                "display_name": "Creative Ecommerce LTD"
+              },
+              {
+                "count": 1,
+                "key": "101058516220289",
+                "display_name": "Dental Digital"
+              },
+              {
+                "count": 1,
+                "key": "933895656476107",
+                "display_name": "Dr. Michael Harris"
+              },
+              {
+                "count": 1,
+                "key": "808008239071443",
+                "display_name": "Firstsource Americas"
+              },
+              {
+                "count": 1,
+                "key": "833648796501487",
+                "display_name": "FlowTiger Agency"
+              },
+              {
+                "count": 1,
+                "key": "262027493668275",
+                "display_name": "Forward Logics"
+              },
+              {
+                "count": 1,
+                "key": "112657150603788",
+                "display_name": "Funnel Creation Pros"
+              },
+              {
+                "count": 1,
+                "key": "1286891064498980",
+                "display_name": "generifymarketing"
+              },
+              {
+                "count": 1,
+                "key": "404553832750351",
+                "display_name": "GHLVA"
+              },
+              {
+                "count": 1,
+                "key": "1041415962388025",
+                "display_name": "Growth Lab Advertising"
+              },
+              {
+                "count": 1,
+                "key": "257990827401676",
+                "display_name": "GrowXme"
+              },
+              {
+                "count": 1,
+                "key": "1038345712691257",
+                "display_name": "Henderson Growth"
+              },
+              {
+                "count": 1,
+                "key": "1063145100213967",
+                "display_name": "Highsale"
+              },
+              {
+                "count": 1,
+                "key": "1185138794683160",
+                "display_name": "Honed Media"
+              },
+              {
+                "count": 1,
+                "key": "187312641128778",
+                "display_name": "Iammajakoenig"
+              },
+              {
+                "count": 1,
+                "key": "302710666483878",
+                "display_name": "Ignite Visibility"
+              },
+              {
+                "count": 1,
+                "key": "108724885231239",
+                "display_name": "Influencer Advantage"
+              },
+              {
+                "count": 1,
+                "key": "1110912165431928",
+                "display_name": "Interconnect International"
+              },
+              {
+                "count": 1,
+                "key": "110568381296224",
+                "display_name": "Level Up Real Estate"
+              },
+              {
+                "count": 1,
+                "key": "357942830961568",
+                "display_name": "Lior Vaknin"
+              },
+              {
+                "count": 1,
+                "key": "1054103744446181",
+                "display_name": "Loud Mouth Agency"
+              },
+              {
+                "count": 1,
+                "key": "900678896692896",
+                "display_name": "Maggie Giele"
+              },
+              {
+                "count": 1,
+                "key": "840053839197240",
+                "display_name": "Matt Slaymaker"
+              },
+              {
+                "count": 1,
+                "key": "838476616020323",
+                "display_name": "Matthew Fleischer"
+              },
+              {
+                "count": 1,
+                "key": "668485796339726",
+                "display_name": "Max Leads Digital - Performance Marketing"
+              },
+              {
+                "count": 1,
+                "key": "367336933123558",
+                "display_name": "Max Sturtevant"
+              },
+              {
+                "count": 1,
+                "key": "851925398014034",
+                "display_name": "Men's Health"
+              },
+              {
+                "count": 1,
+                "key": "1254990847686955",
+                "display_name": "Michael Croft "
+              },
+              {
+                "count": 10,
+                "key": "150701661467827",
+                "display_name": "OmniFunnel Marketing"
+              },
+              {
+                "count": 1,
+                "key": "406686712531421",
+                "display_name": "Patrick ODriscoll"
+              },
+              {
+                "count": 1,
+                "key": "109760398882363",
+                "display_name": "Perplexity AI"
+              },
+              {
+                "count": 1,
+                "key": "1040155482508730",
+                "display_name": "Popcorn LeadGen"
+              },
+              {
+                "count": 1,
+                "key": "1180015261853076",
+                "display_name": "QBO Data"
+              },
+              {
+                "count": 1,
+                "key": "650950741437748",
+                "display_name": "Rapid North "
+              },
+              {
+                "count": 1,
+                "key": "168507656494457",
+                "display_name": "Revenue Breakthrough"
+              },
+              {
+                "count": 1,
+                "key": "739172119790526",
+                "display_name": "S&C Digital"
+              },
+              {
+                "count": 1,
+                "key": "108587041875038",
+                "display_name": "Sam Bell III"
+              },
+              {
+                "count": 1,
+                "key": "880895491779891",
+                "display_name": "Scott Warner"
+              },
+              {
+                "count": 1,
+                "key": "106641484795493",
+                "display_name": "Senator We Run Ads"
+              },
+              {
+                "count": 1,
+                "key": "580040756011067",
+                "display_name": "sergegatari"
+              },
+              {
+                "count": 1,
+                "key": "472754825929264",
+                "display_name": "Shaqir Hussyin - CEO of Funnels.com"
+              },
+              {
+                "count": 1,
+                "key": "569777469532780",
+                "display_name": "Slaymaker Marketing"
+              },
+              {
+                "count": 10,
+                "key": "113033083708894",
+                "display_name": "So Shall We"
+              },
+              {
+                "count": 1,
+                "key": "495656280556704",
+                "display_name": "Sourav Ghosh"
+              },
+              {
+                "count": 1,
+                "key": "156889108402611",
+                "display_name": "Spotlight Social Advertising"
+              },
+              {
+                "count": 1,
+                "key": "113106598294523",
+                "display_name": "Spyglass Ops"
+              },
+              {
+                "count": 1,
+                "key": "484870601379206",
+                "display_name": "Strategy North"
+              },
+              {
+                "count": 1,
+                "key": "183973042249549",
+                "display_name": "Summit In A Box"
+              },
+              {
+                "count": 1,
+                "key": "106246472553414",
+                "display_name": "Sunshy Group Of Companies "
+              },
+              {
+                "count": 1,
+                "key": "147516161771172",
+                "display_name": "Tech Growly"
+              },
+              {
+                "count": 1,
+                "key": "109309331356535",
+                "display_name": "The Designs Inc."
+              },
+              {
+                "count": 1,
+                "key": "1145043795353067",
+                "display_name": "Velvet Logic"
+              },
+              {
+                "count": 1,
+                "key": "105579215922052",
+                "display_name": "Venturebnb"
+              },
+              {
+                "count": 1,
+                "key": "153276554768609",
+                "display_name": "Webonize: Online Marketing with Jayne Day"
+              },
+              {
+                "count": 10,
+                "key": "108409328468312",
+                "display_name": "With Salt"
+              },
+              {
+                "count": 1,
+                "key": "230456386815464",
+                "display_name": "Yooniversal Media "
+              },
+              {
+                "count": 1,
+                "key": "116101675143792",
+                "display_name": "Zen Media"
+              }
+            ],
+            "reached_regions": [],
+            "countries": [],
+            "cities": [],
+            "targeted_regions": []
+          }
+        }
+      },
+      "extensions": {
+        "server_metadata": {
+          "request_start_time_ms": 1784798334780,
+          "time_at_flush_ms": 1784798335060
+        },
+        "is_final": true
+      }
+    }
+  },
+  {
+    "url": "https://www.facebook.com/api/graphql/",
+    "payload": {
+      "errors": [
+        {
+          "message": "Rate limit exceeded",
+          "severity": "CRITICAL",
+          "code": 1675004
+        }
+      ],
+      "extensions": {
+        "is_final": true
+      }
+    }
+  }
+]

@@ -1,0 +1,2 @@
+- [Playwright on NixOS](playwright-nixos.md) — must pass executable_path=shutil.which("chromium") to launch(); downloaded headless shell can't find NixOS library paths
+- [Meta Ad Library scraper quirks](ad-library-scraper-quirks.md) — DOM depth fix, false-positive no-results marker, GraphQL rate limiting in Replit

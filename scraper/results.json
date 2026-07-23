@@ -1,0 +1,244 @@
+{
+  "keyword": "funnel audit",
+  "country": "US",
+  "page_ids": [],
+  "session_status": "ok",
+  "urls_attempted": 1,
+  "urls_blocked": 0,
+  "graphql_hits": 43,
+  "dom_fallback_used": true,
+  "results": [
+    {
+      "library_id": "943898378024454",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1520682079427212",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.heartcenteredapprentice.com%2Fmanu-gupta&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.heartcenteredapprentice.com/manu-gupta",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1365908701652796",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1007084865077613",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1369416538580992",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://solvexmedia.com/pages/landing-page",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "873200255821543",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://solvexmedia.com/pages/landing-page",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "876149345110854",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://scale.axisbrandsco.com/",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "994207930029628",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2F%40kamhossieny%3Fsub_confirmation%3D1&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.youtube.com/@kamhossieny?sub_confirmation=1",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1715845306087173",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bulletproofentrepreneur.io%2Fprofit-c&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.bulletproofentrepreneur.io/profit-c",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "2172441310272748",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Flucenia-funnel-website.vercel.app%2Fsovereignty&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://lucenia-funnel-website.vercel.app/sovereignty",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "962910286633004",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.7figuredocs.co%2Ffree-playbook-x&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.7figuredocs.co/free-playbook-x",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "2059095024671856",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fcalendly.com%2Fflowtiger%2Fflowtiger-intro-call-ads&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://calendly.com/flowtiger/flowtiger-intro-call-ads",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "2011133782820519",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1444760330625564",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1643957676796033",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgrowth-mate.com%2F&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://growth-mate.com/",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1527166865867941",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fadboostads.com%2Fgrowth&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://adboostads.com/growth",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1388212906357814",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.gigabrands.ai%2F&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://scale.gigabrands.ai/",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1044340921720930",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.weddingbusinessmastermind.co%2Fbook&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.weddingbusinessmastermind.co/book",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1788996435802029",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Ffunnels.com%2Faudit&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://funnels.com/audit",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "2251450002045527",
+      "advertiser_name": "\u200b",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "901388215838701",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleMastery.com%2Fapply&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "http://RapidScaleMastery.com/apply",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "2003153330612989",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleFramework.com%2Fapply&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "http://RapidScaleFramework.com/apply",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1937960920417752",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fdahausdigital&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.instagram.com/_u/dahausdigital",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1656146202322538",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.acceleratedagency.com%2Fstart-video&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.acceleratedagency.com/start-video",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "27283393171303913",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.maggiegiele.com%2Fhidden-revenue-audit.html&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.maggiegiele.com/hidden-revenue-audit.html",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "949354388085601",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.kingkong.co%2Fstrategy&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://go.kingkong.co/strategy",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "838505819099998",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.algofy.com%2Findustry%2Fpets&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.algofy.com/industry/pets",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "1310574290821917",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.clientascension.ai%2Fyoutube%2Fthese-ai-agency-offers-are-working-right-now-(steal-them)&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://go.clientascension.ai/youtube/these-ai-agency-offers-are-working-right-now-(steal-them)",
+      "status": "ok",
+      "source": "dom_fallback"
+    },
+    {
+      "library_id": "955775760788775",
+      "advertiser_name": "\u200b",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.organicmarketing.com%2Ffunnels%2Fmeta-scale-v1-vsl&h=AUDyq_vHudT0IpTm-dLd8A8NGwa1qzlgWBtyrFXbfBsztPxZnOrp9WL5xSV6PC5yHULWIpXtclJT3DAs61JaWbAqHCeMsVxy8GGHwcRuunKS2uTVnTd3DXQbmDCp3x4K97cZMD5a1vlHCPzMC27r4Q",
+      "final_url": "https://www.organicmarketing.com/funnels/meta-scale-v1-vsl",
+      "status": "ok",
+      "source": "dom_fallback"
+    }
+  ]
+}

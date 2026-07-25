@@ -1,0 +1,1514 @@
+[
+  {
+    "url": "https://www.facebook.com/api/graphql/",
+    "payload": {
+      "data": {
+        "ad_library_main": {
+          "dynamic_filter_options": {
+            "content_languages": [
+              {
+                "count": 100,
+                "key": "en",
+                "display_name": "\u0627\u0646\u06af\u0631\u06cc\u0632\u06cc"
+              }
+            ],
+            "disclaimers": [],
+            "pages": [
+              {
+                "count": 1,
+                "key": "1233745166479104",
+                "display_name": "8 East Agency"
+              },
+              {
+                "count": 1,
+                "key": "102537889154307",
+                "display_name": "Ad Boost"
+              },
+              {
+                "count": 1,
+                "key": "678785458643879",
+                "display_name": "Advero Ads Agency"
+              },
+              {
+                "count": 1,
+                "key": "839589642569770",
+                "display_name": "AfterHours Marketing Co. "
+              },
+              {
+                "count": 1,
+                "key": "101543081396074",
+                "display_name": "Anura.io"
+              },
+              {
+                "count": 1,
+                "key": "565488903324077",
+                "display_name": "AutoCaller-AI"
+              },
+              {
+                "count": 1,
+                "key": "134052190032679",
+                "display_name": "Ben Sturtevant - The Elite Marketer"
+              },
+              {
+                "count": 1,
+                "key": "1198548460008286",
+                "display_name": "Betina Paix\u00e3o"
+              },
+              {
+                "count": 1,
+                "key": "1416170428411158",
+                "display_name": "Brian Moncada"
+              },
+              {
+                "count": 1,
+                "key": "512111919308677",
+                "display_name": "Cameron Digital Consulting"
+              },
+              {
+                "count": 1,
+                "key": "100339343002224",
+                "display_name": "charlieai.io"
+              },
+              {
+                "count": 1,
+                "key": "1045726778634976",
+                "display_name": "Coast Summit Growth"
+              },
+              {
+                "count": 1,
+                "key": "285853591287354",
+                "display_name": "Content Clicks"
+              },
+              {
+                "count": 1,
+                "key": "1581206138866705",
+                "display_name": "Digital Style House"
+              },
+              {
+                "count": 1,
+                "key": "505878962614933",
+                "display_name": "Dionna"
+              },
+              {
+                "count": 1,
+                "key": "167931109747403",
+                "display_name": "Echelonn"
+              },
+              {
+                "count": 1,
+                "key": "833648796501487",
+                "display_name": "FlowTiger Agency"
+              },
+              {
+                "count": 1,
+                "key": "262027493668275",
+                "display_name": "Forward Logics"
+              },
+              {
+                "count": 1,
+                "key": "1286891064498980",
+                "display_name": "generifymarketing"
+              },
+              {
+                "count": 1,
+                "key": "404553832750351",
+                "display_name": "GHLVA"
+              },
+              {
+                "count": 1,
+                "key": "835717930105709",
+                "display_name": "Grow Pro Agency"
+              },
+              {
+                "count": 1,
+                "key": "1041415962388025",
+                "display_name": "Growth Lab Advertising"
+              },
+              {
+                "count": 1,
+                "key": "336540759550796",
+                "display_name": "Hichem's Journey"
+              },
+              {
+                "count": 1,
+                "key": "1063145100213967",
+                "display_name": "Highsale"
+              },
+              {
+                "count": 1,
+                "key": "1185138794683160",
+                "display_name": "Honed Media"
+              },
+              {
+                "count": 1,
+                "key": "1110912165431928",
+                "display_name": "Interconnect International"
+              },
+              {
+                "count": 1,
+                "key": "562378543780840",
+                "display_name": "King Kong Co."
+              },
+              {
+                "count": 1,
+                "key": "110568381296224",
+                "display_name": "Level Up Real Estate"
+              },
+              {
+                "count": 1,
+                "key": "112861953865153",
+                "display_name": "lina_zuniga_official"
+              },
+              {
+                "count": 1,
+                "key": "840053839197240",
+                "display_name": "Matt Slaymaker"
+              },
+              {
+                "count": 1,
+                "key": "838476616020323",
+                "display_name": "Matthew Fleischer"
+              },
+              {
+                "count": 1,
+                "key": "367336933123558",
+                "display_name": "Max Sturtevant"
+              },
+              {
+                "count": 1,
+                "key": "106209678561381",
+                "display_name": "Mongoose Social"
+              },
+              {
+                "count": 1,
+                "key": "104758999080955",
+                "display_name": "New Client Acquisition"
+              },
+              {
+                "count": 10,
+                "key": "150701661467827",
+                "display_name": "OmniFunnel Marketing"
+              },
+              {
+                "count": 1,
+                "key": "352719884585131",
+                "display_name": "Optimefy"
+              },
+              {
+                "count": 1,
+                "key": "406686712531421",
+                "display_name": "Patrick ODriscoll"
+              },
+              {
+                "count": 1,
+                "key": "109760398882363",
+                "display_name": "Perplexity AI"
+              },
+              {
+                "count": 1,
+                "key": "1180015261853076",
+                "display_name": "QBO Data"
+              },
+              {
+                "count": 1,
+                "key": "650950741437748",
+                "display_name": "Rapid North "
+              },
+              {
+                "count": 1,
+                "key": "353398754503907",
+                "display_name": "ROINinja"
+              },
+              {
+                "count": 1,
+                "key": "1119669117897327",
+                "display_name": "Round Trip Digital"
+              },
+              {
+                "count": 1,
+                "key": "739172119790526",
+                "display_name": "S&C Digital"
+              },
+              {
+                "count": 1,
+                "key": "194019727330384",
+                "display_name": "SEO National"
+              },
+              {
+                "count": 1,
+                "key": "580040756011067",
+                "display_name": "sergegatari"
+              },
+              {
+                "count": 1,
+                "key": "472754825929264",
+                "display_name": "Shaqir Hussyin - CEO of Funnels.com"
+              },
+              {
+                "count": 1,
+                "key": "569777469532780",
+                "display_name": "Slaymaker Marketing"
+              },
+              {
+                "count": 10,
+                "key": "113033083708894",
+                "display_name": "So Shall We"
+              },
+              {
+                "count": 1,
+                "key": "1054995451040283",
+                "display_name": "Spaceman Media "
+              },
+              {
+                "count": 1,
+                "key": "156889108402611",
+                "display_name": "Spotlight Social Advertising"
+              },
+              {
+                "count": 1,
+                "key": "113106598294523",
+                "display_name": "Spyglass Ops"
+              },
+              {
+                "count": 1,
+                "key": "484870601379206",
+                "display_name": "Strategy North"
+              },
+              {
+                "count": 1,
+                "key": "183973042249549",
+                "display_name": "Summit In A Box"
+              },
+              {
+                "count": 1,
+                "key": "106246472553414",
+                "display_name": "Sunshy Group Of Companies "
+              },
+              {
+                "count": 1,
+                "key": "556833480855537",
+                "display_name": "The Ad Papi"
+              },
+              {
+                "count": 1,
+                "key": "109309331356535",
+                "display_name": "The Designs Inc."
+              },
+              {
+                "count": 1,
+                "key": "108328421832964",
+                "display_name": "The Portside Social Club"
+              },
+              {
+                "count": 1,
+                "key": "105579215922052",
+                "display_name": "Venturebnb"
+              },
+              {
+                "count": 1,
+                "key": "447108562481221",
+                "display_name": "Wedding Business Mastermind"
+              },
+              {
+                "count": 10,
+                "key": "108409328468312",
+                "display_name": "With Salt"
+              },
+              {
+                "count": 1,
+                "key": "116101675143792",
+                "display_name": "Zen Media"
+              }
+            ],
+            "reached_regions": [],
+            "countries": [],
+            "cities": [],
+            "targeted_regions": []
+          }
+        }
+      },
+      "extensions": {
+        "server_metadata": {
+          "request_start_time_ms": 1784971003115,
+          "time_at_flush_ms": 1784971003369
+        },
+        "is_final": true
+      }
+    }
+  },
+  {
+    "url": "https://www.facebook.com/api/graphql/",
+    "payload": {
+      "data": {
+        "ad_library_main": {
+          "search_results_connection": {
+            "edges": [
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "2490106128068458",
+                      "collation_count": 1,
+                      "collation_id": "1291736796126788",
+                      "is_active": true,
+                      "page_id": "931531873372620",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "931531873372620",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/61585364530959/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "AXIS Brands",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/739496501_1042925251752918_8981401076484672536_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CwZRTgMS5Q4Q7kNvwHg51KE&_nc_oc=AdqrmBejvzrD_3D-u4M9vYOhOdnGQs7Iht5GjFxbZOdq5E8_PY-D3UmC-7fwYjkURzk&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQChMU_XC8MxjEnDzwN8MwIXXK8xTOJdKfvkFgcI1bUOiw&oe=6A6A4393",
+                        "event": null,
+                        "caption": "scale.axisbrandsco.com",
+                        "cta_text": "\u062a\u0641\u0635\u06cc\u0644\u0627\u062a \u062f\u06cc\u06a9\u06be\u06cc\u06ba",
+                        "cards": [
+                          {
+                            "body": "Most Amazon brands aren't stuck because of their product. They're stuck because of their structure.\n\nThe brands doing $30M, $40M, $50M+ on Amazon aren't running better ads than you. They're running a better system. PPC, SEO, creative, and operations all pulling the same direction instead of in isolation.\n\nThat's what we built for brands like Taramps, Secret Aardvark, and LOTUS Plant Power.\n\nSecret Aardvark went from $20K to $100K a month in 8 months, a 400% jump. LOTUS scaled from $90K to $220K a month in 5 months, up 144%. Taramps 4x'd revenue and took #1 market share in car audio.\n\nSame playbook, different categories. The difference was never the product. It was the funnel behind it.\n\nMost brands run basic PPC, tweak bids, launch a few keywords, and hope. That's not a strategy. That's guessing inside a black box.\n\nWe manage $7M+ in monthly ad spend at a 6x average ROAS across 65+ brands, and 98% of them stay with us. Not because of a contract. Because the results speak.\n\nHere's where we start: a free Amazon brand audit. We'll show you exactly where you're leaking money.\n\n\u25aa\ufe0f Where your ad spend is being wasted\n\u25aa\ufe0f Listings that need to convert, not just impress\n\u25aa\ufe0f The PPC and SEO gaps capping your rank\n\u25aa\ufe0f Where unauthorized sellers are eating your margin\n\nThe audit shows you what's possible. From there, we can run all of it for you. A full Amazon team that takes your brand from launch to scale, all under one roof.\n\nIf your brand is plateauing, it's not your product. It's your funnel.\n\nDrop your email below to get your free audit. Or book a call.\n\nP.S. This is for Amazon brand owners ready to scale, not just maintain.",
+                            "cta_type": "LEARN_MORE",
+                            "caption": "",
+                            "link_description": "",
+                            "link_url": "https://scale.axisbrandsco.com/",
+                            "title": "Spend Smarter. Scale Faster. ",
+                            "cta_text": "Learn More",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/741838836_1540977304332922_4802000333661616001_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=AHjhOjwvIv8Q7kNvwELjihG&_nc_oc=Adqdgcfj7ttWVrAY63fWIDUooxGHZAXszt8ezoAkB7M1ewPBOWaqKBBBigLcFMBLHT0&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCH_l31d_0uShM7TLl4v5WYayNQX2aoNOHkba5r7BGXTg&oe=6A6A50AD",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/742129697_1394326382563768_4484558097446519846_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=zc6RuV4yt2UQ7kNvwEUhQ8h&_nc_oc=AdpYykCbtBDM3z4oAAXmRsSX4bQiG9Xo-ySHlJlfnMp7p-Lj-zXxI6gkzZhGjocFQm8&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCTiUjhmmSHihG0Orqhsw-Y5Av5wZ3OvuRB4bfqozBfng&oe=6A6A46CA",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": "Amazon seller stuck between $50K and $100K a month?\n\nIt's probably not your product. It's your funnel.\n\nMost brands run ads, SEO, and creative in isolation, then wonder why growth stalls. The brands that break past it run all of it as one system.\n\nWe manage $7M+ in monthly ad spend at a 6x average ROAS across 65+ brands.\n\nGet a free audit and we'll show you exactly which lever isn't pulling.\n\n\ud83d\udc49 Book a Discovery Call",
+                            "cta_type": "SEE_DETAILS",
+                            "caption": "",
+                            "link_description": "",
+                            "link_url": "https://scale.axisbrandsco.com/",
+                            "title": "6x ROAS Across 65+ Amazon Brands",
+                            "cta_text": "See Details",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/742060160_1038322051991708_7312274586419189431_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=sy-_T6H1gAAQ7kNvwEyGlI7&_nc_oc=Adr9VNrBb_L0qWVhBYV-NN2WaoJPhBtkVvcBzn3LZZvKx2RJQ3NwAKvMBPPfB8mE1rM&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAXEXV7-VsfVZPQjkHYMLNE3B5Iq_M_qmOtlY2Cqp9Gtw&oe=6A6A3CA5",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/741523514_1620429343421216_5437180083604520459_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=tIIAtR1d7i0Q7kNvwG_6OEk&_nc_oc=AdqL8eROJJMlEY6AGBXaEMhp7AAA8KCHI0-elFnAutL2R1C--1q0dQglHH3PrpPJOmk&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQB5Dx_bnrWg7bDyWanKVGP4A82UJOR1X-HPliq-FpDrBw&oe=6A6A5EBB",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": "Most Amazon brands aren't stuck because of their product. They're stuck because of their structure.\n\nThe brands doing $30M, $40M, $50M+ on Amazon aren't running better ads than you. They're running a better system. PPC, SEO, creative, and operations all pulling the same direction instead of in isolation.\n\nThat's what we built for brands like Taramps, Secret Aardvark, and LOTUS Plant Power.\n\nSecret Aardvark went from $20K to $100K a month in 8 months, a 400% jump. LOTUS scaled from $90K to $220K a month in 5 months, up 144%. Taramps 4x'd revenue and took #1 market share in car audio.\n\nSame playbook, different categories. The difference was never the product. It was the funnel behind it.\n\nMost brands run basic PPC, tweak bids, launch a few keywords, and hope. That's not a strategy. That's guessing inside a black box.\n\nWe manage $7M+ in monthly ad spend at a 6x average ROAS across 65+ brands, and 98% of them stay with us. Not because of a contract. Because the results speak.\n\nHere's where we start: a free Amazon brand audit. We'll show you exactly where you're leaking money.\n\n\u25aa\ufe0f Where your ad spend is being wasted\n\u25aa\ufe0f Listings that need to convert, not just impress\n\u25aa\ufe0f The PPC and SEO gaps capping your rank\n\u25aa\ufe0f Where unauthorized sellers are eating your margin\n\nThe audit shows you what's possible. From there, we can run all of it for you. A full Amazon team that takes your brand from launch to scale, all under one roof.\n\nIf your brand is plateauing, it's not your product. It's your funnel.\n\nDrop your email below to get your free audit. Or book a call.\n\nP.S. This is for Amazon brand owners ready to scale, not just maintain.",
+                            "cta_type": "LEARN_MORE",
+                            "caption": "",
+                            "link_description": "",
+                            "link_url": "https://scale.axisbrandsco.com/",
+                            "title": "Spend Smarter. Scale Faster. ",
+                            "cta_text": "Learn More",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/740533912_2087041728515454_8973966191315912085_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=xqYb6IxYhkcQ7kNvwE5h7Ht&_nc_oc=Adob_fEUe45of5WX2flhpbBi2uLFvWS-z6Wo-MtsrYzCe0xS8aeusMzI0ICCMedcD24&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDzWixRFZhS6EBPebL82WNQ7T3KqNCfXnbpQmSOA_Pheg&oe=6A6A5F46",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/741828134_1044751191426231_9020484196136519801_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2kEguyiU2mMQ7kNvwHovrTe&_nc_oc=AdqgZZlR2gtcZwsXMwhv6mjJuqmVsiYAiL8jvt3Ryrkd4JURExVK8voUANVjsSBOqXY&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCbzA4o_XKeTWa_ei8h4OeIdMlZFNJrztaToK9UD6tN-g&oe=6A6A3802",
+                            "watermarked_resized_image_url": ""
+                          }
+                        ],
+                        "body": {
+                          "text": "{{product.brand}}"
+                        },
+                        "cta_type": "SEE_DETAILS",
+                        "display_format": "DCO",
+                        "link_description": "{{product.description}}",
+                        "link_url": "https://scale.axisbrandsco.com/",
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 7,
+                        "title": "{{product.name}}",
+                        "videos": [],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "AXIS Brands",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "AUDIENCE_NETWORK"
+                      ],
+                      "start_date": 1783407600,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "27343235178701108",
+                      "collation_count": 1,
+                      "collation_id": "986218507348913",
+                      "is_active": true,
+                      "page_id": "115917917789300",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "115917917789300",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/100083594791227/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Grid Lab Studios",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/722163553_1563050332088999_7826613522333893306_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=108&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=KK1fE1PQ3W8Q7kNvwECllP9&_nc_oc=Adrk64stSGLe1aEYy5O0cwtDSL2527shpzillPATWymYUoeW7gsjav_VtnP5JKvLLwU&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDWnzbtW_Vo6lciUaxgLY2l8DvHcuMH63RJqq0GwU2h2g&oe=6A6A3D00",
+                        "event": null,
+                        "caption": null,
+                        "cta_text": "\u0645\u06cc\u0633\u062c \u0628\u06be\u06cc\u062c\u06cc\u06ba",
+                        "cards": [
+                          {
+                            "body": " ",
+                            "cta_type": "MESSAGE_PAGE",
+                            "caption": "fb.com",
+                            "link_description": " ",
+                            "link_url": null,
+                            "title": "Found a plan that fits?",
+                            "cta_text": "Send Message",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/719161314_1744283653590097_7379766315609563921_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=xrxTtdlQgy8Q7kNvwExk-wk&_nc_oc=AdoxvZkF4SAz1cafhZJIFXvO7u8VHewC5BMBaGms_P-_L73rth8T2H9mAJc9YTqjxts&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQA5Bo2HX7XZNk42S640NgGd9Oi3cZJfZseO9vlD8165_A&oe=6A6A5CCC",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/720112093_974542215374028_1031744484456703997_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Vz4cg2UtDIMQ7kNvwGAeRHW&_nc_oc=Adq7GLj8IAAYx6KjMZQ5JbVKvHdZTHGf3Ok2JzHMgJCwEdm3dAhEHEBLcvUYewRrePc&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQB_m9pcoNgezHC7DJKNPaEgX2hiL0hUzl0nG_7CA7PmFw&oe=6A6A5DDE",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": " ",
+                            "cta_type": "MESSAGE_PAGE",
+                            "caption": "fb.com",
+                            "link_description": " ",
+                            "link_url": null,
+                            "title": "Found a plan that fits?",
+                            "cta_text": "Send Message",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/719519375_4381319495449365_3764442266507013872_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Lbny7tcAkTAQ7kNvwFqSoKb&_nc_oc=AdrkRAWozz1JaZ7b1l7lri2TCT5vXM4kFXtHHslfiGx2D_xeLRo6l8YtCqrJz2lkLNM&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCKyn4ICTXFH96_utt1Z2dfFV2wRxF8gHo3hsHF6RnNfQ&oe=6A6A58F8",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/719804348_1764293371225034_8029537759713439902_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=6dndMAWX-e8Q7kNvwGxhzrr&_nc_oc=AdoKUVdYOoAU_Zv1Yaoshp0IlcqSyUBarPiE-qzkx6HvRxA_GGE8WNTClY77DVKbo-w&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQB4od2NHupRZkGa3xOjrFJRtBER1sVlHHCq_6i1uWf9WQ&oe=6A6A3849",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": " ",
+                            "cta_type": "MESSAGE_PAGE",
+                            "caption": "fb.com",
+                            "link_description": " ",
+                            "link_url": null,
+                            "title": "Found a plan that fits?",
+                            "cta_text": "Send Message",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/721626420_1712837396572750_8920280381465247316_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=F-u1NvXWNQ4Q7kNvwEmdGig&_nc_oc=Adq28Mb-6ZxUY7intyhdCb7pdh2eLZ-V0J-e7Fdk9VPObVQ1z7QfQjba_D3hM7cA3AI&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAzXnSh9xZqm5XhmacKJwWjI71OOheOVnddPPV9KyBjoQ&oe=6A6A5BCD",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/720236786_4379593732306557_1848909119870466796_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=5EV0yaaf0nMQ7kNvwHb36q0&_nc_oc=AdqOUtg2Amm7qKZS2qYZWT0HLAKwSUuAa77vtf0taqpiOd4IZRs8C3TTU57Q8ohawtg&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDepbWVR7Ym-zkGe7nlKln_4gDEDgTKeq9xyZPX58PhXQ&oe=6A6A3C4F",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": " ",
+                            "cta_type": "MESSAGE_PAGE",
+                            "caption": "fb.com",
+                            "link_description": " ",
+                            "link_url": null,
+                            "title": "Found a plan that fits?",
+                            "cta_text": "Send Message",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/719462639_1546028240476318_2782392019425535837_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=LMtndqaeVPIQ7kNvwGO5e01&_nc_oc=AdrVsNj-AnheA2pcaAc-8LDp7XDHoiXTMidC5SVObaZ0hblkHGY6x7URo27pxuZGfxM&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBfS8_zcvdyaQWOZIW4vaMQ3jDPsETcfnYyovNexZR6-Q&oe=6A6A67EA",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/720334047_1324366139887949_3291965230260216415_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=A76v3z1q0PIQ7kNvwFjKGFO&_nc_oc=AdpCuRZO_MuGaxGWTM24TNOo5mI4xE_ZyhIgjK8VL9VXLFWy_rk4zla0gJrftzqeTFE&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAI8vrRRsmTA7XYb0TBe-VUowNmj5MYvDCH7vMSMakC-Q&oe=6A6A41A4",
+                            "watermarked_resized_image_url": ""
+                          },
+                          {
+                            "body": " ",
+                            "cta_type": "MESSAGE_PAGE",
+                            "caption": "fb.com",
+                            "link_description": " ",
+                            "link_url": null,
+                            "title": "Found a plan that fits?",
+                            "cta_text": "Send Message",
+                            "video_hd_url": null,
+                            "video_preview_image_url": null,
+                            "video_sd_url": null,
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null,
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/721626418_1749905386456789_1895711035862486701_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ifcZeH51FQgQ7kNvwGor2mg&_nc_oc=AdoJ1JOKTO1M6OU4Sp58SpQV--L92wvKI5ehYSmXcx4IWCCKsObOWEVD7qOx8y7N2rg&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCfjt5xJ5mqLu601JiwVjRWjXrbj_RfYhaH-kH9rtz-RA&oe=6A6A5A18",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/718965027_854152150641278_7576269213712635123_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=6fx7-k8hpOkQ7kNvwGaJA_H&_nc_oc=AdrDDd-sa3CKh1iRdU8fRKeTJCmjpUhNioArHWnoUIBs570NavoS79A06XQ0YiFEdkI&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBi-54wEn5-H9WYUgzJlR76V-Tpc3yXSJXDdmY6HVz8sg&oe=6A6A3FA1",
+                            "watermarked_resized_image_url": ""
+                          }
+                        ],
+                        "body": {
+                          "text": "Too busy to manage your socials? We\u2019re already on it.\n\nWe\u2019re the team behind your team \u2014 built for brands that want to scale, not stay stuck.\n\nAt GridLab, we treat your brand like our own. Every strategy, design, and post is made with care, precision, and real results in mind.\n\nFrom content calendars to creative direction \u2014 we fill the gaps, solve the stress, and help you show up consistently and compellingly.\n\n\u2705 Results-driven strategy\n\u2705 Dedicated creatives\n\u2705 Hands-on client care\n\u2705 Tailored social media plans\n\n\ud83d\udce9 Found a plan that fits? Let\u2019s make it official.\nOr message us \u2014 we\u2019ll build something that works for you.\n\n#GridLabManila #SocialMediaManagement #BuildWithGrid #CreativeAgencyPH #SMMAphilippines"
+                        },
+                        "cta_type": "MESSAGE_PAGE",
+                        "display_format": "CAROUSEL",
+                        "link_description": null,
+                        "link_url": null,
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 6132,
+                        "title": "Grid Lab Studios",
+                        "videos": [],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Grid Lab Studios",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "MESSENGER"
+                      ],
+                      "start_date": 1781074800,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "1712138396643323",
+                      "collation_count": 2,
+                      "collation_id": "1032952005828144",
+                      "is_active": true,
+                      "page_id": "108591551076953",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "108591551076953",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/banchmarketing/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Banch Marketing Digital Agency",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/724912564_1677723523467744_1891206957088406446_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=J7cCHQOTzuIQ7kNvwF2v4Fh&_nc_oc=AdptGYboAx7gOLTkDAvsmQ1aCCp_hgFVyxwTRnbV_zlzXOhZMQs_Aukz9Wdy0iIBsnM&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQD-LXZe1gcRk8BK86vbWrBDZXPqAywu4p9f3Ctg2iv62g&oe=6A6A5115",
+                        "event": null,
+                        "caption": "www.instagram.com",
+                        "cta_text": "\u0645\u06cc\u0633\u062c \u0628\u06be\u06cc\u062c\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "If your looking for a marketing agency It's\nimportant to work with one that knows your niche and has\nhad massive success in your industry.\n\nWe have worked with hundreds of clothing brands in the last\n5 years and continue to show them incredible results with the\nstrategies we use for our clients and on our own brands.\n\nGod The Father: $2.7M in revenue with a 12.6X ROAS\n\nRicchezza: Increased their ROAS from 0.5X to 11.8X in ONE\nMONTH\n\nMaverick City Music: increased their apparel sales from $10k/\nmonth to over $50k/month in THREE MONTHS\n\nThrottle Addikt: Took them from making under $2k/month to\nnow making just under $20k/month on $1.5k ad spend.\nThats a 13.7X\n\nWhether you're just starting out or making six figures a\nmonth. We have strategies to make sure you're hitting your\ngoals and levelling up your revenue\n\nDM us \"SERVICES\" to see if working with Banch makes sense\nfor you brand"
+                        },
+                        "cta_type": "INSTAGRAM_MESSAGE",
+                        "display_format": "VIDEO",
+                        "link_description": null,
+                        "link_url": "http://www.instagram.com/",
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 1444,
+                        "title": "Scale your Brand 10X",
+                        "videos": [
+                          {
+                            "video_hd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m367/AQN2_WNnupPM08w-6dmiJfgPKTbgPjBmwiRoHP67EfG0s-LTd-d7FWMnvKNCjoB2B1v8uMd7xvr6h6PDnlLjQXhAoJC-XD0VorsQQJUgtA.mp4?_nc_cat=108&_nc_oc=Ado4dwn7HBVjQSCF0aylOeRpvHQ8Z-ldYrpbj3Qp1JCa6nCGXFprWShuqLxTUGI0GGc&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=hQ1y814pqRoQ7kNvwEgypo1&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxNDI5MTkyNjEyMzQ5OTM0LCJhc3NldF9hZ2VfZGF5cyI6NDUsInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo3MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQBwBhCjyFJYcbeAu5Zt_JXH4Q_zcwqJurPBI-4r0sDzWA&oe=6A6A53B2",
+                            "video_preview_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/724407905_870677855561717_1453633528501497904_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=PppLqQhVISYQ7kNvwEC9zz6&_nc_oc=AdpSUIFxmwYSjOe6q-t05OBUTZ0ALlXEwodK8m9kO17yethccttmdB6PJGNWfW2LMB0&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBFvMmfyEZQMrapVVK3v77JMiiq5iICiK41PucxH-1Z3A&oe=6A6A3DED",
+                            "video_sd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m367/AQP8Ay5jjB3Aks_A05cAnZWpVMdvv5ZaAsgAMZLWFHgStvu1GYNuHzU5ZjMv2olr_NM6rYoVnx-exz_GgN7QsOZU9vNnaQTZ6B9ZWMjwjQ.mp4?_nc_cat=110&_nc_oc=AdrJguWreg2foOYhzjjGb1YRdAgSKe8Yk3yS2V_1nFjLW5Ql-iqotg0QeU3IrYfiJgk&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=XY6ATBwCRH8Q7kNvwHhqNCy&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnByb2dyZXNzaXZlX2gyNjQtYmFzaWMtZ2VuMl8zNjBwIiwieHB2X2Fzc2V0X2lkIjoxNDI5MTkyNjEyMzQ5OTM0LCJhc3NldF9hZ2VfZGF5cyI6NDUsInZpX3VzZWNhc2VfaWQiOjEwMDk5LCJkdXJhdGlvbl9zIjo3MywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQDMmNIiBQK8j5Lp8YFLRhfQW3gVIJslEizXLh7ERh7_cw&oe=6A6A37D8",
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null
+                          }
+                        ],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Banch Marketing Digital Agency",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM"
+                      ],
+                      "start_date": 1781593200,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "909968504691015",
+                      "collation_count": 1,
+                      "collation_id": "1052937027416845",
+                      "is_active": true,
+                      "page_id": "100348739540643",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "100348739540643",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/100086806506091/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Basedaustindunham",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/739118020_1062432289541066_910661739141807971_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=107&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=CjE8Fhsj6gIQ7kNvwHJXkI-&_nc_oc=Adok6dAWSgjmrBHDWjaAKLNVqfpX8RGYrbSM2tQwQYcNuMzfaxknw3UkQ1VQIHjEXB8&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAb5keinS6MK45bvanyYaKy_4glBw4hfoYxKT1JuyKY6Q&oe=6A6A5E4A",
+                        "event": null,
+                        "caption": "www.thedigitalromeo.com",
+                        "cta_text": "\u0645\u0632\u06cc\u062f \u062c\u0627\u0646\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "Most men chase.\n\nYou're going to learn how to select.\n\nIf you're a successful guy in your 30s or 40s opening Hinge every night to an empty inbox, the problem isn't your face. It's that the version of you who exists in real life doesn't exist on her screen yet.\n\nHere's what changes in 90 days:\n\u2705 New photos, wardrobe, grooming dialed in \n\u2705 Hinge, Bumble, and Instagram rebuilt as one funnel \n\u2705 2-4 quality dates per week by week 6 \n\u2705 A frame where she's working for your attention, not the other way around\n\nI went through this myself. Two years of blaming my height and my race. Then I rebuilt how I showed up online and went from 1 match a week to 3 quality dates a month. Nothing changed about my face.\n\n\ud83d\udc49 Kareem, 34, finance, Chicago. Was matching with women he didn't want to date. Six weeks in, different inbox entirely.\n\ud83d\udc49 Landon, 37, Brooklyn, divorced. Spent years thinking \"is it just me?\" Now he's matching with women he actually wants.\n\nClick below to book a call. Free profile audit. We'll tell you what's broken and show you how to fix it."
+                        },
+                        "cta_type": "LEARN_MORE",
+                        "display_format": "VIDEO",
+                        "link_description": null,
+                        "link_url": "https://www.thedigitalromeo.com/",
+                        "images": [],
+                        "page_categories": [
+                          "Dating Service",
+                          "Business"
+                        ],
+                        "page_like_count": 108106,
+                        "title": "Stop Chasing. Start Choosing.",
+                        "videos": [
+                          {
+                            "video_hd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOYg4Kc5PITCRBKqJkqUTpAmY5P3n2BYfSNfeExCfQuduoQAseekG8ej-RcFLFU7dvKKNBa7gSjnfXpo5GpCuELriUNypAvOlgdrJRXPQbFAg.mp4?_nc_cat=110&_nc_oc=AdoWi9LOuJEuQ-bzN22IBOy_Awv2SrSweEdbe3ty7qR2l2BzGtW5MG21G9txKvb7svs&_nc_sid=b66105&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=zJ6i0cM2asMQ7kNvwGBOqBZ&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjg5MDEwOTUxNzQ0NDI2MywiYXNzZXRfYWdlX2RheXMiOjUzLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6NzAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=540a2a0310dd755e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC80NjRBODQxQTU2RUZFQjE5NDAzOTc2QTg5RjFCQkQ5Ml9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0RDNDk3MUQ2NDQ1RTEyMkEzNEU3NEFGNTY5Qzg1RTk3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbO0snZmOOUAxUCKAJDMywXQFGGZmZmZmYYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQCYsY5Elw1O0XrdDpqLna2NWIezuqK-o4Rs5VoC7nAOwQ&oe=6A6A38C2",
+                            "video_preview_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/741870973_3385550281647614_8764577854500524526_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=b3Uc8N-3KO4Q7kNvwFFCDQA&_nc_oc=AdpNWc8aaSZGz539caM_KwwxfAd2duYrgVg0pDEaAURKhAHtEp-ZUcAy1n9Nn7nQBqM&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCIRCToKDHd7anXSHPDNtSymgU6rhZglYKptLuhsUETGQ&oe=6A6A664F",
+                            "video_sd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNCRcz71rVXKuAawm8zzU7lUq6j894XnBIVHw3P3bqGbTNOO11wLXT7JdobQB0OznBCegxIOTG7aPqMgHx0FPOCKRqO1AbCENEraKifVA.mp4?_nc_cat=111&_nc_oc=AdqFZblGk0XVPIhf4HXKcYnRwAnJrDlr215t70RtzOssigmbF2k1GL446TuaJxlVgKw&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=XeclDza2O4gQ7kNvwEFBweF&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODkwMTA5NTE3NDQ0MjYzLCJhc3NldF9hZ2VfZGF5cyI6NTMsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjo3MCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQC0HVfxSpFHObLgim0-Vy0WYRVkbFNy2V9nwUXyIyM1Tw&oe=6A6A41BB",
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null
+                          }
+                        ],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Basedaustindunham",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM"
+                      ],
+                      "start_date": 1783321200,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "1481587166817965",
+                      "collation_count": 1,
+                      "collation_id": "939785961939697",
+                      "is_active": true,
+                      "page_id": "115431318809543",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "115431318809543",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/hernanvazquezim/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Hernan Vazquez",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/540488052_800291042382708_7977598589345699220_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-n9zxRbvm4wQ7kNvwEmM7pO&_nc_oc=AdqvLx8deUopnURZIyHR31sOnzq3Qyi4C2SJqlAfvhzHwAbJZFZlJVKNR_g9vctSQLY&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQD1rUcERRwsoX_gTagDyPWC1xweOche7-7lmBoEhy7jFA&oe=6A6A5E36",
+                        "event": null,
+                        "caption": null,
+                        "cta_text": "\u0628\u063a\u06cc\u0631 \u0628\u0679\u0646 \u06a9\u06d2",
+                        "cards": [],
+                        "body": {
+                          "text": "The $500K Scaling Wall: Why This Client's Funnel Hit a Ceiling (And the \"Scissor Effect\" That Kills Most Campaigns)\n\nFriday I had a call with a potential client that made me realize something...\n\nThis wasn't some struggling startup or new business owner trying to crack their first $1K/month.\n\nThis was a team already crushing it - spending over $500K per month across Facebook and YouTube ads. \n\nGreat funnel. Solid media buying team. High-converting creatives. Premium market with customers ready to pay.\n\nEverything looked perfect from the outside.\n\nBut they hit a wall.\n\nNo matter what they tried, they couldn't push past that $500K/month mark. \n\nEvery attempt to scale further just made their numbers worse.\n\nAfter diving into their account, I discovered they were experiencing what I call the \"Scissor Effect\" - and it's probably the #1 reason why successful campaigns suddenly stop scaling.\n\nHere's what it is, why it happens, and the three-part solution that can break you through any scaling ceiling.\n\n=== The Scissor Effect: When Success Becomes Your Enemy\n\nPicture two lines on a graph crossing each other like scissors.\n\nLine 1 (Going Up): Your daily ad budget. As you scale, this keeps climbing - $1K/day, $5K/day, $10K/day, $20K/day.\n\nLine 2 (Going Down): Your funnel performance. CTRs drop. Opt-in rates drop. ROAS decreases. Conversion rates fall.\n\nThe more you scale, the more these lines separate from each other.\n\nBudget up. Performance down.\n\nThat's the Scissor Effect.\n\nAnd it's not a bug in the system - it's a feature.\n\nHere's what I mean (and how to control this)...\n\n=== Why the Scissor Effect Is Actually Normal (But Nobody Talks About It)\n\nHere's what most people don't understand about scaling:\n\nWhen you're spending smaller amounts - $100/day, $1K/day, even $5K/day - Facebook and Google's algorithms can easily find your lowest-hanging fruit.\n\nThe machine learning knows exactly who your buyers are. It targets people ready to buy RIGHT NOW. People who see your ad and immediately pull out their credit card.\n\nThis gives you incredible results. Amazing ROAS. Great conversion rates.\n\nYou think you've cracked the code.\n\nAnd everyone is screaming \"Scale Scale Scale Scale!\"\n\nBut here's the flip side...\n\nAs you push more volume, the algorithm has to expand beyond your ideal buyers. It starts showing ads to:\n\n- People who might buy in a month\n- People who need more convincing\n- People further from a purchase decision\n- People outside your core demographic\n\nYour ads are reaching colder and colder audiences.\n\nThe sales process gets harder. People don't convert immediately. Your metrics decline.\n\nThis isn't failure - it's the natural progression of scaling.\n\n=== The $500K Case Study: What I Found When I Dug Deep\n\nThis client's situation was textbook Scissor Effect.\n\nWhat Was Working:\n\n- Incredible funnel that converted warm traffic beautifully\n- World-class creative team producing engaging ads\n- Experienced media buyers optimizing everything perfectly\n- High-value market willing to pay premium prices\n- Strong product-market fit\n\nTheir Main Bottlenecks:\n\n- All $500K/month was going through ONE funnel\n- No alternative acquisition channels for different buyer temperatures\n- No Branding at alll\n\nThey had built the perfect machine for harvesting low-hanging fruit. But there's only so much low-hanging fruit in any market.\n\nNo matter how big your market is...\n\nOnce they exhausted their core buyer pool, they hit the ceiling.\n\n=== Why Most \"Solutions\" Don't Work\n\nBefore I share what actually works, let me tell you what doesn't:\n\n\"Just optimize the funnel better\" - Wrong. Their funnel was already optimized. You can't optimization your way out of a ceiling caused by audience saturation.\n\n\"Find better targeting\" - Not really. Better targeting just means smaller audiences, which limits your scale potential.\n\n\"Create better creatives\" - Mmhh. Their creatives were already great. New creative helps, but it doesn't solve the fundamental scaling problem.\n\n\"Increase budgets gradually\" - Got a point BUT... The Scissor Effect happens regardless of how slowly you scale.\n\nThe real solution requires thinking differently about your entire acquisition strategy.\n\nSo let's jump into what I recommended:\n\n=== Solution #1: Build Multiple Acquisition Points\n\nInstead of pushing all volume through one funnel, create multiple entry points for different buyer temperatures.\n\nThe Problem: This client was only targeting people ready to buy their high-ticket offer immediately.\n\nThe Solution: Create acquisition funnels for people at different stages of buyer readiness.\n\n- High-Intent Funnel (Current): $5K-$25K offers for people ready to buy now\n- Medium-Intent Funnel (New): $97-$497 courses/workshops for people who need education first\n- Low-Intent Funnel (New): $7-$47 guides/challenges for people just discovering the problem\n\nThis approach lets you:\n\n- Capture everyone in your market, not just immediate buyers\n- Scale each funnel to its natural ceiling without forcing volume\n- Build relationships with people who aren't ready for high-ticket yet\n- Create multiple revenue streams instead of depending on one funnel\n\n=== Solution #2: Target Different Market Segments\n\nMost businesses think they have one avatar, but successful scalers discover they actually serve multiple segments.\n\nThe Problem: This client was targeting one market segment with one message.\n\nThe Solution: Identify different segments that need the same outcome but have different motivations, pain points, and buying triggers.\n\nExample Market Segments:\n\n- Segment A: Established entrepreneurs wanting to scale faster\n- Segment B: Corporate executives transitioning to entrepreneurship\n- Segment C: Service providers wanting to systematize their business\n- Segment D: Content creators monetizing their audience\n\nSame core offer. Different messaging. Different entry points. Different acquisition channels.\n\nThis multiplies your addressable market without changing your product.\n\n=== Solution #3: Invest More in Brand Building\n\nThis was one of the biggest opportunity I saw.\n\nThe Problem: Zero content. Zero brand building. Zero top-of-funnel investment.\n\nThey were leaving massive money on the table.\n\nWhen you're spending $500K/month on ads, you're generating enormous brand awareness. \n\nBut if you're not capturing and nurturing that awareness, most of it disappears.\n\n=== The Brand Building Strategy:\n\nContent Machine: Start publishing valuable content consistently. Build audiences on each platform.\n\nEngagement Campaigns: Run video view campaigns, engagement campaigns, reach campaigns. Stay top-of-mind with people who aren't ready to buy yet.\n\nLong-Term Nurturing: Build email lists of people who engage with your content but don't buy. Nurture them over months until they're ready.\n\nStrategic Patience: Accept that brand building takes time but creates compound effects.\n\nLook at Alex Hormozi's recent $100M launch weekend. That wasn't luck - it was the result of years of systematic brand building.\n\nHe's been doing \"jab, jab, jab, right hook\" for years. Content, content, content, then massive offer launch.\n\nBranding matters... not at the beginning, but at some point it becomes vital.\n\n=== The Implementation Timeline\n\nIf you're hitting scaling ceilings, here's your roadmap:\n\n- Month 1-2: Audit and Plan\n\nIdentify your current funnel's natural ceiling\nMap out different buyer segments in your market\nPlan 2-3 additional acquisition funnels for different buyer temperatures\n\n- Month 3-4: Build Low-Ticket Acquisition\n\nCreate $7-$47 front-end offers for cold traffic\nTest these offers with small budgets\nOptimize for breakeven or small profit on front-end\n\n- Month 5-6: Launch Content and Brand Building\n\nStart consistent content creation across platforms\nLaunch engagement and video view campaigns\nBegin building brand awareness beyond direct response\n\n- Month 7-8: Add Medium-Ticket Bridge\n\nCreate $97-$497 offers that bridge low-ticket to high-ticket\nTest these with audiences from your low-ticket funnels\nOptimize the customer journey between funnels\n\n- Month 9-12: Scale the Ecosystem\n\nIncrease budgets across all funnels simultaneously\nOptimize the handoffs between different buyer journey stages\nBuild long-term brand equity while scaling acquisition\n\n=== The Bottom Line\n\nThe Scissor Effect isn't a problem to solve - it's a signal that you're ready to graduate to a more \"complete\" approach.\n\n(BTW, if you reached this level... CONGRATULATIONS! You're crushing it)\n\nSingle-funnel businesses eventually hit natural ceilings. Multi-funnel ecosystems can scale much further.\n\nBut it requires patience, investment, and a fundamental shift in how you think about customer acquisition.\n\nThe businesses that make this shift first will dominate their markets. \n\nThe ones that keep pushing single funnels will keep hitting the same walls.\n\nTime to decide which category you want to be in.\n\nHernan\n\nP.S. - If you want my team to help you put together your next couple of front-end offers to expand your ecosystem...\n\nWe have a couple of spots open for DFY Low Ticket offers where we'll give you:\n\n- A minimum of 10 front-end offer ideas, 5 upsell ideas and 5 bump ideas.\n- A fully fleshed out Lot Ticket offer with copy, emails and ads.\n- My proven Low Ticket funnel ready to import into your GHL account.\n- My proven Low Ticket Offer testing framework and full training.\n- You can also get done for you image ads and a call with me so I can help you launch all of this...\n\nDeets here: https://rapidscaleframework.com/dfy-lto"
+                        },
+                        "cta_type": "NO_BUTTON",
+                        "display_format": "IMAGE",
+                        "link_description": null,
+                        "link_url": null,
+                        "images": [
+                          {
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/541403884_1107503810938916_4130098012596560010_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=b_qKbpjOjZwQ7kNvwGZimy3&_nc_oc=Adpq8Lur2dTjlKIvPbOfNA5m8S2s-5QRUMB6agIh-1fFzbEiqnrxO6qDrBjaEecDK20&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAVBqWniac5cT-oUnLMuEFAqQcaanUZazDffEkV3xwEHg&oe=6A6A41DF",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/543126969_1480824109735501_4132619246257000025_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=VUhTMcyX-lwQ7kNvwEgmqbg&_nc_oc=Adq46mA1SxkeEQHlx2On6p76huESzr9dG-piSOgvH2zdMLeu3qq6Klo7cGRiYEPXhPQ&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQD7vhTh7KYAyp9iVqR5EiJje4MpE5kJKMsd2MX6hWpJfg&oe=6A6A479A",
+                            "watermarked_resized_image_url": ""
+                          }
+                        ],
+                        "page_categories": [
+                          "Entrepreneur"
+                        ],
+                        "page_like_count": 15882,
+                        "title": null,
+                        "videos": [],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Hernan Vazquez",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM"
+                      ],
+                      "start_date": 1772784000,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "2492395391262380",
+                      "collation_count": 1,
+                      "collation_id": "1189547779848886",
+                      "is_active": true,
+                      "page_id": "313036255225404",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "313036255225404",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/61559119323948/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Brit Forrester Coaching ",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/682691620_1814361876191506_1840413597550714799_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mtK8f5LJZvwQ7kNvwH9MrVS&_nc_oc=AdpLH1JAEWh5zYSy0fXZZsDjWfGfjLwTF7P0oe4NYsoFx-iYtD5o6kHPDjALAqFYHGw&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQCfJ4L6UCM7ZLK3vGQut7Cn04wTl_7hdQoMYYH8VMBsoQ&oe=6A6A5A9E",
+                        "event": null,
+                        "caption": "britforrestercoaching.com.au",
+                        "cta_text": "\u0645\u0632\u06cc\u062f \u062c\u0627\u0646\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "Kate\u2019s issue was never motivation.\ufffdIt was too many moving parts and no decision hierarchy.\n\nSo instead of adding more strategy, we forced clarity.\nShe started by feeding her current business state into my VIP Coach Brit AI bot and asking it to audit what she\u2019d already built.\n\nThe first shift came fast:\ufffdthe bot broke down what was helping conversions vs what was quietly hurting them \u2014 starting with her bio.\nLanguage that sounded \u201cnice\u201d but vague was flagged.\ufffdCTAs that diluted authority were rewritten.\ufffdHer positioning tightened immediately.\n\nFrom there, we built content parameters \u2014 not random post ideas, but clear frameworks:\ufffdwhat she should talk about, how often, and from what angle depending on where the lead sat in the funnel.\n\nHooks weren\u2019t brainstormed.\ufffdThey were generated on demand \u2014 specific to her niche, her offer, and the outcome she wanted from each post.\n\nThen Kate uploaded the assets she was already using:\ufffdPDFs, lead magnets, landing pages, and emails.\nThe bot didn\u2019t rewrite them blindly.\ufffdIt highlighted where clarity dropped, where messaging mismatched her audience\u2019s awareness level, and where language weakened intent \u2014 then sharpened it.\nThis removed guesswork from both content and conversations.\n\nEvery DM, comment, or re-engagement was handled the same way:\ufffdKate dropped the context in, the bot returned responses that preserved authority and moved the conversation forward.\n\nAnd then she did what most people never get to:\nShe built her entire onboarding system using the bot.\nFrom first contact \u2192 orientation \u2192 expectations \u2192 action steps \u2014\ufffdall structured, clear, and duplicatable without overwhelming new people.\n\nThat\u2019s the difference.\ufffdIt\u2019s an execution system.\n\nIf you want the same thinking framework in your back pocket, I literally extracted my entire $5M network marketing business frameworks into an AI on demand bot. \n\nComment \ud83e\udde0\u2705 \u2018AI\u2019 and I\u2019ll send you the access details."
+                        },
+                        "cta_type": "LEARN_MORE",
+                        "display_format": "VIDEO",
+                        "link_description": null,
+                        "link_url": "https://britforrestercoaching.com.au/nwm-dmcloserai",
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 558,
+                        "title": "Unlock more customers with this DM Secret",
+                        "videos": [
+                          {
+                            "video_hd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQMnACbRONqr1UoiXWfj1gUJFpkW8tbBd2kpzqQzBJ-4wUF4EuZBwQzJqvRFgnAdm1FVZ5j4Mw97GyusVbCn3C_-hm8nwl9HKjsTP3ZrU-rGTA.mp4?_nc_cat=101&_nc_oc=AdriZzbbkhWlyzn7eVg6tkVQPdwRrk3Wg0n4NqmL13j0k3xvsTdUvA241X3euPLPKe8&_nc_sid=b66105&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=uruyeUTLu4QQ7kNvwF9Q1FR&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEzNjU5MDU4MTUzMDAwNjAsImFzc2V0X2FnZV9kYXlzIjo5MCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjEzMSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=81752310b8ca7540&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85MzRENzMxNjUxMzczNTFDNERERjAzMTY3OTREMUVBOV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzA4NEU0MkU4ODU3MzY0NTUyMDcxNjVBOUFDOUJFNkJGX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa4n9eul5LtBBUCKAJDMywXQGB5mZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQDF2EvAEq3vTkr3tQO1QyuzbJIaaZBh2xnzmJON_ohyxg&oe=6A6A56EF",
+                            "video_preview_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/682404988_2691863944542441_8091056799729923037_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=jFsYUEccwRYQ7kNvwGEV-EC&_nc_oc=Adp1odGg9sV_HHr2H0MUxpP6oxuns8qgqga_RdAX37gauY80HGP-_gzJhHPLuG8zAFE&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQByf94pNrkoL-8yAJ3rAaxQrzR23Gl38rMmi_2yyWkY0w&oe=6A6A54B2",
+                            "video_sd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQMvbeJuus7hrC-jw3koJA-OQeunvIVHLGyC2-KfceKKpSty25mTE3pdtTxJu4MUZUu60B84ZJ6sPI6vcVVLlUjSx-rQL8pL2hdAkLgKXA.mp4?_nc_cat=104&_nc_oc=AdpCWe7ljo3B38KPoepBr8Vmo-pVJxhrfno_Yu0w1Clb_ex83NEp6Jb3O6-dV9Z4WVI&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=94UZs2uHo9cQ7kNvwGIqj0c&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTM2NTkwNTgxNTMwMDA2MCwiYXNzZXRfYWdlX2RheXMiOjkwLCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6MTMxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQCmjZRxSuMPnudy4_tXO97yfArQkRGd_M5K6N3BAg2iYQ&oe=6A6A5E72",
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null
+                          }
+                        ],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Brit Forrester Coaching ",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "AUDIENCE_NETWORK",
+                        "MESSENGER",
+                        "THREADS"
+                      ],
+                      "start_date": 1780902000,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "2477303849355645",
+                      "collation_count": 1,
+                      "collation_id": "2523948844640803",
+                      "is_active": true,
+                      "page_id": "115431318809543",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "115431318809543",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/hernanvazquezim/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Hernan Vazquez",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/518280602_1087797972678621_1387754188321940059_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=ISsaqZ_Bh1EQ7kNvwHdF2sj&_nc_oc=AdpmComcbwLNe8ijD8ZvjphLSKQJ0tCPUnbX-M_7ZVNovqCBgKyGZosG_8kK1Pohtm8&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDYJ4wT_E-ImJliTG2dwrYLbAOt8hvBUs72o4rwdxNUVg&oe=6A6A53C8",
+                        "event": null,
+                        "caption": null,
+                        "cta_text": "\u0628\u063a\u06cc\u0631 \u0628\u0679\u0646 \u06a9\u06d2",
+                        "cards": [],
+                        "body": {
+                          "text": "I've been consistently hitting 30-40 buyers every single day for the past five months...\n\nAnd I've been helping clients generate hundreds of buyers daily for several years.\n\nHere's the one thing that made it all possible...\n\nIt all comes down to one simple concept: the low-ticket offer.\n\nBecause right now, especially if you've been running Facebook ads, it makes more sense to have a low-ticket offer than ever before.\n\n(I'd even say... it makes more sense than to run ANY OTHER kind of ad strategy)...\n\nI mean, do \"Direct to High-Ticket ads\" work? Yep, of course. It's just less profitable these days.\n\nDoes \"Branding Video\" stuff work? Definitely! It just takes some time for it to kick in...\n\nDo \"Webinars\" work? Yeah, totally. You need to be REALLY GOOD at webinars to make them work tho...\n\nDo \"Challenges\" work? You bet! I consider this another low ticket offer :)\n\nDo \"Lead Magnets\" work? No. Stop doing that please...\n\nHere's how \"Low Ticket Ads\" work...\n\n=== It's 2025 And Costs Are Rising (Again)\n\nWe used to generate booked calls for $50.\n\nWe used to get leads for webinars and magnets for $2-3.\n\nAnd they worked. They were qualified. They showed up.\n\nThose were the good times...\n\nBut now? We're paying $200-300-500 to get somebody on the phone.\n\nWe're paying $15/$20 for a webinar lead... same for a lead magnet.\n\nAnd when those leads don't show up, don't open emails, don't convert... the cost to acquire a customer becomes unviable.\n\nIt starts to sting...\n\nTHAT's why you see a lot of people going \"back\" to low ticket offers...\n\n=== Sell Something Right Away, Darling...\n\nI'm paying $10-20-30 to acquire a lead on my low-ticket funnels.\n\nBut here's the kicker: around 30% of these people buy something right away.\n\nAnd many of them drop $200-300-500 on those funnels from the get-go.\n\nNot everyone, but a lot of people do.\n\nThe math is completely different.\n\nBecause you're getting paid to build your list and liquidating as much as possible, as fast as possible...\n\n=== Why Low-Ticket Offers Put Growth Back In Your Control\n\nAs business owners, we want to control our scale.\n\nThe reason we do paid ads is because we don't want to pray to the organic gods. We don't want to wait around.\n\n\"Time is money\". \"Money loves speed\". And other clich\u00e9 phrases...\n\nWhen you can control your scale, you'll never have a growth problem.\n\nYou might have other issues and challenges, but growth won't be one of them.\n\nLow-ticket funnels put that growth right back in your lap.\n\nWhen you have one, two, or ten low-ticket funnels (what I call a low-ticket portfolio), you can control exactly how many leads and sales you get per day.\n\n=== But Here Are Some Interesting Byproducts Of It...\n\nBut controlling your growth is just one part of it.\n\nAs a byproduct of being able to afford to advertise, you get a ton of other benefits:\n\n- Brand awareness\n- Organic exposure\n- People coming into your universe (even if they don't buy right away)\n\nHow do I know this works?\n\nI'm not an Instagram guy. I don't try to go viral. I don't post seven times per day.\n\nI'm not shaking my booty 7 times per day on Reels lol.\n\nIf anything, I post maybe three times a week.\n\nBut here's what happened last month: I got 2 million impressions on my Instagram profile.\n\nWhy? Because I'm advertising.\n\nMy YouTube channel is growing as a result of me advertising (and I'm not even advertising on YouTube).\n\nMy LinkedIn following is growing (and I'm not even that active on LinkedIn).\n\nMore people are following me on other platforms where I barely post.\n\nThese are all byproducts of running low-ticket offers, because now I can afford to advertise consistently.\n\n=== Why Most People Can't Afford To Advertise\n\nA lot of people can't afford to advertise because they don't know when the return is going to come.\n\nThey're running high-ticket funnels where they might spend $500 to get someone on a call, and then hope they close them into a $5K program.\n\nBut what if they don't show up? What if they don't buy?\n\nThat $500 is just... gone.\n\nWith low-ticket offers, you know exactly when the return is going to come.\n\nYou're trying to liquidate your advertising costs as fast as possible.\n\nSometimes it works and you're profitable on day one.\n\nI have students and friends who are profitable on the front-end immediately.\n\nSometimes you need to wait 10 days, maybe 15 days, maybe 30 days.\n\nAnd that's fine too.\n\n=== The Psychology Behind Why This Works\n\nLow-ticket offers are accessible. They're non-threatening.\n\nPeople don't need to think about them much.\n\n\"Ask for coffee before marriage\" type stuff...\n\nWhen someone sees your $27 framework or your $47 toolkit, they're not sitting down to research pros and cons.\n\nThey don't have to \"discuss it with their partner\".\n\nThey're scrolling, they see something that might solve an immediate problem, and they either buy it in the moment or scroll past forever.\n\nYou don't have to convince them, twist their arms, have amazing ads, etc.\n\n(Most of my ads are ugly. And they work).\n\nIt's not cause I'm a genius.\n\nIt's because it's a freaking $5 product lol.\n\n=== My Current Low-Ticket Portfolio\n\nHere's what I'm running these days:\n\n- Rapid Scale Framework ($4.95) - My system for scaling ad campaigns\n- AI Ads That Work ($27) - How to use ChatGPT for ads\n- Low-Ticket Workshop ($27) - How to create profitable low-ticket offers\n- Rapid Creatives ($12) - Framework for simple text ads\n- Retargeting Playbook ($27) - Guess what it shows lol\n\nAnd I have some more in the pipeline...\n\nEach offer appeals to slightly different segments, but they all lead to the same back-end offers.\n\nWhen I launch ads, I don't choose just ONE to promote. I run ALL of them simultaneously.\n\nThis means if CPAs rise on one, the others keep performing.\n\n=== How To Build Your Own 30-40 Buyer Per Day Machine\n\nHere's the framework I use:\n\nStep 0: Get My Brand New Low Ticket Profits Book (Link in comments) wink wink...\n\nStep 1: Create 3-5 Low-Ticket Offers\n\nDifferent angles on your core solution. Different price points ($7, $17, $27, $47, $97).\n\nStep 2: Keep The Back-End Identical\n\nSame upsells, same email sequences, same high-ticket offer. Don't complicate this.\n\nStep 3: Run Ads To All Of Them\n\nStart with $20-50/day per offer. Scale the winners, kill the losers.\n\nStep 4: Optimize For Speed\n\nFocus on getting people to buy as fast as possible. No long sales letters for low-ticket stuff.\n\nStep 5: Build Your Upsell Sequence\n\nThis is where the real money is. Order bumps, one-time offers, recurring subscriptions.\n\n=== Common Mistakes That Kill Results\n\nMistake #1: Trying To Break Even On Front-End Only\n\nThis is doable. But it's also HARD to do...\n\nYour front-end is just the entry point. The money is in the upsells and back-end.\n\nMistake #2: Creating Only One Low-Ticket Offer\n\nYou need multiple entry points. Different people buy different things.\n\nMistake #3: Overcomplicating The Offers\n\nKeep them simple. Solve one specific problem. Make them easy to understand and buy.\n\nMistake #4: Not Having Clear Upsells\n\nIf someone just bought your $27 framework, what's the logical next step? What would give them better results faster? Have it ready.\n\n=== The Long-Term Compound Effect\n\nHere's what happens when you implement this correctly:\n\nMonth 1: You're breaking even or slightly profitable on front-end\nMonth 3: Your buyer list is growing, back-end sales are increasing\nMonth 6: You have multiple profitable acquisition channels\nMonth 12: You have a customer acquisition machine that \"almost\" runs itself\n\nThe compound effect is insane.\n\nEvery day you're adding 30-40 new buyers to your ecosystem. \n\nEven if only 5% of them eventually buy your high-ticket offer, that's 1-2 high-ticket sales per day just from your low-ticket funnels.\n\nYou see where I'm going with this?\n\n=== Why This Strategy Is Perfect For 2025\n\nAd costs are rising. Attention spans are shrinking. Trust is harder to build.\n\nIn this environment, low-ticket offers are the perfect bridge between cold traffic and high-ticket sales.\n\nThey let people experience working with you at low risk before making bigger commitments.\n\nThey give you immediate cash flow to fund more advertising.\n\nThey build a list of actual buyers (not just freebie seekers).\n\nAnd they create multiple ways for people to enter your ecosystem.\n\n=== Your Action Plan\n\n- This Week:\n\nAudit your current offers\nIdentify 3-5 potential low-ticket angles\nChoose one to start with\n\n- Next Week:\n\nCreate your first low-ticket offer (keep it simple)\nSet up basic upsell sequence\nLaunch with small ad budget\n\n- Following Weeks:\n\nScale what works, kill what doesn't\nAdd more offers to your portfolio\nOptimize upsells and back-end\n\n=== The Bottom Line\n\nGenerating 30-40 (or 100-200) buyers per day isn't about some secret advertising hack.\n\nIt's about creating offers that are accessible, valuable, and aligned with how people actually buy in 2025.\n\nIt's about building a portfolio of entry points instead of relying on one funnel.\n\nAnd it's about playing the long game where every customer acquired becomes a compound asset in your business.\n\nI did an entire masterclass on how to make this happen...\n\nIn as little as 7 days.\n\nIt's pretty rad.\n\nGoes through everything...\n\nValidating offers.\n\nPutting together your funnel.\n\nYour upsells.\n\nYour order bumps.\n\nYour emails.\n\nYour ads...\n\nEtc etc...\n\nClick here to get access: https://rapidscaleframework.com/workshop\n\nHave an amazing day!\n\nHernan"
+                        },
+                        "cta_type": "NO_BUTTON",
+                        "display_format": "IMAGE",
+                        "link_description": null,
+                        "link_url": null,
+                        "images": [
+                          {
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/518327951_1365173947911739_7604384548060647857_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=c_LeXWzNWxAQ7kNvwE6WX9f&_nc_oc=Adqf60tbTH8fImW1CwyBS0VCvr5yaEh-VMSEA0KFvJ6Uf1en8u34xFuh3os1WE_IPGo&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBxNtu9qhz0y8hoIredUmNjOn3awIysKhIt4JH1rU7fqw&oe=6A6A45E0",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/518172115_948419827415335_513757838012467320_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=bcbiMqDhbcsQ7kNvwG1mB9T&_nc_oc=Ado8Ir_UIQXvUZ-x2njTcbCq2mLsqxn0z_Ae1skWLnzjn1h-ZoEXMRDN38q_9lQ9OLo&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDTCEE4NpoBpfYjwgS6jRYX-HYnIUmG4vZ9MakF7-5nKg&oe=6A6A47CA",
+                            "watermarked_resized_image_url": ""
+                          }
+                        ],
+                        "page_categories": [
+                          "Emprendedor(a)"
+                        ],
+                        "page_like_count": 15882,
+                        "title": null,
+                        "videos": [],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Hernan Vazquez",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM"
+                      ],
+                      "start_date": 1772784000,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "2092317687977673",
+                      "collation_count": 2,
+                      "collation_id": "1293534575996034",
+                      "is_active": true,
+                      "page_id": "171495927741126",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "171495927741126",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/DigiCom.io/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "DigiCom",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/649831419_1557518661979453_6311536596139921777_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=X53LcRi6M6YQ7kNvwEzKxw4&_nc_oc=AdqvT7msI4DXO1eJt6UTto8LoII-Vzr18B7bgJA8Mv36USsQY2LdeFKPT6EWVnlk4w4&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDwiAD97CVe4mgo3iPfDDQeAS-7g0DtvUWALd9X628jyQ&oe=6A6A647B",
+                        "event": null,
+                        "caption": "www.digicom.io",
+                        "cta_text": "\u06c1\u0645 \u0633\u06d2 \u0631\u0627\u0628\u0637\u06c1 \u06a9\u0631\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "Meta Andromeda is a high-performance engine. But if you're still running stock photo + text ads, you're putting 87-octane in a Ferrari. The machine can find your customers, but it can\u2019t make them care.\n\nIn the Andromeda era, your creative isn't just an ad. It\u2019s your targeting, your filtering, and your sales rep all in one. If it doesn't hook the right person in 3 seconds, the algorithm will bury you. We don\u2019t just \"run ads.\" We build creative systems designed to feed the machine exactly what it needs to scale.\n\nFind out if your creative is fuel or dead weight. Book your free audit."
+                        },
+                        "cta_type": "CONTACT_US",
+                        "display_format": "VIDEO",
+                        "link_description": null,
+                        "link_url": "https://www.digicom.io/",
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 1003,
+                        "title": "Get a Free Audit Today",
+                        "videos": [
+                          {
+                            "video_hd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQMEkZ5GT4Er2QlQmV4cts2ZTdOAQF9-2Zm9261hh091T4_aO1mFFdcRa9LkK3n-AI0mx1arOwupwzVQY4CEHqUgmpq_I5j-nXxTBT7_8VymeQ.mp4?_nc_cat=111&_nc_oc=AdrdCp6FgvivV_Q3lknFR3UHLOnMkBSrNztQpuAS08U5NordxwetI1QHP2Ri3Kn09RM&_nc_sid=b66105&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=o6gojaD_iFQQ7kNvwEynqpp&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjE1OTYxMjQzMjQ3NzA0MjAsImFzc2V0X2FnZV9kYXlzIjoxMzYsInZpX3VzZWNhc2VfaWQiOjEwNzk5LCJkdXJhdGlvbl9zIjo0NCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=88801ad3653299c&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC82RDQzQjMxRjlCMjBGODk0M0QxRjM2N0IxQzkzNjlBNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzM2NEQ3ODdGRTNGNjVEQkI0NTUxOEZDMTQzQTcyOUJEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACboyan21OrVBRUCKAJDMywXQEZZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQDMZZ7CyV7b2DvUAgMYDDqEXUDVhHsiNmLH-e5CoGOSkg&oe=6A6A4885",
+                            "video_preview_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/650974905_2106981633426134_2694010707047027536_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Yl_67xKCE-wQ7kNvwEdQQw3&_nc_oc=AdogWaopQB1Sg9UFMRiIjd55E1QQ2cGo0YyCC2VFJaWWR6gSmsaiDMFJMvpCpcQNHg8&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBT_49a7ExgH1rUWIEEn-Gi74igWXtInlJPseE3aW6dJw&oe=6A6A4F4D",
+                            "video_sd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m412/AQNo4T1uQWx3kVWG21usJsO0r_pUPUI9KdNQBHT2obJ3GS8JUSY6oF6acrHmArJQGCesGGXfea84erF_QbkFUW13MbEtKp40zpx2vDxVbw.mp4?_nc_cat=106&_nc_oc=Adpclvwi24e-BlL0Kf8Z1eDf66yIZPxJvdL22pW1Qyko874KPZj9TsheHwRUsr4DZTU&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=kOnX5vJSqLAQ7kNvwGJNEo3&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTU5NjEyNDMyNDc3MDQyMCwiYXNzZXRfYWdlX2RheXMiOjEzNiwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjQ0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQBOGchqvSJVDw34Znk4i9csUQhgNbFfFzx8Gq6VJW5V0A&oe=6A6A695C",
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null
+                          }
+                        ],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "DigiCom",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "AUDIENCE_NETWORK",
+                        "MESSENGER",
+                        "THREADS"
+                      ],
+                      "start_date": 1773126000,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "1205510235106720",
+                      "collation_count": 3,
+                      "collation_id": "1421580615808331",
+                      "is_active": true,
+                      "page_id": "451916937996976",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "451916937996976",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/61565525925201/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "GigaBrands",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/594685862_1336028721077019_2835208660512359686_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=106&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=fR47pjANYC4Q7kNvwGJblKW&_nc_oc=AdqOJuNYAYql3mkzEh0IjjYu7tPxlCRqCJ7frk8cFwZeaApPYQoGaDxa3vuUwURpcnU&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQC0XnPBy1uZCX-cvG9WO5i6MRUVqBIud8V-BZK9PP8LVQ&oe=6A6A5382",
+                        "event": null,
+                        "caption": "scale.gigabrands.ai",
+                        "cta_text": "\u0645\u0632\u06cc\u062f \u062c\u0627\u0646\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "Behind every Amazon brand crossing $500K per month is a system.\n\nNot just ads. Not just SEO. A system built on feedback, optimization, and consistency.\n\nThat\u2019s what we build at Gigabrands.\n\nOur clients aren\u2019t guessing with their ad spend or watching their ASINs slip in rankings.\n\nThey\u2019re running integrated campaigns tied to creative performance, PPC data, and catalog velocity\u2014together.\n\nIf your brand is doing $100K or more per month and you\u2019re ready to move faster, it starts here.\n\nApply for a strategy audit."
+                        },
+                        "cta_type": "LEARN_MORE",
+                        "display_format": "VIDEO",
+                        "link_description": null,
+                        "link_url": "https://scale.gigabrands.ai/",
+                        "images": [],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 51,
+                        "title": "The Amazon Brands You Admire Don\u2019t Scale by Accident",
+                        "videos": [
+                          {
+                            "video_hd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQP0GM2Hp2Uijr1zpt2xSwBcXEX1l7cKwrDoQFuiA8VF_T1iG1j2OZgZSazt82vhh7pXQISvvv0edFAk9Z1jB44JK6hhqKaPTcJiSvBGhlYSTQ.mp4?_nc_cat=110&_nc_oc=AdoQvUuT7jNpM0eQ80Boq3cODm-7e8_lE0pMgxuqopxMgAFbAhePhhoLUfldZHJhrF4&_nc_sid=b66105&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=soGOYSo_2K8Q7kNvwFs6kI7&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjc0OTgzOTM5NDUzNDI4NSwiYXNzZXRfYWdlX2RheXMiOjMxOCwidmlfdXNlY2FzZV9pZCI6MTA3OTksImR1cmF0aW9uX3MiOjYyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=ae799b03b4a44d75&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85NTRBMUY0MDc0QjJEMDQ4MTRCRDMzMDlDNjAyOTJCQV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzQ4NDVCQUJEQzlEMDJFMTU0RjAxRDNFM0VEQTE3NUJEX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaazv_rsv7UAhUCKAJDMywXQE9dT987ZFoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZd6oAQA&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQCa9ReaMvjoS7Wzo5Y1C9J6WShX-NI1Ei6lH_5vFNKhYA&oe=6A6A4EFE",
+                            "video_preview_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/593235013_1637223504328906_6309310131804527027_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=GoJcFZelIXAQ7kNvwG2_kw8&_nc_oc=AdpoDREZQZKyFdWyS_UNIXejWsalBMo_1Blo4Li3kWUeYQ5YV_sVCtcVuEXDWzX-vB4&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQD2gin7VCOKzr2Saq6OyVx8nXP6qAw2QQ_kCFD8hedtWA&oe=6A6A4669",
+                            "video_sd_url": "https://video.fkhi29-1.fna.fbcdn.net/o1/v/t2/f2/m366/AQOEpNjLJXyc5sAG_wcuFiwrlmGcIf-ABHomKZ4PYGsnpLSQM9E-_3LLernd7IHj4BYt2VGv52H9k37FfRPKOWsUk9cvMOr8rCx0W3tFsw.mp4?_nc_cat=103&_nc_oc=AdpGXihWKEEUCf_Ev_u1mIetRTaLsoSIgBT-no92YE5lSARbi87le72OpwVuaf0htms&_nc_sid=ef5aa3&_nc_ht=video.fkhi29-1.fna.fbcdn.net&_nc_ohc=t6CGB-6OTXQQ7kNvwHuki-Y&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NzQ5ODM5Mzk0NTM0Mjg1LCJhc3NldF9hZ2VfZGF5cyI6MzE4LCJ2aV91c2VjYXNlX2lkIjoxMDc5OSwiZHVyYXRpb25fcyI6NjIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&_nc_zt=28&oh=00_AQBfcvDmpAeuekIjmZ41MkeozeyNsmTfFY7jijhttiiv6w&oe=6A6A590B",
+                            "watermarked_video_hd_url": null,
+                            "watermarked_video_sd_url": null
+                          }
+                        ],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "GigaBrands",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784876400,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "AUDIENCE_NETWORK",
+                        "MESSENGER",
+                        "THREADS"
+                      ],
+                      "start_date": 1773385200,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              },
+              {
+                "node": {
+                  "collated_results": [
+                    {
+                      "ad_archive_id": "2260178824755852",
+                      "collation_count": 1,
+                      "collation_id": "3137284463326257",
+                      "is_active": true,
+                      "page_id": "199147300493510",
+                      "page_is_deleted": false,
+                      "snapshot": {
+                        "branded_content": null,
+                        "page_id": "199147300493510",
+                        "page_is_deleted": false,
+                        "page_profile_uri": "https://www.facebook.com/KarenNelsonDigital/",
+                        "root_reshared_post": null,
+                        "byline": null,
+                        "disclaimer_label": null,
+                        "page_name": "Karen Nelson Digital",
+                        "page_profile_picture_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/726145908_4343628265892821_5773969363825980425_n.jpg?stp=dst-jpg_s60x60_tt6&_nc_cat=101&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=UNS-qFXegVwQ7kNvwFP7W9I&_nc_oc=AdrYEfl7ei0NF37QQR7wgNvQcQdZtKE_hsD03QuLelg-HPcSTs96Px14xutfmB2JYL8&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQDJO29PsdLDueu_A2MueeoIeTtpic8-BKPX_AE51iqu3A&oe=6A6A39FC",
+                        "event": null,
+                        "caption": "apply.karennelsondigital.com",
+                        "cta_text": "\u062a\u0641\u0635\u06cc\u0644\u0627\u062a \u062f\u06cc\u06a9\u06be\u06cc\u06ba",
+                        "cards": [],
+                        "body": {
+                          "text": "One of our clients came to us after running ads for months without getting the sales she expected.\n\nShe had changed the ads, adjusted the audiences, lowered the budget, then raised it again.\n\nWhen we took over her Meta ad management, our initial audit showed us something important: the ads were sending people to her page, but too many of them were leaving before they reached the offer.\n\nWe don\u2019t build or fix funnels. But funnel performance affects ad performance, so we showed her what the data was telling us and where people were dropping off.\n\nHer team made the changes. Then we focused on our job: building and managing an ad strategy around the parts of her business that were already working.\n\nThat\u2019s what thoughtful ad management looks like. We pay attention to the full path your customers take because it helps us make better decisions about your ads.\n\nIf you have a proven offer, an existing funnel, and a team that can make updates when needed, we\u2019d be happy to take Meta ads off your plate.\n\nLet\u2019s talk."
+                        },
+                        "cta_type": "SEE_DETAILS",
+                        "display_format": "IMAGE",
+                        "link_description": "Apply now to partner with Karen Nelson Digital: elite Facebook, Instagram & Pinterest ad management for service-based businesses ready to scale.",
+                        "link_url": "https://apply.karennelsondigital.com/",
+                        "images": [
+                          {
+                            "image_crops": [],
+                            "original_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/725666653_1524064466018338_2670372383198012508_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=b8eUg1LekBwQ7kNvwHdrWaK&_nc_oc=AdrYAehsEY3qnHymCYgF8XH0MCEAWeMUTme6_X5cb1uGldZNnzWqAIWTjjF1XHIYzd0&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQAItNpCdi7dVcU0ewtwyb2j8lY5w2qUSxZ_UWM8YW5MNw&oe=6A6A3D9A",
+                            "resized_image_url": "https://scontent.fkhi29-1.fna.fbcdn.net/v/t39.35426-6/726868910_3072882102910314_8604869251741577805_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Jp1Giy4047gQ7kNvwFUJl3k&_nc_oc=AdrRBVfS92NVLt4UKtu8Ju8Bf-J04OdRdwSuRVOyWyUWqObUAsr44HtTqvcY97gg7OI&_nc_zt=14&_nc_ht=scontent.fkhi29-1.fna&_nc_gid=TsffMPwKgvrI-pkh7o_BJg&_nc_ss=7b289&oh=00_AQBqSFaip6w0PslfCNFhuDAz1iktbQ4anjQWdaqPAGoQcw&oe=6A6A61CD",
+                            "watermarked_resized_image_url": ""
+                          }
+                        ],
+                        "page_categories": [
+                          "Business"
+                        ],
+                        "page_like_count": 270,
+                        "title": "What If You Understood Every Ad Dollar?",
+                        "videos": [],
+                        "is_reshared": false,
+                        "extra_links": [],
+                        "extra_texts": [],
+                        "extra_images": [],
+                        "extra_videos": [],
+                        "country_iso_code": null,
+                        "brazil_tax_id": null,
+                        "additional_info": null,
+                        "ec_certificates": []
+                      },
+                      "has_user_reported": false,
+                      "report_count": null,
+                      "menu_items": [],
+                      "state_media_run_label": null,
+                      "page_name": "Karen Nelson Digital",
+                      "impressions_with_index": {
+                        "impressions_text": null,
+                        "impressions_index": -1
+                      },
+                      "gated_type": "ELIGIBLE",
+                      "categories": [
+                        "UNKNOWN"
+                      ],
+                      "is_aaa_eligible": false,
+                      "contains_digital_created_media": false,
+                      "reach_estimate": null,
+                      "currency": "",
+                      "spend": null,
+                      "end_date": 1784962800,
+                      "publisher_platform": [
+                        "FACEBOOK",
+                        "INSTAGRAM",
+                        "MESSENGER",
+                        "THREADS"
+                      ],
+                      "start_date": 1781766000,
+                      "contains_sensitive_content": false,
+                      "total_active_time": null,
+                      "regional_regulation_data": {
+                        "finserv": {
+                          "is_deemed_finserv": false,
+                          "is_limited_delivery": false
+                        },
+                        "tw_anti_scam": {
+                          "is_limited_delivery": false
+                        }
+                      },
+                      "hide_data_status": "NONE",
+                      "fev_info": null,
+                      "ad_id": null,
+                      "targeted_or_reached_countries": []
+                    }
+                  ],
+                  "__typename": "CollatedSearchResults"
+                },
+                "cursor": null
+              }
+            ],
+            "page_info": {
+              "end_cursor": "AQHSRd5qD2bvImsJxtiTw6oEtHZbNejChBFenIa7YwHQzNUiesdsEuKhYVFsB67O9RSg",
+              "has_next_page": true
+            }
+          }
+        }
+      },
+      "extensions": {
+        "server_metadata": {
+          "request_start_time_ms": 1784971011274,
+          "time_at_flush_ms": 1784971013249
+        },
+        "is_final": true
+      }
+    }
+  }
+]

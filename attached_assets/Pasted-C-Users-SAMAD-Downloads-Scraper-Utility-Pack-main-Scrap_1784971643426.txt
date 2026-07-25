@@ -1,0 +1,63 @@
+C:\Users\SAMAD\Downloads\Scraper-Utility-Pack-main\Scraper-Utility-Pack-main\scraper>python live_capture.py
+============================================================
+Live capture: keyword='funnel audit'  country=US
+GRAPHQL_URL_PATTERN = '/api/graphql/'
+============================================================
+Navigating to:
+  https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&is_targeted_country=false&media_type=all&q=funnel+audit&search_type=keyword_unordered
+Captured 4 GraphQL response(s) matching '/api/graphql/'
+--- Response 1 shape (URL: https://www.facebook.com/api/graphql/) ---
+data:
+  ad_library_main:
+    dynamic_filter_options:
+      content_languages:
+        [list, len=1]
+      disclaimers:
+        [list, len=0]
+      pages:
+        [list, len=61]
+      reached_regions:
+        [list, len=0]
+      countries:
+        [list, len=0]
+      cities:
+        [list, len=0]
+      targeted_regions:
+        [list, len=0]
+extensions:
+  server_metadata:
+    request_start_time_ms:
+      int = 1784971003115
+    time_at_flush_ms:
+      int = 1784971003369
+  is_final:
+    bool = True
+--- Response 2 shape (URL: https://www.facebook.com/api/graphql/) ---
+data:
+  ad_library_main:
+    search_results_connection:
+      edges:
+        [list, len=10]
+      page_info:
+        end_cursor:
+        has_next_page:
+extensions:
+  server_metadata:
+    request_start_time_ms:
+      int = 1784971011274
+    time_at_flush_ms:
+      int = 1784971013249
+  is_final:
+    bool = True
+Raw payload(s) saved to scraper/captured_payload.json for manual diff.
+============================================================
+Running run_scrape() with existing field paths ...
+============================================================
+session_status   : ok
+urls_attempted   : 1
+urls_blocked     : 0
+graphql_hits     : 10
+dom_fallback_used: True
+total results    : 0
+All 0 results written to scraper/results.json
+C:\Users\SAMAD\Downloads\Scraper-Utility-Pack-main\Scraper-Utility-Pack-main\scraper>

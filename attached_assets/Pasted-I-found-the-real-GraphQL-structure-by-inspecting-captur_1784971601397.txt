@@ -1,0 +1,38 @@
+I found the real GraphQL structure by inspecting captured_payload.json
+directly (see attached). Here's exactly what's wrong and how to fix it —
+don't guess further, use this.
+
+THE BUG: _parse_graphql_payload() currently expects one ad directly under
+raw["ads"] or similar. The REAL structure is:
+
+  payload["data"]["ad_library_main"]["search_results_connection"]["edges"]
+    -> list of edges
+    -> each edge["node"]["collated_results"]
+      -> LIST of ads (usually 1, but can be more — same advertiser running
+         several ad variants)
+    -> each item in that list has:
+       - ad_archive_id       (this is the actual ad ID, not "ad_id")
+       - page_id
+       - page_name           (also duplicated inside snapshot.page_name)
+       - start_date, end_date
+       - publisher_platform  (this is the platform list we've been missing —
+         e.g. facebook/instagram — wire this into the "platforms" field)
+       - snapshot.link_url   (confirmed correct — this IS the real landing
+         page URL, e.g. "https://scale.axisbrandsco.com/")
+       - snapshot.cta_text
+       - snapshot.cards      (list — for multi-card ads, each card also has
+         its own link_url; usually matches snapshot.link_url, but check for
+         cards where it differs and flag needs_review if so rather than
+         guessing which one to use)
+
+Fix _parse_graphql_payload() to iterate edges -> collated_results (not
+treating each edge as one ad), and pull fields from the paths above. Then
+re-run live_capture.py's run_scrape() logic against this same
+captured_payload.json (as a fixture, no need to hit Meta again) and confirm
+it now produces 10 real result records instead of 0 — show me the parsed
+output for at least 2 of them.
+
+SEPARATELY: also investigate why DOM fallback returned 0 results on the
+live run (raw terminal output attached) when it previously found 29 cards
+against a saved page.html. This is a live-page timing/rendering question,
+not a field-path question — just report the finding, don't fix yet.

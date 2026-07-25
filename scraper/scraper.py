@@ -46,19 +46,20 @@ from dom_parser import parse_ad_cards
 from rate_limiter import RateLimiter, SessionBudgetExceeded
 from url_builder import build_search_urls_for_query
 
-# CONFIRMED against a live capture on 2026-07-23 (Replit environment):
-#   - Endpoint URL: https://www.facebook.com/api/graphql/ (POST)
-#   - Pattern "/api/graphql/" correctly matches all intercepted requests.
-#   - Ad-results payloads were rate-limited by Meta in this environment
-#     (all non-filter GraphQL responses returned code 1675004 "Rate limit
-#     exceeded"), so the structured ad-results path in _parse_graphql_payload
-#     below could not be verified against a live response in this run.
-#     The filter-options response confirmed data.ad_library_main is the
-#     correct root. The ad-results path (data.ad_library_main.results.edges)
-#     is based on documented schema and should be re-checked with DevTools
-#     when running from a fresh IP/session (see CAPTURE_INSTRUCTIONS.md).
-#   - The DOM fallback is working correctly and is the primary path while
-#     the GraphQL path is rate-limited. See dom_parser.py for confirmed fixes.
+# CONFIRMED against a real live capture on 2026-07-25 (non-Replit network,
+# home wifi, Windows — no rate limiting observed):
+#   - Endpoint: https://www.facebook.com/api/graphql/ (POST) ✓
+#   - Pattern "/api/graphql/" matches correctly ✓
+#   - Real ad-results path (confirmed against captured_payload.json):
+#       data -> ad_library_main -> search_results_connection -> edges
+#       edge -> node -> collated_results (list, usually 1 item, can be more)
+#       each item: ad_archive_id, page_name, publisher_platform,
+#                  start_date, end_date, snapshot.link_url, snapshot.cards
+#   - NOTE: the earlier guess ("results.edges") was wrong — it's
+#     "search_results_connection.edges" with an extra collated_results
+#     nesting level. Fixed in _parse_graphql_payload below.
+#   - Rate limiting appears IP-range-specific to Replit: on home wifi the
+#     GraphQL endpoint returned real payloads immediately, no 1675004 errors.
 GRAPHQL_URL_PATTERN = "/api/graphql/"
 
 BLOCKED_MARKERS = [
@@ -79,6 +80,7 @@ NO_RESULTS_MARKERS = [
 class ScrapedAd:
     library_id: Optional[str]
     advertiser_name: Optional[str]
+    platforms: list          # e.g. ['FACEBOOK', 'INSTAGRAM'] — from publisher_platform
     raw_href: Optional[str]
     final_url: Optional[str]
     status: str  # 'ok' | 'needs_review' | 'blocked' | 'no_results'
@@ -112,43 +114,97 @@ def classify_page_text(visible_text: str) -> Optional[str]:
 
 def _parse_graphql_payload(payload: dict) -> list[ScrapedAd]:
     """
-    Placeholder field-path parsing — MUST be confirmed against a real
-    capture (see module docstring). Structured defensively: any field
-    access that fails produces a 'needs_review' row instead of raising
-    and killing the whole batch.
+    Parse a real Meta Ad Library GraphQL response.
+
+    Confirmed field path (live capture 2026-07-25):
+      payload
+        ["data"]["ad_library_main"]["search_results_connection"]["edges"]
+        -> each edge["node"]["collated_results"]   # list, usually 1 item
+        -> each ad:
+             ad_archive_id       — the library ID shown in the UI
+             page_name           — advertiser name
+             publisher_platform  — list e.g. ['FACEBOOK', 'INSTAGRAM']
+             snapshot.link_url   — the real landing-page URL (already unwrapped)
+             snapshot.cards      — list; each card also has link_url
+                                   (usually identical to snapshot.link_url, but
+                                   flagged needs_review when they diverge)
+
+    Structured defensively: any missing field produces a needs_review row
+    rather than raising and killing the whole batch.
     """
+    from link_unwrapper import unwrap_destination
+
     out = []
     try:
         edges = (
             payload.get("data", {})
             .get("ad_library_main", {})
-            .get("results", {})
+            .get("search_results_connection", {})
             .get("edges", [])
         )
     except AttributeError:
         return out
 
     for edge in edges:
-        node = edge.get("node", {}) if isinstance(edge, dict) else {}
-        library_id = node.get("collation_id") or node.get("id")
-        advertiser_name = node.get("page_name")
-        raw_href = None
-        snapshot = node.get("snapshot", {}) if isinstance(node, dict) else {}
-        if isinstance(snapshot, dict):
-            raw_href = snapshot.get("link_url") or snapshot.get("cta_url")
+        if not isinstance(edge, dict):
+            continue
+        node = edge.get("node") or {}
+        if not isinstance(node, dict):
+            continue
+        collated = node.get("collated_results") or []
+        if not isinstance(collated, list):
+            continue
 
-        from link_unwrapper import unwrap_destination
-        unwrapped = unwrap_destination(raw_href) if raw_href else {
-            "final_url": None, "parse_ok": False}
+        for ad in collated:
+            if not isinstance(ad, dict):
+                continue
 
-        out.append(ScrapedAd(
-            library_id=str(library_id) if library_id else None,
-            advertiser_name=advertiser_name,
-            raw_href=raw_href,
-            final_url=unwrapped["final_url"],
-            status="ok" if unwrapped["parse_ok"] else "needs_review",
-            source="graphql",
-        ))
+            library_id = ad.get("ad_archive_id") or ad.get("collation_id")
+            advertiser_name = ad.get("page_name")
+            platforms = ad.get("publisher_platform") or []
+
+            snapshot = ad.get("snapshot") or {}
+            snap_url = snapshot.get("link_url") if isinstance(snapshot, dict) else None
+
+            # Multi-card conflict check: if any card has a different link_url
+            # than snapshot.link_url, we can't be sure which is the real CTA —
+            # flag needs_review rather than silently picking one.
+            cards = snapshot.get("cards") or [] if isinstance(snapshot, dict) else []
+            card_urls = {
+                c.get("link_url") for c in cards
+                if isinstance(c, dict) and c.get("link_url")
+            }
+            card_urls.discard(None)
+            conflicting = card_urls - ({snap_url} if snap_url else set())
+
+            if conflicting:
+                out.append(ScrapedAd(
+                    library_id=str(library_id) if library_id else None,
+                    advertiser_name=advertiser_name,
+                    platforms=list(platforms),
+                    raw_href=snap_url,
+                    final_url=None,
+                    status="needs_review",
+                    source="graphql",
+                ))
+                continue
+
+            # snapshot.link_url on Ad Library is already the real destination
+            # (not a shim), so unwrap_destination is a no-op but kept for
+            # defence against future changes.
+            unwrapped = unwrap_destination(snap_url) if snap_url else {
+                "final_url": None, "parse_ok": False}
+
+            out.append(ScrapedAd(
+                library_id=str(library_id) if library_id else None,
+                advertiser_name=advertiser_name,
+                platforms=list(platforms),
+                raw_href=snap_url,
+                final_url=unwrapped["final_url"],
+                status="ok" if unwrapped.get("parse_ok") else "needs_review",
+                source="graphql",
+            ))
+
     return out
 
 
@@ -214,6 +270,7 @@ def _scrape_one_url(url: str, page, rate_limiter: RateLimiter, session: ScrapeSe
             session.results.append(ScrapedAd(
                 library_id=r["library_id"],
                 advertiser_name=r["advertiser_name"],
+                platforms=[],  # DOM fallback has no platform data
                 raw_href=r["raw_href"],
                 final_url=r["final_url"],
                 status=r["status"],
@@ -264,13 +321,43 @@ def run_scrape(page, rate_limiter: RateLimiter, keyword: str = None,
 
 
 if __name__ == "__main__":
-    # This module's live network path (run_scrape with a real Page) can't
-    # be exercised here -- no network in this sandbox. What CAN be tested
-    # without a browser: the pure-logic pieces, which is what
-    # url_builder.py, link_unwrapper.py, dom_parser.py, and
-    # rate_limiter.py each already do standalone. Run those four scripts
-    # directly to see their self-tests. This file's job is orchestration;
-    # test it live in Replit against one real keyword/country first.
-    print("scraper.py has no standalone network-free self-test -- see")
-    print("the other four modules for logic that's already verified,")
-    print("and the module docstring above for the live-verification steps.")
+    # Fixture-based self-test: run _parse_graphql_payload against the real
+    # captured payload from the 2026-07-25 live run (no browser/network needed).
+    import json, pathlib, sys
+
+    # Accept an optional path argument; default to the attached_assets copy.
+    search_paths = [
+        pathlib.Path(__file__).parent.parent / "attached_assets" / "captured_payload_1784971618300.json",
+        pathlib.Path(__file__).parent / "captured_payload.json",
+    ]
+    fixture_path = next((p for p in search_paths if p.exists()), None)
+
+    if fixture_path is None:
+        print("No fixture file found; run live_capture.py first to generate captured_payload.json")
+        sys.exit(1)
+
+    print(f"Loading fixture: {fixture_path}")
+    with open(fixture_path) as f:
+        raw = json.load(f)
+
+    # The fixture is a list of captured responses; find the one with ad results.
+    all_results = []
+    for item in raw:
+        payload = item.get("payload", item)  # handle both wrapped and bare
+        parsed = _parse_graphql_payload(payload)
+        all_results.extend(parsed)
+
+    print(f"\nTotal parsed results: {len(all_results)}")
+    assert len(all_results) >= 10, f"Expected >=10 results, got {len(all_results)}"
+
+    print("\nFirst 5 results:")
+    for r in all_results[:5]:
+        print(
+            f"  [{r.status:12s}] {(r.advertiser_name or 'N/A'):35s} | "
+            f"platforms={r.platforms} | {r.final_url or r.raw_href or 'NO URL'}"
+        )
+
+    ok_count = sum(1 for r in all_results if r.status == "ok")
+    nr_count = sum(1 for r in all_results if r.status == "needs_review")
+    print(f"\nstatus breakdown: ok={ok_count}  needs_review={nr_count}")
+    print("\nscraper.py fixture test passed.")

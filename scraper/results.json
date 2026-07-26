@@ -5,98 +5,269 @@
   "session_status": "ok",
   "urls_attempted": 1,
   "urls_blocked": 0,
-  "graphql_hits": 37,
-  "dom_fallback_used": false,
+  "graphql_hits": 36,
+  "dom_fallback_used": true,
   "results": [
     {
-      "library_id": "2234177684073046",
-      "advertiser_name": "AdSumo Digital",
-      "raw_href": "https://sprint.adsumodigital.com/get-started",
-      "final_url": "https://sprint.adsumodigital.com/get-started",
-      "status": "ok",
-      "source": "graphql",
-      "start_date": 1780297200
-    },
-    {
-      "library_id": "1705125880637217",
-      "advertiser_name": "BUZZZ",
+      "library_id": "943898378024454",
+      "advertiser_name": "Sales Funnel Marketing",
       "raw_href": null,
       "final_url": null,
       "status": "needs_review",
-      "source": "graphql",
-      "start_date": 1781161200
+      "source": "dom_fallback",
+      "start_date": 1775260800
     },
     {
-      "library_id": "909968504691015",
+      "library_id": "1520682079427212",
+      "advertiser_name": "Heart-Centered Apprentice",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.heartcenteredapprentice.com%2Fmanu-gupta&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.heartcenteredapprentice.com/manu-gupta",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1777852800
+    },
+    {
+      "library_id": "1007084865077613",
+      "advertiser_name": "RoofIgnite",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1778457600
+    },
+    {
+      "library_id": "1369416538580992",
+      "advertiser_name": "CEO of Solvexmedia - Kam Hossieny",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://solvexmedia.com/pages/landing-page",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1780185600
+    },
+    {
+      "library_id": "873200255821543",
+      "advertiser_name": "CEO of Solvexmedia - Kam Hossieny",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://solvexmedia.com/pages/landing-page",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1780272000
+    },
+    {
+      "library_id": "876149345110854",
+      "advertiser_name": "AXIS Brands",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://scale.axisbrandsco.com/",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1783382400
+    },
+    {
+      "library_id": "994207930029628",
+      "advertiser_name": "CEO of Solvexmedia - Kam Hossieny",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2F%40kamhossieny%3Fsub_confirmation%3D1&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.youtube.com/@kamhossieny?sub_confirmation=1",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1780272000
+    },
+    {
+      "library_id": "1715845306087173",
+      "advertiser_name": "John Whiting",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bulletproofentrepreneur.io%2Fprofit-c&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.bulletproofentrepreneur.io/profit-c",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1778284800
+    },
+    {
+      "library_id": "2172441310272748",
+      "advertiser_name": "Lucenia io",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Flucenia-funnel-website.vercel.app%2Fsovereignty&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://lucenia-funnel-website.vercel.app/sovereignty",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1779494400
+    },
+    {
+      "library_id": "2059095024671856",
+      "advertiser_name": "FlowTiger Agency",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1778889600
+    },
+    {
+      "library_id": "962910286633004",
+      "advertiser_name": "7FigureDocs",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.7figuredocs.co%2Ffree-playbook-x&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.7figuredocs.co/free-playbook-x",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1778457600
+    },
+    {
+      "library_id": "2011133782820519",
+      "advertiser_name": "Tina Sandford Video Ads",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1779148800
+    },
+    {
+      "library_id": "1444760330625564",
+      "advertiser_name": "Shamina Taylor INC",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1771545600
+    },
+    {
+      "library_id": "1527166865867941",
+      "advertiser_name": "Ad Boost",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1782604800
+    },
+    {
+      "library_id": "1044340921720930",
+      "advertiser_name": "Wedding Business Mastermind",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.weddingbusinessmastermind.co%2Fbook&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.weddingbusinessmastermind.co/book",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1782604800
+    },
+    {
+      "library_id": "1643957676796033",
+      "advertiser_name": "Growth Mate",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgrowth-mate.com%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://growth-mate.com/",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1775606400
+    },
+    {
+      "library_id": "1388212906357814",
+      "advertiser_name": "GigaBrands",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.gigabrands.ai%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://scale.gigabrands.ai/",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1773446400
+    },
+    {
+      "library_id": "949354388085601",
+      "advertiser_name": "King Kong Co.",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.kingkong.co%2Fstrategy&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://go.kingkong.co/strategy",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1780876800
+    },
+    {
+      "library_id": "2251450002045527",
+      "advertiser_name": "Dr. Marquel Russell",
+      "raw_href": null,
+      "final_url": null,
+      "status": "needs_review",
+      "source": "dom_fallback",
+      "start_date": 1774396800
+    },
+    {
+      "library_id": "901388215838701",
+      "advertiser_name": "Hernan Vazquez",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleMastery.com%2Fapply&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "http://RapidScaleMastery.com/apply",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1772755200
+    },
+    {
+      "library_id": "2003153330612989",
+      "advertiser_name": "Hernan Vazquez",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleFramework.com%2Fapply&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "http://RapidScaleFramework.com/apply",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1772755200
+    },
+    {
+      "library_id": "1937960920417752",
+      "advertiser_name": "dahausdigital",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fdahausdigital.com%2Ffree-audit-2&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://dahausdigital.com/free-audit-2",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1777248000
+    },
+    {
+      "library_id": "1656146202322538",
+      "advertiser_name": "Carl Weische",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.acceleratedagency.com%2Fstart-video&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.acceleratedagency.com/start-video",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1780444800
+    },
+    {
+      "library_id": "27283393171303913",
+      "advertiser_name": "Maggie Giele",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.maggiegiele.com%2Fhidden-revenue-audit.html&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.maggiegiele.com/hidden-revenue-audit.html",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1781654400
+    },
+    {
+      "library_id": "838505819099998",
+      "advertiser_name": "Algofy",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.algofy.com%2Findustry%2Fpets&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://www.algofy.com/industry/pets",
+      "status": "ok",
+      "source": "dom_fallback",
+      "start_date": 1782086400
+    },
+    {
+      "library_id": "2196887251045447",
       "advertiser_name": "Basedaustindunham",
-      "raw_href": "https://www.thedigitalromeo.com/",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.thedigitalromeo.com%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
       "final_url": "https://www.thedigitalromeo.com/",
       "status": "ok",
-      "source": "graphql",
-      "start_date": 1783321200
+      "source": "dom_fallback",
+      "start_date": 1783296000
     },
     {
-      "library_id": "27343235178701108",
-      "advertiser_name": "Grid Lab Studios",
-      "raw_href": null,
-      "final_url": null,
-      "status": "needs_review",
-      "source": "graphql",
-      "start_date": 1781074800
-    },
-    {
-      "library_id": "2492395391262380",
-      "advertiser_name": "Brit Forrester Coaching ",
-      "raw_href": "https://britforrestercoaching.com.au/nwm-dmcloserai",
-      "final_url": "https://britforrestercoaching.com.au/nwm-dmcloserai",
+      "library_id": "1712138396643323",
+      "advertiser_name": "Banch Marketing Digital Agency",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.instagram.com%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "http://www.instagram.com/",
       "status": "ok",
-      "source": "graphql",
-      "start_date": 1780902000
+      "source": "dom_fallback",
+      "start_date": 1781568000
     },
     {
-      "library_id": "1481587166817965",
-      "advertiser_name": "Hernan Vazquez",
-      "raw_href": null,
-      "final_url": null,
-      "status": "needs_review",
-      "source": "graphql",
-      "start_date": 1772784000
-    },
-    {
-      "library_id": "2108742516747782",
-      "advertiser_name": "Creative Ecommerce LTD",
-      "raw_href": "https://creativeecommerce.net/lp",
-      "final_url": "https://creativeecommerce.net/lp",
+      "library_id": "2490106128068458",
+      "advertiser_name": "AXIS Brands",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://scale.axisbrandsco.com/",
       "status": "ok",
-      "source": "graphql",
-      "start_date": 1784271600
+      "source": "dom_fallback",
+      "start_date": 1783382400
     },
     {
-      "library_id": "2477303849355645",
-      "advertiser_name": "Hernan Vazquez",
-      "raw_href": null,
-      "final_url": null,
-      "status": "needs_review",
-      "source": "graphql",
-      "start_date": 1772784000
-    },
-    {
-      "library_id": "2092317687977673",
-      "advertiser_name": "DigiCom",
-      "raw_href": "https://www.digicom.io/",
-      "final_url": "https://www.digicom.io/",
+      "library_id": "1310574290821917",
+      "advertiser_name": "Daniel Fazio",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.clientascension.ai%2Fyoutube%2Fthese-ai-agency-offers-are-working-right-now-(steal-them)&h=AUDFeYEWkb-3Z8Zjf30xQ1QmaG0mzvQRAzpE4qXPZEIx8szWgd7nGV0nu3O9lZ0OxtjJi8zyF2UU1ihZfswo3R5B-a4uOoOua1jAIdIlVeJaAXOzs7fjd5Orj5Cc6IAI07aRLYOJnFchpXp8lt4vqQ",
+      "final_url": "https://go.clientascension.ai/youtube/these-ai-agency-offers-are-working-right-now-(steal-them)",
       "status": "ok",
-      "source": "graphql",
-      "start_date": 1773126000
-    },
-    {
-      "library_id": "2473915819698508",
-      "advertiser_name": "AnalyticsFlow",
-      "raw_href": "https://www.analyticsflow.app/?utm_source=meta&utm_medium=paid_social&utm_campaign=launch_202607_founders_beta&utm_content=audit_stopwatch_v1",
-      "final_url": "https://www.analyticsflow.app/?utm_source=meta&utm_medium=paid_social&utm_campaign=launch_202607_founders_beta&utm_content=audit_stopwatch_v1",
-      "status": "ok",
-      "source": "graphql",
-      "start_date": 1784530800
+      "source": "dom_fallback",
+      "start_date": 1770422400
     }
   ]
 }

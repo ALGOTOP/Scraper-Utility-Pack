@@ -5,7 +5,7 @@
   "session_status": "ok",
   "urls_attempted": 1,
   "urls_blocked": 0,
-  "graphql_hits": 40,
+  "graphql_hits": 36,
   "dom_fallback_used": true,
   "results": [
     {
@@ -20,7 +20,7 @@
     {
       "library_id": "1520682079427212",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.heartcenteredapprentice.com%2Fmanu-gupta&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.heartcenteredapprentice.com%2Fmanu-gupta&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.heartcenteredapprentice.com/manu-gupta",
       "status": "ok",
       "source": "dom_fallback",
@@ -38,7 +38,7 @@
     {
       "library_id": "1369416538580992",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://solvexmedia.com/pages/landing-page",
       "status": "ok",
       "source": "dom_fallback",
@@ -47,7 +47,7 @@
     {
       "library_id": "873200255821543",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fsolvexmedia.com%2Fpages%2Flanding-page&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://solvexmedia.com/pages/landing-page",
       "status": "ok",
       "source": "dom_fallback",
@@ -56,7 +56,7 @@
     {
       "library_id": "876149345110854",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://scale.axisbrandsco.com/",
       "status": "ok",
       "source": "dom_fallback",
@@ -65,7 +65,7 @@
     {
       "library_id": "994207930029628",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2F%40kamhossieny%3Fsub_confirmation%3D1&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.youtube.com%2F%40kamhossieny%3Fsub_confirmation%3D1&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.youtube.com/@kamhossieny?sub_confirmation=1",
       "status": "ok",
       "source": "dom_fallback",
@@ -74,7 +74,7 @@
     {
       "library_id": "1715845306087173",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bulletproofentrepreneur.io%2Fprofit-c&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.bulletproofentrepreneur.io%2Fprofit-c&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.bulletproofentrepreneur.io/profit-c",
       "status": "ok",
       "source": "dom_fallback",
@@ -83,7 +83,7 @@
     {
       "library_id": "2172441310272748",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Flucenia-funnel-website.vercel.app%2Fsovereignty&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Flucenia-funnel-website.vercel.app%2Fsovereignty&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://lucenia-funnel-website.vercel.app/sovereignty",
       "status": "ok",
       "source": "dom_fallback",
@@ -101,7 +101,7 @@
     {
       "library_id": "962910286633004",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.7figuredocs.co%2Ffree-playbook-x&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.7figuredocs.co%2Ffree-playbook-x&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.7figuredocs.co/free-playbook-x",
       "status": "ok",
       "source": "dom_fallback",
@@ -137,7 +137,7 @@
     {
       "library_id": "1044340921720930",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.weddingbusinessmastermind.co%2Fbook&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.weddingbusinessmastermind.co%2Fbook&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.weddingbusinessmastermind.co/book",
       "status": "ok",
       "source": "dom_fallback",
@@ -146,7 +146,7 @@
     {
       "library_id": "1643957676796033",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgrowth-mate.com%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgrowth-mate.com%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://growth-mate.com/",
       "status": "ok",
       "source": "dom_fallback",
@@ -155,7 +155,7 @@
     {
       "library_id": "1388212906357814",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.gigabrands.ai%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.gigabrands.ai%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://scale.gigabrands.ai/",
       "status": "ok",
       "source": "dom_fallback",
@@ -164,7 +164,7 @@
     {
       "library_id": "949354388085601",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.kingkong.co%2Fstrategy&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.kingkong.co%2Fstrategy&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://go.kingkong.co/strategy",
       "status": "ok",
       "source": "dom_fallback",
@@ -182,7 +182,7 @@
     {
       "library_id": "901388215838701",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleMastery.com%2Fapply&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleMastery.com%2Fapply&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "http://RapidScaleMastery.com/apply",
       "status": "ok",
       "source": "dom_fallback",
@@ -191,7 +191,7 @@
     {
       "library_id": "2003153330612989",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleFramework.com%2Fapply&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2FRapidScaleFramework.com%2Fapply&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "http://RapidScaleFramework.com/apply",
       "status": "ok",
       "source": "dom_fallback",
@@ -200,7 +200,7 @@
     {
       "library_id": "1937960920417752",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fdahausdigital.com%2Ffree-audit-2&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fdahausdigital.com%2Ffree-audit-2&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://dahausdigital.com/free-audit-2",
       "status": "ok",
       "source": "dom_fallback",
@@ -209,7 +209,7 @@
     {
       "library_id": "1656146202322538",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.acceleratedagency.com%2Fstart-video&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.acceleratedagency.com%2Fstart-video&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.acceleratedagency.com/start-video",
       "status": "ok",
       "source": "dom_fallback",
@@ -218,7 +218,7 @@
     {
       "library_id": "27283393171303913",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.maggiegiele.com%2Fhidden-revenue-audit.html&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.maggiegiele.com%2Fhidden-revenue-audit.html&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.maggiegiele.com/hidden-revenue-audit.html",
       "status": "ok",
       "source": "dom_fallback",
@@ -227,7 +227,7 @@
     {
       "library_id": "838505819099998",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.algofy.com%2Findustry%2Fpets&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.algofy.com%2Findustry%2Fpets&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.algofy.com/industry/pets",
       "status": "ok",
       "source": "dom_fallback",
@@ -236,7 +236,7 @@
     {
       "library_id": "2196887251045447",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.thedigitalromeo.com%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.thedigitalromeo.com%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://www.thedigitalromeo.com/",
       "status": "ok",
       "source": "dom_fallback",
@@ -245,7 +245,7 @@
     {
       "library_id": "1712138396643323",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.instagram.com%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=http%3A%2F%2Fwww.instagram.com%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "http://www.instagram.com/",
       "status": "ok",
       "source": "dom_fallback",
@@ -254,7 +254,7 @@
     {
       "library_id": "2490106128068458",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fscale.axisbrandsco.com%2F&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://scale.axisbrandsco.com/",
       "status": "ok",
       "source": "dom_fallback",
@@ -263,7 +263,7 @@
     {
       "library_id": "1310574290821917",
       "advertiser_name": "Platforms",
-      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.clientascension.ai%2Fyoutube%2Fthese-ai-agency-offers-are-working-right-now-(steal-them)&h=AUDwzWYeI2-rRtCKmzs5Nbg-b32CYSIvCbUGAwiOhcsRj-lKQ_zJT5qqmXbuSGmRQBa17inMYSF5bqb0mi2d1Ykzjtfg5s2DNBVNOoq8MIiMltqGUmVzJYVSbY5O8v930YwCNxPuHnL8zDj9bXSEdQ",
+      "raw_href": "https://l.facebook.com/l.php?u=https%3A%2F%2Fgo.clientascension.ai%2Fyoutube%2Fthese-ai-agency-offers-are-working-right-now-(steal-them)&h=AUBDXmlpVHzAgiqyC_jUIAnj7DYu4r38yb93sOlwOiFwLc2HnoM0_XhrrC0UTSvUbCbTyW5JxSpId0fUlfeU36uc9q4oB9jWQt__KeKUe0NMrf64LcYa2JiG7ASL-jL4jji6B1Fy1AT3lBZK2w25Mw",
       "final_url": "https://go.clientascension.ai/youtube/these-ai-agency-offers-are-working-right-now-(steal-them)",
       "status": "ok",
       "source": "dom_fallback",

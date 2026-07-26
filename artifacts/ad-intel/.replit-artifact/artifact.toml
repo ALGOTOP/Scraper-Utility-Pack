@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Ad Intelligence"
+version = "1.0.0"
+id = "artifacts/ad-intel"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22386
+
+[services.development]
+run = "pnpm --filter @workspace/ad-intel run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ad-intel", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ad-intel/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22386"
+BASE_PATH = "/"

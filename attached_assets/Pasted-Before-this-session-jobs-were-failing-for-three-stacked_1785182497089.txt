@@ -1,0 +1,72 @@
+Before this session, jobs were failing for three stacked reasons you already found and partially fixed: python3 not resolving via spawn, the repo-root path being wrong by one directory level after esbuild bundling, and run_job.py treating ScrapedAd dataclasses as plain dicts. Those diagnoses were correct, but I want to harden two of the fixes and also close out issues from an earlier audit that this session didn't touch.
+
+Please replace these files with the attached versions:
+
+1. artifacts/api-server/src/lib/worker.ts
+   - Replaces the hardcoded Nix store path for python3 with a dynamic
+     `which python3` resolution at startup (Nix store paths are
+     content-hashed and change on every rebuild — a hardcoded one will
+     break again).
+   - Replaces the fixed "3 levels up" REPO_ROOT calculation with a
+     walk-up search for pnpm-workspace.yaml, so it's independent of
+     however many directories deep esbuild's output ends up.
+   - Throws a clear error at server startup (not on first job) if
+     run_job.py can't be found or python3 can't be resolved, logging
+     the resolved paths — so if this ever breaks again it fails loud
+     immediately instead of a silent per-job ENOENT.
+
+2. scraper/run_job.py
+   - This now actually launches Playwright + a RateLimiter and calls
+     run_scrape(page, limiter, ...) with the correct signature, and
+     converts ScrapedAd dataclasses via dataclasses.asdict() before
+     scoring — same fix direction as this session, formalized into a
+     testable score_session() function.
+   - Also fixes a separate bug: it was recomputing `confidence` with
+     its own hardcoded thresholds (score >= 7 = high, etc.) instead of
+     using the confidence scoring_engine.score_lead() already returns
+     — meaning the dashboard could show a different confidence than
+     what the scoring engine actually computed. Now it uses
+     scoring_engine's own value.
+
+3. scraper/test_orchestration.py
+   - The existing make_graphql_payload() test fixture built a payload
+     shape that predates a later fix to _parse_graphql_payload's
+     confirmed field path. That mismatch meant 4 of the 6 "mocked
+     orchestration tests" replit.md tells you to run before touching
+     core modules were silently failing — the fixture just never
+     matched what the real parser expects. Fixed to match the
+     confirmed shape (search_results_connection.edges[].node.
+     collated_results[]).
+
+4. scraper/test_run_job.py (new file)
+   - There was no test coverage at all for the run_scrape() ->
+     score_session() hand-off — exactly where this whole outage lived.
+     This adds mocked-Playwright tests for that boundary specifically,
+     plus a regression guard asserting confidence/score/reasons match
+     scoring_engine.score_lead() directly (catching the duplicated-
+     confidence bug above if it ever comes back).
+
+5. lib/api-client-react/src/generated/api.ts
+   - `pnpm run typecheck` fails on artifacts/ad-intel with 4 real
+     TypeScript errors. Root cause: the orval-generated React Query
+     hooks type their `options.query` param as a full UseQueryOptions
+     (which requires queryKey) instead of Partial<UseQueryOptions<...>>
+     — so passing `{ enabled: false }` or `{ refetchInterval: 5000 }`
+     at any call site fails to compile. Wrapped the 18 affected hook
+     signatures in Partial<>. (If you regenerate this file with orval
+     later, check whether your orval version/config produces
+     Partial<> by default — if not, this will need reapplying.)
+
+6. artifacts/ad-intel/src/pages/jobs.tsx
+   - One real app-code bug alongside the above: reads `err.error` on a
+     caught ApiError, but that class has no `.error` field — the
+     message is at `err.data?.error` (the API's JSON error body) or
+     `err.message`. Fixed.
+
+After applying these, please verify and report back:
+1. `pnpm run typecheck` from the repo root — should be 0 errors across all 9 workspace projects.
+2. `cd scraper && python3 test_orchestration.py` — all 6 should pass.
+3. `cd scraper && python3 test_run_job.py` — all 3 should pass.
+4. A real job through the API (POST /api/jobs with a keyword) end-to-end, confirming leads land in the DB with sensible score/confidence values — same as your 30-lead run, but now with the hardened path resolution and correct confidence values.
+
+Don't touch anything else in the pipeline beyond these six files — the rest of the API routes, DB schema, and scoring engine were already reviewed and are working correctly.

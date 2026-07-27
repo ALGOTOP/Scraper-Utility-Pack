@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Database, Search, CheckSquare, Bookmark, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const NAV_ITEMS = [
   { href: "/", label: "Dashboard", icon: Target },
@@ -20,7 +21,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="h-6 w-6 bg-primary text-primary-foreground flex items-center justify-center rounded-sm font-bold text-sm">
             A
           </div>
-          <span className="font-semibold text-lg tracking-tight text-sidebar-foreground">Ad Intel</span>
+          <span className="font-semibold text-lg tracking-tight text-sidebar-foreground flex-1">Ad Intel</span>
+          <ThemeToggle />
         </div>
         <nav className="flex-1 px-4 py-2 space-y-1">
           {NAV_ITEMS.map((item) => {

@@ -123,6 +123,20 @@ export function LeadDetail() {
               <CardTitle>Target URLs</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
+              {lead.library_id && (
+                <div className="space-y-1.5">
+                  <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Ad Library Link</div>
+                  <a
+                    href={`https://www.facebook.com/ads/library/?id=${lead.library_id}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-primary hover:underline flex items-start gap-2 break-all bg-primary/5 p-2 rounded"
+                  >
+                    <ExternalLink className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                    {`https://www.facebook.com/ads/library/?id=${lead.library_id}`}
+                  </a>
+                </div>
+              )}
               {lead.final_url && (
                 <div className="space-y-1.5">
                   <div className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Final URL</div>
@@ -140,7 +154,7 @@ export function LeadDetail() {
                   </div>
                 </div>
               )}
-              {!lead.final_url && !lead.raw_href && (
+              {!lead.library_id && !lead.final_url && !lead.raw_href && (
                 <p className="text-sm text-muted-foreground">No URLs extracted.</p>
               )}
             </CardContent>

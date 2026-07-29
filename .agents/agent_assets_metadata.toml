@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Trb8z0-xLmfBokH1HmXsx"
+uri = "file://scraper/leads_rescored.csv"
+type = "table"
+title = "Leads — rescored (bare fb.me fix)"

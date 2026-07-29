@@ -58,7 +58,10 @@ def rescore(conn):
             "business_name":    row["advertiser_name"] or "",
             "country":          row["country"],
             "landing_url":      corrected_final_url,
-            "resolution_status": "resolved",   # all stored leads passed the pipeline
+            # A stored lead with no resolved URL had resolution_status="failed"
+            # in the original scoring run (adapter.py STATUS_MAP). That field is
+            # not persisted, so we infer it: None URL → failed, real URL → resolved.
+            "resolution_status": "resolved" if corrected_final_url else "failed",
             "ad_active_days":   ad_active_days(row["ad_start_date"]),
             "target_countries": TARGET_COUNTRIES,
         }

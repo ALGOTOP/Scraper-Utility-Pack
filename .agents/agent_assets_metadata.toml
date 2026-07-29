@@ -6,3 +6,9 @@ id = "Trb8z0-xLmfBokH1HmXsx"
 uri = "file://scraper/leads_rescored.csv"
 type = "table"
 title = "Leads — rescored (corrected)"
+
+[[outputs]]
+id = "UpWySugvrWgneaZvMy5XD"
+uri = "file://scraper/leads_export.csv"
+type = "table"
+title = "leads_export.csv"

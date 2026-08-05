@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 const COUNTRIES = ["US", "GB", "AU", "CA", "IE", "NZ", "DE", "NL", "SE", "NO", "DK", "CH", "AE", "SG"];
 
 export function Jobs() {
-  const { data: jobs, isLoading } = useListJobs(undefined, { query: { refetchInterval: 5000 } });
+  const { data: jobs, isLoading } = useListJobs(undefined, { query: { queryKey: getListJobsQueryKey(), refetchInterval: 5000 } });
   const [keyword, setKeyword] = useState("");
   const [country, setCountry] = useState("US");
   const [pageIds, setPageIds] = useState("");

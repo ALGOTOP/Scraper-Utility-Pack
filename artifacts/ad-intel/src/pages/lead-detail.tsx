@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 export function LeadDetail() {
   const params = useParams();
   const id = Number(params.id);
-  const { data: lead, isLoading } = useGetLead(id, { query: { enabled: !!id } });
+  const { data: lead, isLoading } = useGetLead(id, { query: { queryKey: getGetLeadQueryKey(id), enabled: !!id } });
   
   const reviewLead = useReviewLead();
   const queryClient = useQueryClient();

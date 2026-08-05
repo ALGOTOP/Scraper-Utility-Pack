@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useListLeads, useReviewLead, useExportLeads, getListLeadsQueryKey, ListLeadsParams } from "@workspace/api-client-react";
+import { useListLeads, useReviewLead, useExportLeads, getListLeadsQueryKey, getExportLeadsQueryKey, ListLeadsParams } from "@workspace/api-client-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { ScoreBadge, StatusBadge } from "@/components/badges";
 import { Button } from "@/components/ui/button";
@@ -36,7 +36,8 @@ export function LeadsTable({ baseFilters = {}, showReviewActions = false, title,
   };
 
   const { data, isLoading } = useListLeads(queryParams);
-  const { refetch: fetchExport } = useExportLeads({ ...baseFilters, score_min: baseFilters.score_min }, { query: { enabled: false } });
+  const exportParams = { ...baseFilters, score_min: baseFilters.score_min };
+  const { refetch: fetchExport } = useExportLeads(exportParams, { query: { queryKey: getExportLeadsQueryKey(exportParams), enabled: false } });
   
   const reviewLead = useReviewLead();
   const queryClient = useQueryClient();

@@ -219,6 +219,10 @@ export type ExportLeadsParams = {
 session_id?: number;
 score_min?: number;
 review_status?: ExportLeadsReviewStatus;
+/**
+ * When set to "business", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business), with an added duplicate_count column showing how many total ads that business had. Omit for the raw, one-row- per-ad export.
+ */
+dedupe?: ExportLeadsDedupe;
 };
 
 export type ExportLeadsReviewStatus = typeof ExportLeadsReviewStatus[keyof typeof ExportLeadsReviewStatus];
@@ -228,5 +232,12 @@ export const ExportLeadsReviewStatus = {
   pending: 'pending',
   approved: 'approved',
   rejected: 'rejected',
+} as const;
+
+export type ExportLeadsDedupe = typeof ExportLeadsDedupe[keyof typeof ExportLeadsDedupe];
+
+
+export const ExportLeadsDedupe = {
+  business: 'business',
 } as const;
 

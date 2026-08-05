@@ -90,6 +90,7 @@ export const healthCheck = async ( options?: RequestInit): Promise<HealthStatus>
 
 
 
+
 export const getHealthCheckQueryKey = () => {
     return [
     `/api/healthz`
@@ -97,7 +98,7 @@ export const getHealthCheckQueryKey = () => {
     }
 
 
-export const getHealthCheckQueryOptions = <TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getHealthCheckQueryOptions = <TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -107,6 +108,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof healthCheck>>> = ({ signal }) => healthCheck({ signal, ...requestOptions });
+
 
 
 
@@ -123,7 +125,7 @@ export type HealthCheckQueryError = ErrorType<unknown>
  */
 
 export function useHealthCheck<TData = Awaited<ReturnType<typeof healthCheck>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof healthCheck>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -133,6 +135,9 @@ export function useHealthCheck<TData = Awaited<ReturnType<typeof healthCheck>>, 
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -169,6 +174,7 @@ export const listJobs = async (params?: ListJobsParams, options?: RequestInit): 
 
 
 
+
 export const getListJobsQueryKey = (params?: ListJobsParams,) => {
     return [
     `/api/jobs`, ...(params ? [params] : [])
@@ -176,7 +182,7 @@ export const getListJobsQueryKey = (params?: ListJobsParams,) => {
     }
 
 
-export const getListJobsQueryOptions = <TData = Awaited<ReturnType<typeof listJobs>>, TError = ErrorType<unknown>>(params?: ListJobsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listJobs>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getListJobsQueryOptions = <TData = Awaited<ReturnType<typeof listJobs>>, TError = ErrorType<unknown>>(params?: ListJobsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listJobs>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -186,6 +192,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof listJobs>>> = ({ signal }) => listJobs(params, { signal, ...requestOptions });
+
 
 
 
@@ -202,7 +209,7 @@ export type ListJobsQueryError = ErrorType<unknown>
  */
 
 export function useListJobs<TData = Awaited<ReturnType<typeof listJobs>>, TError = ErrorType<unknown>>(
- params?: ListJobsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listJobs>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+ params?: ListJobsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listJobs>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -212,6 +219,9 @@ export function useListJobs<TData = Awaited<ReturnType<typeof listJobs>>, TError
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -241,6 +251,7 @@ export const createJob = async (scrapeJobInput: ScrapeJobInput, options?: Reques
 
 
 
+
 export const getCreateJobMutationOptions = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createJob>>, TError,{data: BodyType<ScrapeJobInput>}, TContext>, request?: SecondParameter<typeof customFetch>}
 ): UseMutationOptions<Awaited<ReturnType<typeof createJob>>, TError,{data: BodyType<ScrapeJobInput>}, TContext> => {
@@ -260,6 +271,8 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
           return  createJob(data,requestOptions)
         }
+
+
 
 
 
@@ -309,6 +322,7 @@ export const getJob = async (id: number, options?: RequestInit): Promise<ScrapeJ
 
 
 
+
 export const getGetJobQueryKey = (id: number,) => {
     return [
     `/api/jobs/${id}`
@@ -316,7 +330,7 @@ export const getGetJobQueryKey = (id: number,) => {
     }
 
 
-export const getGetJobQueryOptions = <TData = Awaited<ReturnType<typeof getJob>>, TError = ErrorType<ApiError>>(id: number, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getJob>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getGetJobQueryOptions = <TData = Awaited<ReturnType<typeof getJob>>, TError = ErrorType<ApiError>>(id: number, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getJob>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -326,6 +340,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof getJob>>> = ({ signal }) => getJob(id, { signal, ...requestOptions });
+
 
 
 
@@ -342,7 +357,7 @@ export type GetJobQueryError = ErrorType<ApiError>
  */
 
 export function useGetJob<TData = Awaited<ReturnType<typeof getJob>>, TError = ErrorType<ApiError>>(
- id: number, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getJob>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+ id: number, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getJob>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -352,6 +367,9 @@ export function useGetJob<TData = Awaited<ReturnType<typeof getJob>>, TError = E
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -388,6 +406,7 @@ export const listLeads = async (params?: ListLeadsParams, options?: RequestInit)
 
 
 
+
 export const getListLeadsQueryKey = (params?: ListLeadsParams,) => {
     return [
     `/api/leads`, ...(params ? [params] : [])
@@ -395,7 +414,7 @@ export const getListLeadsQueryKey = (params?: ListLeadsParams,) => {
     }
 
 
-export const getListLeadsQueryOptions = <TData = Awaited<ReturnType<typeof listLeads>>, TError = ErrorType<unknown>>(params?: ListLeadsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getListLeadsQueryOptions = <TData = Awaited<ReturnType<typeof listLeads>>, TError = ErrorType<unknown>>(params?: ListLeadsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -405,6 +424,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof listLeads>>> = ({ signal }) => listLeads(params, { signal, ...requestOptions });
+
 
 
 
@@ -421,7 +441,7 @@ export type ListLeadsQueryError = ErrorType<unknown>
  */
 
 export function useListLeads<TData = Awaited<ReturnType<typeof listLeads>>, TError = ErrorType<unknown>>(
- params?: ListLeadsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+ params?: ListLeadsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listLeads>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -431,6 +451,9 @@ export function useListLeads<TData = Awaited<ReturnType<typeof listLeads>>, TErr
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -467,6 +490,7 @@ export const exportLeads = async (params?: ExportLeadsParams, options?: RequestI
 
 
 
+
 export const getExportLeadsQueryKey = (params?: ExportLeadsParams,) => {
     return [
     `/api/leads/export`, ...(params ? [params] : [])
@@ -474,7 +498,7 @@ export const getExportLeadsQueryKey = (params?: ExportLeadsParams,) => {
     }
 
 
-export const getExportLeadsQueryOptions = <TData = Awaited<ReturnType<typeof exportLeads>>, TError = ErrorType<unknown>>(params?: ExportLeadsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof exportLeads>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getExportLeadsQueryOptions = <TData = Awaited<ReturnType<typeof exportLeads>>, TError = ErrorType<unknown>>(params?: ExportLeadsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof exportLeads>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -484,6 +508,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof exportLeads>>> = ({ signal }) => exportLeads(params, { signal, ...requestOptions });
+
 
 
 
@@ -500,7 +525,7 @@ export type ExportLeadsQueryError = ErrorType<unknown>
  */
 
 export function useExportLeads<TData = Awaited<ReturnType<typeof exportLeads>>, TError = ErrorType<unknown>>(
- params?: ExportLeadsParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof exportLeads>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+ params?: ExportLeadsParams, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof exportLeads>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -510,6 +535,9 @@ export function useExportLeads<TData = Awaited<ReturnType<typeof exportLeads>>, 
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -539,6 +567,7 @@ export const getLead = async (id: number, options?: RequestInit): Promise<Lead> 
 
 
 
+
 export const getGetLeadQueryKey = (id: number,) => {
     return [
     `/api/leads/${id}`
@@ -546,7 +575,7 @@ export const getGetLeadQueryKey = (id: number,) => {
     }
 
 
-export const getGetLeadQueryOptions = <TData = Awaited<ReturnType<typeof getLead>>, TError = ErrorType<ApiError>>(id: number, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLead>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getGetLeadQueryOptions = <TData = Awaited<ReturnType<typeof getLead>>, TError = ErrorType<ApiError>>(id: number, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getLead>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -556,6 +585,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof getLead>>> = ({ signal }) => getLead(id, { signal, ...requestOptions });
+
 
 
 
@@ -572,7 +602,7 @@ export type GetLeadQueryError = ErrorType<ApiError>
  */
 
 export function useGetLead<TData = Awaited<ReturnType<typeof getLead>>, TError = ErrorType<ApiError>>(
- id: number, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLead>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+ id: number, options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getLead>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -582,6 +612,9 @@ export function useGetLead<TData = Awaited<ReturnType<typeof getLead>>, TError =
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -612,6 +645,7 @@ export const reviewLead = async (id: number,
 
 
 
+
 export const getReviewLeadMutationOptions = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof reviewLead>>, TError,{id: number;data: BodyType<LeadReviewInput>}, TContext>, request?: SecondParameter<typeof customFetch>}
 ): UseMutationOptions<Awaited<ReturnType<typeof reviewLead>>, TError,{id: number;data: BodyType<LeadReviewInput>}, TContext> => {
@@ -631,6 +665,8 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
           return  reviewLead(id,data,requestOptions)
         }
+
+
 
 
 
@@ -680,6 +716,7 @@ export const listSavedSearches = async ( options?: RequestInit): Promise<SavedSe
 
 
 
+
 export const getListSavedSearchesQueryKey = () => {
     return [
     `/api/saved-searches`
@@ -687,7 +724,7 @@ export const getListSavedSearchesQueryKey = () => {
     }
 
 
-export const getListSavedSearchesQueryOptions = <TData = Awaited<ReturnType<typeof listSavedSearches>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listSavedSearches>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getListSavedSearchesQueryOptions = <TData = Awaited<ReturnType<typeof listSavedSearches>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listSavedSearches>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -697,6 +734,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof listSavedSearches>>> = ({ signal }) => listSavedSearches({ signal, ...requestOptions });
+
 
 
 
@@ -713,7 +751,7 @@ export type ListSavedSearchesQueryError = ErrorType<unknown>
  */
 
 export function useListSavedSearches<TData = Awaited<ReturnType<typeof listSavedSearches>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof listSavedSearches>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof listSavedSearches>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -723,6 +761,9 @@ export function useListSavedSearches<TData = Awaited<ReturnType<typeof listSaved
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -752,6 +793,7 @@ export const createSavedSearch = async (savedSearchInput: SavedSearchInput, opti
 
 
 
+
 export const getCreateSavedSearchMutationOptions = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createSavedSearch>>, TError,{data: BodyType<SavedSearchInput>}, TContext>, request?: SecondParameter<typeof customFetch>}
 ): UseMutationOptions<Awaited<ReturnType<typeof createSavedSearch>>, TError,{data: BodyType<SavedSearchInput>}, TContext> => {
@@ -771,6 +813,8 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
           return  createSavedSearch(data,requestOptions)
         }
+
+
 
 
 
@@ -820,6 +864,7 @@ export const deleteSavedSearch = async (id: number, options?: RequestInit): Prom
 
 
 
+
 export const getDeleteSavedSearchMutationOptions = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof deleteSavedSearch>>, TError,{id: number}, TContext>, request?: SecondParameter<typeof customFetch>}
 ): UseMutationOptions<Awaited<ReturnType<typeof deleteSavedSearch>>, TError,{id: number}, TContext> => {
@@ -839,6 +884,8 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
           return  deleteSavedSearch(id,requestOptions)
         }
+
+
 
 
 
@@ -888,6 +935,7 @@ export const getDashboardStats = async ( options?: RequestInit): Promise<Dashboa
 
 
 
+
 export const getGetDashboardStatsQueryKey = () => {
     return [
     `/api/dashboard/stats`
@@ -895,7 +943,7 @@ export const getGetDashboardStatsQueryKey = () => {
     }
 
 
-export const getGetDashboardStatsQueryOptions = <TData = Awaited<ReturnType<typeof getDashboardStats>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getDashboardStats>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getGetDashboardStatsQueryOptions = <TData = Awaited<ReturnType<typeof getDashboardStats>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getDashboardStats>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -905,6 +953,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof getDashboardStats>>> = ({ signal }) => getDashboardStats({ signal, ...requestOptions });
+
 
 
 
@@ -921,7 +970,7 @@ export type GetDashboardStatsQueryError = ErrorType<unknown>
  */
 
 export function useGetDashboardStats<TData = Awaited<ReturnType<typeof getDashboardStats>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getDashboardStats>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getDashboardStats>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -931,6 +980,9 @@ export function useGetDashboardStats<TData = Awaited<ReturnType<typeof getDashbo
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
 
 
 
@@ -960,6 +1012,7 @@ export const getRecentActivity = async ( options?: RequestInit): Promise<RecentA
 
 
 
+
 export const getGetRecentActivityQueryKey = () => {
     return [
     `/api/dashboard/recent`
@@ -967,7 +1020,7 @@ export const getGetRecentActivityQueryKey = () => {
     }
 
 
-export const getGetRecentActivityQueryOptions = <TData = Awaited<ReturnType<typeof getRecentActivity>>, TError = ErrorType<unknown>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getRecentActivity>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+export const getGetRecentActivityQueryOptions = <TData = Awaited<ReturnType<typeof getRecentActivity>>, TError = ErrorType<unknown>>( options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getRecentActivity>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 ) => {
 
 const {query: queryOptions, request: requestOptions} = options ?? {};
@@ -977,6 +1030,7 @@ const {query: queryOptions, request: requestOptions} = options ?? {};
 
 
     const queryFn: QueryFunction<Awaited<ReturnType<typeof getRecentActivity>>> = ({ signal }) => getRecentActivity({ signal, ...requestOptions });
+
 
 
 
@@ -993,7 +1047,7 @@ export type GetRecentActivityQueryError = ErrorType<unknown>
  */
 
 export function useGetRecentActivity<TData = Awaited<ReturnType<typeof getRecentActivity>>, TError = ErrorType<unknown>>(
-  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getRecentActivity>>, TError, TData>>, request?: SecondParameter<typeof customFetch>}
+  options?: { query?:UseQueryOptions<Awaited<ReturnType<typeof getRecentActivity>>, TError, TData>, request?: SecondParameter<typeof customFetch>}
 
  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } {
 
@@ -1003,3 +1057,10 @@ export function useGetRecentActivity<TData = Awaited<ReturnType<typeof getRecent
 
   return withQueryKey(query, queryOptions.queryKey);
 }
+
+
+
+
+
+
+

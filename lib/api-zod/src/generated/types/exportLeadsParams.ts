@@ -5,10 +5,15 @@
  * Meta Ad Library Lead Intelligence API
  * OpenAPI spec version: 0.1.0
  */
+import type { ExportLeadsDedupe } from './exportLeadsDedupe';
 import type { ExportLeadsReviewStatus } from './exportLeadsReviewStatus';
 
 export type ExportLeadsParams = {
 session_id?: number;
 score_min?: number;
 review_status?: ExportLeadsReviewStatus;
+/**
+ * When set to "business", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business), with an added duplicate_count column showing how many total ads that business had. Omit for the raw, one-row- per-ad export.
+ */
+dedupe?: ExportLeadsDedupe;
 };

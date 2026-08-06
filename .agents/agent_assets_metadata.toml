@@ -19,3 +19,10 @@ uri = "file://exports/leads_deduped.csv"
 type = "table"
 title = "Deduped Leads Export"
 description = "Business-deduplicated leads CSV (dedupe=business) — 21 rows, includes other_urls column."
+
+[[outputs]]
+id = "mneETLBTKgBmFJCNIObb7"
+uri = "file://exports/leads_icp_excluded.csv"
+type = "table"
+title = "Leads Export (ICP mismatches excluded)"
+description = "29 leads minus 6 flagged as icp_mismatch (4x Teero Dental, Birdeye, NexHealth) = 23 rows."

@@ -165,6 +165,8 @@ async function runJob(sessionId: number): Promise<void> {
             reasons: (l.reasons as string[]) ?? [],
             source: (l.source as string) ?? null,
             adStartDate: l.ad_start_date != null ? Number(l.ad_start_date) : null,
+            icpMismatch: Boolean(l.icp_mismatch ?? false),
+            icpMismatchReason: (l.icp_mismatch_reason as string) ?? null,
           }))
         )
         .onConflictDoUpdate({
@@ -181,6 +183,8 @@ async function runJob(sessionId: number): Promise<void> {
             reasons: sqlExcluded("reasons"),
             source: sqlExcluded("source"),
             adStartDate: sqlExcluded("ad_start_date"),
+            icpMismatch: sqlExcluded("icp_mismatch"),
+            icpMismatchReason: sqlExcluded("icp_mismatch_reason"),
             // Deliberately NOT overwriting reviewStatus -- if a human
             // already approved/rejected this lead, a re-scrape refreshing
             // its score shouldn't silently reset that decision back to

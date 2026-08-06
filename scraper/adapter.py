@@ -38,6 +38,7 @@ from collections import Counter
 from pathlib import Path
 
 from scoring_engine import score_lead
+from icp_filter import check_icp_mismatch
 
 # --- config: define once, pass in per batch. Edit this list to match
 # the real approved outreach country list before running for real. ---
@@ -109,6 +110,9 @@ def score_batch(scraped_records: list, session_country: str,
     for rec in scraped_records:
         ad_record, active_days_unknown = adapt_record(rec, session_country, target_countries)
         result = score_lead(ad_record)
+        icp_mismatch, icp_mismatch_reason = check_icp_mismatch(
+            ad_record["business_name"], ad_record["landing_url"]
+        )
         scored.append({
             "library_id": rec.get("library_id"),
             "business_name": ad_record["business_name"] or "(no name captured)",
@@ -119,6 +123,8 @@ def score_batch(scraped_records: list, session_country: str,
             "confidence": result["confidence"],
             "needs_review": result["needs_review"],
             "reasons": result["reasons"],
+            "icp_mismatch": icp_mismatch,
+            "icp_mismatch_reason": icp_mismatch_reason,
         })
     return scored
 

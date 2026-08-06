@@ -99,6 +99,8 @@ export const GetJobResponse = zod.object({
   "source": zod.string().nullish(),
   "ad_start_date": zod.number().nullish(),
   "session_id": zod.number(),
+  "icp_mismatch": zod.boolean().describe('Separate flag layered on top of score\/confidence\/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform\/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead.\n'),
+  "icp_mismatch_reason": zod.string().nullish().describe('Human-readable reason when icp_mismatch is true.'),
   "created_at": zod.coerce.date()
 }))
 }))
@@ -143,6 +145,8 @@ export const ListLeadsResponse = zod.object({
   "source": zod.string().nullish(),
   "ad_start_date": zod.number().nullish(),
   "session_id": zod.number(),
+  "icp_mismatch": zod.boolean().describe('Separate flag layered on top of score\/confidence\/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform\/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead.\n'),
+  "icp_mismatch_reason": zod.string().nullish().describe('Human-readable reason when icp_mismatch is true.'),
   "created_at": zod.coerce.date()
 })),
   "total": zod.number()
@@ -156,7 +160,8 @@ export const ExportLeadsQueryParams = zod.object({
   "session_id": zod.coerce.number().optional(),
   "score_min": zod.coerce.number().optional(),
   "review_status": zod.enum(['pending', 'approved', 'rejected']).optional(),
-  "dedupe": zod.enum(['business']).optional().describe('When set to \"business\", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business). Adds two extra columns to the CSV: duplicate_count — how many total ads that business had, and other_urls — semicolon-separated list of any distinct final_url values from the collapsed ads that differ from the kept row\'s final_url (empty string when all ads share the same URL). Tie-break order when scores match: created_at desc, then id asc. Omit for the raw one-row-per-ad export.\n')
+  "dedupe": zod.enum(['business']).optional().describe('When set to \"business\", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business). Adds two extra columns to the CSV: duplicate_count — how many total ads that business had, and other_urls — semicolon-separated list of any distinct final_url values from the collapsed ads that differ from the kept row\'s final_url (empty string when all ads share the same URL). Tie-break order when scores match: created_at desc, then id asc. Omit for the raw one-row-per-ad export.\n'),
+  "icp_mismatch": zod.enum(['exclude', 'only']).optional().describe('Filter by the icp_mismatch flag (see the Lead schema). \"exclude\" drops flagged leads from the export; \"only\" returns just the flagged leads. Omit to include everything, unchanged.\n')
 })
 
 export const ExportLeadsResponse = zod.unknown()
@@ -184,6 +189,8 @@ export const GetLeadResponse = zod.object({
   "source": zod.string().nullish(),
   "ad_start_date": zod.number().nullish(),
   "session_id": zod.number(),
+  "icp_mismatch": zod.boolean().describe('Separate flag layered on top of score\/confidence\/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform\/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead.\n'),
+  "icp_mismatch_reason": zod.string().nullish().describe('Human-readable reason when icp_mismatch is true.'),
   "created_at": zod.coerce.date()
 })
 
@@ -214,6 +221,8 @@ export const ReviewLeadResponse = zod.object({
   "source": zod.string().nullish(),
   "ad_start_date": zod.number().nullish(),
   "session_id": zod.number(),
+  "icp_mismatch": zod.boolean().describe('Separate flag layered on top of score\/confidence\/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform\/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead.\n'),
+  "icp_mismatch_reason": zod.string().nullish().describe('Human-readable reason when icp_mismatch is true.'),
   "created_at": zod.coerce.date()
 })
 
@@ -319,6 +328,8 @@ export const GetRecentActivityResponse = zod.object({
   "source": zod.string().nullish(),
   "ad_start_date": zod.number().nullish(),
   "session_id": zod.number(),
+  "icp_mismatch": zod.boolean().describe('Separate flag layered on top of score\/confidence\/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform\/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead.\n'),
+  "icp_mismatch_reason": zod.string().nullish().describe('Human-readable reason when icp_mismatch is true.'),
   "created_at": zod.coerce.date()
 }))
 })

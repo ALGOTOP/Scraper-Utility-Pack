@@ -86,6 +86,13 @@ export interface Lead {
   /** @nullable */
   ad_start_date?: number | null;
   session_id: number;
+  /** Separate flag layered on top of score/confidence/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead. */
+  icp_mismatch: boolean;
+  /**
+     * Human-readable reason when icp_mismatch is true.
+     * @nullable
+     */
+  icp_mismatch_reason?: string | null;
   created_at: string;
 }
 
@@ -223,6 +230,10 @@ review_status?: ExportLeadsReviewStatus;
  * When set to "business", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business). Adds two extra columns to the CSV: duplicate_count — how many total ads that business had, and other_urls — semicolon-separated list of any distinct final_url values from the collapsed ads that differ from the kept row's final_url (empty string when all ads share the same URL). Tie-break order when scores match: created_at desc, then id asc. Omit for the raw one-row-per-ad export.
  */
 dedupe?: ExportLeadsDedupe;
+/**
+ * Filter by the icp_mismatch flag (see the Lead schema). "exclude" drops flagged leads from the export; "only" returns just the flagged leads. Omit to include everything, unchanged.
+ */
+icp_mismatch?: ExportLeadsIcpMismatch;
 };
 
 export type ExportLeadsReviewStatus = typeof ExportLeadsReviewStatus[keyof typeof ExportLeadsReviewStatus];
@@ -239,5 +250,13 @@ export type ExportLeadsDedupe = typeof ExportLeadsDedupe[keyof typeof ExportLead
 
 export const ExportLeadsDedupe = {
   business: 'business',
+} as const;
+
+export type ExportLeadsIcpMismatch = typeof ExportLeadsIcpMismatch[keyof typeof ExportLeadsIcpMismatch];
+
+
+export const ExportLeadsIcpMismatch = {
+  exclude: 'exclude',
+  only: 'only',
 } as const;
 

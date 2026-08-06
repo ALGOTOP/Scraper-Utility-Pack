@@ -27,6 +27,8 @@ function buildLeadResponse(l: typeof leadsTable.$inferSelect) {
     source: l.source,
     ad_start_date: l.adStartDate,
     session_id: l.sessionId,
+    icp_mismatch: l.icpMismatch,
+    icp_mismatch_reason: l.icpMismatchReason,
     created_at: l.createdAt,
   };
 }
@@ -40,6 +42,11 @@ router.get("/leads/export", async (req, res): Promise<void> => {
     if (parsed.data.session_id != null) filters.push(eq(leadsTable.sessionId, parsed.data.session_id));
     if (parsed.data.score_min != null) filters.push(gte(leadsTable.score, parsed.data.score_min));
     if (parsed.data.review_status != null) filters.push(eq(leadsTable.reviewStatus, parsed.data.review_status));
+    // icp_mismatch is a separate flag on top of score/confidence/needs_review
+    // (see leads schema) -- "exclude" drops flagged leads, "only" returns
+    // just the flagged leads. No param = unchanged, include everything.
+    if (parsed.data.icp_mismatch === "exclude") filters.push(eq(leadsTable.icpMismatch, false));
+    else if (parsed.data.icp_mismatch === "only") filters.push(eq(leadsTable.icpMismatch, true));
   }
 
   let leads = await db
@@ -118,7 +125,7 @@ router.get("/leads/export", async (req, res): Promise<void> => {
   const header =
     "id,advertiser_name,final_url,country,score,confidence,needs_review,review_status,source,reasons," +
     (includeDuplicateCount ? "duplicate_count,other_urls," : "") +
-    "created_at\n";
+    "icp_mismatch,icp_mismatch_reason,created_at\n";
   const rows = leads.map((l) => {
     const cols = [
       l.id,
@@ -137,6 +144,8 @@ router.get("/leads/export", async (req, res): Promise<void> => {
       const otherUrls = otherUrlsMap!.get(l.id) ?? [];
       cols.push(`"${otherUrls.join(";").replace(/"/g, '""')}"`);
     }
+    cols.push(l.icpMismatch);
+    cols.push(`"${(l.icpMismatchReason ?? "").replace(/"/g, '""')}"`);
     cols.push(l.createdAt.toISOString());
     return cols.join(",");
   });

@@ -44,6 +44,7 @@ from scraper import run_scrape, ScrapeSession
 from rate_limiter import RateLimiter
 from adapter import adapt_record, TARGET_COUNTRIES
 from scoring_engine import score_lead
+from icp_filter import check_icp_mismatch
 
 
 def score_session(session: ScrapeSession, country: str) -> list[dict]:
@@ -63,6 +64,13 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
                 ad_dict, session_country=country, target_countries=TARGET_COUNTRIES
             )
             result = score_lead(scored_record)
+            # Separate flag layered on top of the scorer's own output --
+            # does not touch score/confidence/needs_review. Computed from
+            # the same adapted record in the same pass, not a second pass
+            # over the data.
+            icp_mismatch, icp_mismatch_reason = check_icp_mismatch(
+                scored_record.get("business_name"), scored_record.get("landing_url")
+            )
 
             output.append({
                 "library_id": ad_dict.get("library_id"),
@@ -77,6 +85,8 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
                 "needs_review": result["needs_review"],
                 "review_status": "pending",
                 "reasons": result["reasons"],
+                "icp_mismatch": icp_mismatch,
+                "icp_mismatch_reason": icp_mismatch_reason,
             })
         except Exception as exc:
             # Previously this just logged to stderr and skipped the ad
@@ -100,6 +110,8 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
                 "needs_review": True,
                 "review_status": "pending",
                 "reasons": [f"Scoring failed, needs manual check: {exc}"],
+                "icp_mismatch": False,
+                "icp_mismatch_reason": None,
             })
             continue
 

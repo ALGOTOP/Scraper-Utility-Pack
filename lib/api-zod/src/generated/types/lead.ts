@@ -29,5 +29,12 @@ export interface Lead {
   /** @nullable */
   ad_start_date?: number | null;
   session_id: number;
+  /** Separate flag layered on top of score/confidence/needs_review, not a replacement for them. True when the lead matches a known bad-ICP pattern (app-store-only destination, or a denylisted large-platform/affiliate-funnel match) so it can be excluded or deprioritized without deleting the lead. */
+  icp_mismatch: boolean;
+  /**
+     * Human-readable reason when icp_mismatch is true.
+     * @nullable
+     */
+  icp_mismatch_reason?: string | null;
   created_at: Date;
 }

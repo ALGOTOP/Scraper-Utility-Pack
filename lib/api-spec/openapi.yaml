@@ -182,6 +182,13 @@ paths:
             Tie-break order when scores match: created_at desc, then id asc.
             Omit for the raw one-row-per-ad export.
           schema: { type: string, enum: [business] }
+        - in: query
+          name: icp_mismatch
+          description: >
+            Filter by the icp_mismatch flag (see the Lead schema). "exclude"
+            drops flagged leads from the export; "only" returns just the
+            flagged leads. Omit to include everything, unchanged.
+          schema: { type: string, enum: [exclude, only] }
       responses:
         "200":
           description: CSV file
@@ -434,10 +441,21 @@ components:
           type: ["integer", "null"]
         session_id:
           type: integer
+        icp_mismatch:
+          type: boolean
+          description: >
+            Separate flag layered on top of score/confidence/needs_review,
+            not a replacement for them. True when the lead matches a known
+            bad-ICP pattern (app-store-only destination, or a denylisted
+            large-platform/affiliate-funnel match) so it can be excluded
+            or deprioritized without deleting the lead.
+        icp_mismatch_reason:
+          type: ["string", "null"]
+          description: Human-readable reason when icp_mismatch is true.
         created_at:
           type: string
           format: date-time
-      required: [id, country, score, confidence, needs_review, review_status, reasons, session_id, created_at]
+      required: [id, country, score, confidence, needs_review, review_status, reasons, session_id, icp_mismatch, created_at]
 
     LeadList:
       type: object

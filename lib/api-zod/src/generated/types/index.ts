@@ -10,6 +10,7 @@ export * from './apiError';
 export * from './countryStat';
 export * from './dashboardStats';
 export * from './exportLeadsDedupe';
+export * from './exportLeadsIcpMismatch';
 export * from './exportLeadsParams';
 export * from './exportLeadsReviewStatus';
 export * from './healthStatus';

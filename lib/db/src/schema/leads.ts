@@ -20,6 +20,13 @@ export const leadsTable = pgTable("leads", {
   reasons: jsonb("reasons").$type<string[]>().notNull().default([]),
   source: text("source"), // graphql | dom_fallback
   adStartDate: integer("ad_start_date"), // unix timestamp
+  // Separate flag layered on top of score/confidence/needs_review, not a
+  // replacement for them. Catches known bad-ICP patterns (app-store-only
+  // destinations, known large-platform denylist matches) so they can be
+  // excluded/deprioritized in exports without deleting the lead. See
+  // scraper/icp_filter.py for the detection rules.
+  icpMismatch: boolean("icp_mismatch").notNull().default(false),
+  icpMismatchReason: text("icp_mismatch_reason"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, (table) => ({
   // Meta's library_id is a stable, globally unique ad identifier.

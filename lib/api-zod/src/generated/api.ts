@@ -156,7 +156,7 @@ export const ExportLeadsQueryParams = zod.object({
   "session_id": zod.coerce.number().optional(),
   "score_min": zod.coerce.number().optional(),
   "review_status": zod.enum(['pending', 'approved', 'rejected']).optional(),
-  "dedupe": zod.enum(['business']).optional().describe('When set to \"business\", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business), with an added duplicate_count column showing how many total ads that business had. Omit for the raw, one-row- per-ad export.\n')
+  "dedupe": zod.enum(['business']).optional().describe('When set to \"business\", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business). Adds two extra columns to the CSV: duplicate_count — how many total ads that business had, and other_urls — semicolon-separated list of any distinct final_url values from the collapsed ads that differ from the kept row\'s final_url (empty string when all ads share the same URL). Tie-break order when scores match: created_at desc, then id asc. Omit for the raw one-row-per-ad export.\n')
 })
 
 export const ExportLeadsResponse = zod.unknown()

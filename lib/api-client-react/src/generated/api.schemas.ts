@@ -220,7 +220,7 @@ session_id?: number;
 score_min?: number;
 review_status?: ExportLeadsReviewStatus;
 /**
- * When set to "business", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business), with an added duplicate_count column showing how many total ads that business had. Omit for the raw, one-row- per-ad export.
+ * When set to "business", collapses multiple ads from the same advertiser into a single row (the highest-scoring ad for that business). Adds two extra columns to the CSV: duplicate_count — how many total ads that business had, and other_urls — semicolon-separated list of any distinct final_url values from the collapsed ads that differ from the kept row's final_url (empty string when all ads share the same URL). Tie-break order when scores match: created_at desc, then id asc. Omit for the raw one-row-per-ad export.
  */
 dedupe?: ExportLeadsDedupe;
 };

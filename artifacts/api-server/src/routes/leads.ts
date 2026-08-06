@@ -52,13 +52,27 @@ router.get("/leads/export", async (req, res): Promise<void> => {
   // Business-level dedupe: a business running several concurrent ads
   // (different library_id per ad) is one prospect, not several. Groups
   // by a normalized advertiser name (trimmed, case-insensitive) and
-  // keeps only the highest-scoring ad per business -- ties broken by
-  // most recent created_at, since a more recent ad is more likely to
-  // still be live. Rows with no advertiser_name at all (a parsing miss,
-  // already needs_review) are left ungrouped rather than silently
-  // merged under an empty-string key, since that would collapse
-  // unrelated leads together.
+  // keeps only the highest-scoring ad per business.
+  //
+  // Tie-break order (explicit and documented):
+  //   1. score desc        — higher score wins
+  //   2. created_at desc   — more recent ad is more likely still live
+  //   3. id asc            — lowest id wins; id is unique and stable, so
+  //                          two runs against the same DB state always pick
+  //                          the same row regardless of insertion order or
+  //                          JS array iteration order. (created_at alone is
+  //                          not sufficient because ads scraped in the same
+  //                          job share the same millisecond timestamp.)
+  //
+  // other_urls: instead of silently discarding URLs from collapsed ads, the
+  // deduped row includes an other_urls column listing every distinct
+  // final_url from the group that differs from the winner's URL,
+  // semicolon-separated. Empty string when all ads share the same URL.
+  //
+  // Rows with no advertiser_name (a parsing miss, already needs_review) are
+  // left ungrouped rather than silently merged under an empty-string key.
   let duplicateCounts: Map<number, number> | null = null;
+  let otherUrlsMap: Map<number, string[]> | null = null;
   if (parsed.success && parsed.data.dedupe === "business") {
     const groups = new Map<string, typeof leads>();
     const ungrouped: typeof leads = [];
@@ -74,13 +88,27 @@ router.get("/leads/export", async (req, res): Promise<void> => {
     }
 
     duplicateCounts = new Map();
+    otherUrlsMap = new Map();
     const deduped: typeof leads = [];
     for (const group of groups.values()) {
       const best = group.reduce((a, b) => {
         if (b.score !== a.score) return b.score > a.score ? b : a;
-        return b.createdAt > a.createdAt ? b : a;
+        if (b.createdAt.getTime() !== a.createdAt.getTime())
+          return b.createdAt > a.createdAt ? b : a;
+        return a.id < b.id ? a : b; // lowest id wins (stable, unique)
       });
       duplicateCounts.set(best.id, group.length);
+
+      // Collect distinct URLs from collapsed ads that differ from the winner.
+      const otherUrls = [
+        ...new Set(
+          group
+            .filter((l) => l.finalUrl && l.finalUrl !== best.finalUrl)
+            .map((l) => l.finalUrl!)
+        ),
+      ];
+      otherUrlsMap.set(best.id, otherUrls);
+
       deduped.push(best);
     }
     leads = [...deduped, ...ungrouped].sort((a, b) => b.score - a.score);
@@ -89,7 +117,7 @@ router.get("/leads/export", async (req, res): Promise<void> => {
   const includeDuplicateCount = duplicateCounts !== null;
   const header =
     "id,advertiser_name,final_url,country,score,confidence,needs_review,review_status,source,reasons," +
-    (includeDuplicateCount ? "duplicate_count," : "") +
+    (includeDuplicateCount ? "duplicate_count,other_urls," : "") +
     "created_at\n";
   const rows = leads.map((l) => {
     const cols = [
@@ -104,7 +132,11 @@ router.get("/leads/export", async (req, res): Promise<void> => {
       l.source ?? "",
       `"${(l.reasons ?? []).join(" | ").replace(/"/g, '""')}"`,
     ];
-    if (includeDuplicateCount) cols.push(duplicateCounts!.get(l.id) ?? 1);
+    if (includeDuplicateCount) {
+      cols.push(duplicateCounts!.get(l.id) ?? 1);
+      const otherUrls = otherUrlsMap!.get(l.id) ?? [];
+      cols.push(`"${otherUrls.join(";").replace(/"/g, '""')}"`);
+    }
     cols.push(l.createdAt.toISOString());
     return cols.join(",");
   });

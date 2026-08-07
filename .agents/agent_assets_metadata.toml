@@ -1,0 +1,28 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Trb8z0-xLmfBokH1HmXsx"
+uri = "file://scraper/leads_rescored.csv"
+type = "table"
+title = "Leads — rescored (corrected)"
+
+[[outputs]]
+id = "UpWySugvrWgneaZvMy5XD"
+uri = "file://scraper/leads_export.csv"
+type = "table"
+title = "leads_export.csv"
+
+[[outputs]]
+id = "_byrgDyuHC51mr-tLx_Tu"
+uri = "file://exports/leads_deduped.csv"
+type = "table"
+title = "Deduped Leads Export"
+description = "Business-deduplicated leads CSV (dedupe=business) — 21 rows, includes other_urls column."
+
+[[outputs]]
+id = "mneETLBTKgBmFJCNIObb7"
+uri = "file://exports/leads_icp_excluded.csv"
+type = "table"
+title = "Leads Export — ICP Mismatches Excluded"
+description = "19 lead rows with Kong, HRcosts.com, Coilcraft Inc., Teero Dental, Birdeye, and NexHealth excluded. Apex Dental Sensors remains included."

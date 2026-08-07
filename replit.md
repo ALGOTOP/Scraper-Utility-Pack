@@ -4,7 +4,15 @@ A Python pipeline that scrapes Meta's public Ad Library for ads matching a keywo
 
 ## Run & Operate
 
+The **Project** workflow starts both services in parallel (Replit run button).
+
+| Service | Command | Port |
+|---------|---------|------|
+| API Server | `PORT=8080 pnpm --filter @workspace/api-server run dev` | 8080 |
+| Ad Intel Frontend | `PORT=3000 BASE_PATH=/ pnpm --filter @workspace/ad-intel run dev` | 3000 |
+
 ```bash
+# Python scraper (no UI needed)
 cd scraper
 python3 test_orchestration.py   # mocked unit tests (no network needed)
 python3 live_capture.py         # keyword search → results.json
@@ -13,9 +21,16 @@ python3 live_page_id.py         # page-ID search → results_page_id.json
 
 ## Stack
 
-- Python 3.11 (Nix module), Playwright 1.61, BeautifulSoup4 4.15
+- **Frontend**: React + Vite + Tailwind (port 3000), Wouter routing, TanStack Query
+- **API**: Express 5 (port 8080), Drizzle ORM, PostgreSQL
+- **Scraper**: Python 3.11, Playwright 1.61, BeautifulSoup4 4.15
 - System Chromium via Nix (`chromium` package) — Playwright's downloaded headless shell can't find libs on NixOS
-- pnpm workspaces (Node/TS monorepo scaffolding, not used by scraper)
+- pnpm workspaces monorepo
+
+## Branch note
+
+Running on branch `sub-fable-5-made-branch-remaining-after-paphase-3` (not `main`).
+This branch adds the full-stack web app (`artifacts/ad-intel` + `artifacts/api-server`) on top of the Python scraper.
 
 ## Where things live
 

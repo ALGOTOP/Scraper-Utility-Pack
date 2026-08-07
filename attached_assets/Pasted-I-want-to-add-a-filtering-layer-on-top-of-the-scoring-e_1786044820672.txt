@@ -1,0 +1,12 @@
+I want to add a filtering layer on top of the scoring engine — not a new score, a separate flag — that catches businesses matching known bad-ICP patterns, so they can be excluded or deprioritized without deleting the underlying lead data.
+
+Patterns to catch, based on real leads seen so far:
+1. App-store-only businesses: final_url host is itunes.apple.com, apps.apple.com, or play.google.com. (Real example: Teero Dental — legitimate business, but nothing to run a landing-page audit against.)
+2. Large SaaS platforms / affiliate funnels for large platforms: business name or domain matches known platforms we've seen misfire on this keyword search — Builderall, GoHighLevel/HighLevel, CRMPros.ai, Birdeye, NexHealth. Start with an explicit denylist of these names/domains rather than trying to infer "large company" heuristically.
+3. Off-topic results: business name/domain has no relation to the search keyword's industry at all (e.g. searching "dental software" surfaced Kong, HRcosts.com, Coilcraft Inc. — a job board, an HR comparison site, an electronics manufacturer). This one's harder to automate reliably — for now, just flag it as a TODO rather than guessing at a heuristic, since a false-positive here could wrongly exclude a real prospect.
+
+Implementation: add an icp_mismatch boolean column (default false) and an icp_mismatch_reason text column to the leads table. Compute this at scoring time in the same pass as the existing scorer, using rules 1 and 2 above (skip rule 3 for now — just leave the column there for future manual/LLM-based tagging). Add an icp_mismatch query param to GET /leads/export so it can be excluded from an export (icp_mismatch=exclude) or shown only (icp_mismatch=only). Default behavior with no param: include everything, unchanged.
+
+Don't touch the existing score/confidence/needs_review logic — this is a separate flag layered on top, not a replacement.
+
+After implementing, run it against the existing "dental software" DB data (no re-scrape needed) and tell me which leads got flagged and why, then paste the icp_mismatch=exclude export so I can check the count against what should be excluded (Teero Dental should be excluded via rule 1; Builderall/HighLevel/CRMPros.ai/Birdeye/NexHealth via rule 2 if any are present in this batch).

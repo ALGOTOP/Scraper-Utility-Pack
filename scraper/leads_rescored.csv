@@ -1,0 +1,60 @@
+id,score,old_score,confidence,old_confidence,needs_review,final_url,reasons
+1,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+2,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+3,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+4,2,2,low,low,True,https://dentalstore123.com/shop/apex-dental-sensors/?utm_source={{site_source_name}}&utm_medium={{adset.name}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}},Domain match to business name is unclear (similarity 0.58) - needs review; Ad has been active 414 days - real ongoing spend (+1); Country matches target outreach list (+1)
+5,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+6,2,2,high,high,False,https://www.dentalstores.com/catalog/product_info.php?products_id=100075&utm_source=facebook-ads&utm_medium=products&utm_campaign=50+Dollar+Gift+Card,Ad has been active 2094 days - real ongoing spend (+1); Country matches target outreach list (+1)
+7,4,4,high,high,False,http://itunes.apple.com/app/id6463821171,Domain 'itunes.apple.com' doesn't clearly match business name (+2); Ad has been active 36 days - real ongoing spend (+1); Country matches target outreach list (+1)
+8,2,2,high,high,False,https://hrcosts.com/compare-quotes/,Ad has been active 123 days - real ongoing spend (+1); Country matches target outreach list (+1)
+9,4,4,high,high,False,http://itunes.apple.com/app/id6463821171,Domain 'itunes.apple.com' doesn't clearly match business name (+2); Ad has been active 36 days - real ongoing spend (+1); Country matches target outreach list (+1)
+10,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+11,2,2,high,high,False,https://coilcraft.applicantpro.com/jobs/3717925,Ad has been active 140 days - real ongoing spend (+1); Country matches target outreach list (+1)
+12,2,2,low,low,True,https://dentalstore123.com/shop/apex-dental-sensors/?utm_source={{site_source_name}}&utm_medium={{adset.name}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}},Domain match to business name is unclear (similarity 0.58) - needs review; Ad has been active 414 days - real ongoing spend (+1); Country matches target outreach list (+1)
+13,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+14,4,4,high,high,False,http://itunes.apple.com/app/id6463821171,Domain 'itunes.apple.com' doesn't clearly match business name (+2); Ad has been active 36 days - real ongoing spend (+1); Country matches target outreach list (+1)
+15,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+16,2,2,low,low,True,https://dentalstore123.com/shop/apex-dental-sensors/?utm_source={{site_source_name}}&utm_medium={{adset.name}}&utm_campaign={{campaign.name}}&utm_content={{ad.name}},Domain match to business name is unclear (similarity 0.58) - needs review; Ad has been active 414 days - real ongoing spend (+1); Country matches target outreach list (+1)
+17,4,4,high,high,False,https://go.kingkong.co/signup,Domain 'go.kingkong.co' doesn't clearly match business name (+2); Ad has been active 329 days - real ongoing spend (+1); Country matches target outreach list (+1)
+18,2,2,high,high,False,https://birdeye.com/cmp/how-to-get-google-reviews/?utm_source=facebook&utm_medium=cpc&utm_campaign=fb_ltv-lookalike_leads_06252025&utm_content=before_and_after&utm_term=2-4pclookalike-1dattrib-customlookalike&utm_sfcamp=7011Q000000XBEu,Ad has been active 19 days - real ongoing spend (+1); Country matches target outreach list (+1)
+19,2,2,high,high,False,https://www.starlincoln.com/star-mobile-service-van.html,Ad has been active 251 days - real ongoing spend (+1); Country matches target outreach list (+1)
+20,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+21,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+22,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+23,2,2,high,high,False,https://www.nexhealth.com/features/forms?gtm_adid=120243912426560190&utm_source=genly&utm_medium=cpc&utm_campaign=meta_awareness&utm_genly=1&utm_placement={{placement}}&gtm_genly=1&utm_adid=120247652743150190,Ad has been active 37 days - real ongoing spend (+1); Country matches target outreach list (+1)
+24,2,2,high,high,False,https://www.columbiadental.com/,Ad has been active 16 days - real ongoing spend (+1); Country matches target outreach list (+1)
+25,2,2,high,high,False,https://www.videa.ai/,Ad has been active 61 days - real ongoing spend (+1); Country matches target outreach list (+1)
+26,2,2,high,high,False,https://www.pattersondental.com/software?utm_source=meta&utm_medium=paidsocial&utm_campaign=software_solutions&utm_content=upper_prospecting_dentists_image_b&utm_id=form,Ad has been active 83 days - real ongoing spend (+1); Country matches target outreach list (+1)
+27,2,2,low,low,True,https://rdclermont.smileimplantsnow.com/?utm_source=meta&utm_medium=paid social&utm_campaign=PDM 104571 diQUAL00 LangEN,Domain match to business name is unclear (similarity 0.44) - needs review; Ad has been active 125 days - real ongoing spend (+1); Country matches target outreach list (+1)
+28,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+29,2,2,high,high,False,https://ivory-implant-dentistry.implantschedule.com/consult-fb,Ad has been active 135 days - real ongoing spend (+1); Country matches target outreach list (+1)
+30,2,2,high,high,False,https://alliebloyd.com/highlevel,Ad has been active 707 days - real ongoing spend (+1); Country matches target outreach list (+1)
+31,2,2,high,high,False,https://www.civicplus.com/blog/crm/what-is-a-311-and-citizen-request-management-solution/?utm_campaign=08 | 2026 | 311 CRM-ATOF&utm_source=facebook&utm_medium=paidsocial,Ad has been active 119 days - real ongoing spend (+1); Country matches target outreach list (+1)
+32,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+33,2,2,high,high,False,https://www.servicetitan.com/features/field-service-app,Ad has been active 91 days - real ongoing spend (+1); Country matches target outreach list (+1)
+34,2,2,high,high,False,https://scribe.com/lp/software-adoption,Ad has been active 15 days - real ongoing spend (+1); Country matches target outreach list (+1)
+35,4,4,high,high,False,https://strategy.perspective.co/160-leads/,Domain 'strategy.perspective.co' doesn't clearly match business name (+2); Ad has been active 380 days - real ongoing spend (+1); Country matches target outreach list (+1)
+36,2,2,high,high,False,https://builderall.com/#aid=2411156,Ad has been active 63 days - real ongoing spend (+1); Country matches target outreach list (+1)
+37,2,2,high,high,False,https://builderall.com/#aid=2411156,Ad has been active 63 days - real ongoing spend (+1); Country matches target outreach list (+1)
+38,2,2,high,high,False,https://www.gohighlevel.com/paid-ad-fb,Ad has been active 77 days - real ongoing spend (+1); Country matches target outreach list (+1)
+39,4,4,high,high,False,https://crm.business-software.com/ai-playbook-for-sales-professionals/,Domain 'crm.business-software.com' doesn't clearly match business name (+2); Ad has been active 147 days - real ongoing spend (+1); Country matches target outreach list (+1)
+40,4,4,high,high,False,https://www.gohighlevel.com/ghlaipro/?fp_ref=ghlaipro,Domain 'gohighlevel.com' doesn't clearly match business name (+2); Ad has been active 58 days - real ongoing spend (+1); Country matches target outreach list (+1)
+41,2,2,high,high,False,https://rituallyrooted.com/opportunities,Ad has been active 57 days - real ongoing spend (+1); Country matches target outreach list (+1)
+42,2,2,high,high,False,https://builderall.com/#aid=2411156,Ad has been active 63 days - real ongoing spend (+1); Country matches target outreach list (+1)
+43,2,2,high,high,False,https://donorsnap.com/donation-management/,Ad has been active 40 days - real ongoing spend (+1); Country matches target outreach list (+1)
+44,2,2,high,high,False,https://www.gohighlevel.com/paid-ad-fb,Ad has been active 82 days - real ongoing spend (+1); Country matches target outreach list (+1)
+45,2,2,high,high,False,https://builderall.com/#aid=2411156,Ad has been active 63 days - real ongoing spend (+1); Country matches target outreach list (+1)
+46,5,5,high,high,False,https://www.instagram.com/_u/alex.jonasse,"Ad destination is a Facebook/Instagram page, not a real site (+3); Ad has been active 35 days - real ongoing spend (+1); Country matches target outreach list (+1)"
+47,2,2,high,high,False,https://www.gohighlevel.com/paid-ad-fb,Ad has been active 77 days - real ongoing spend (+1); Country matches target outreach list (+1)
+48,4,4,high,high,False,https://unc.az1.qualtrics.com/jfe/form/SV_6mTRrJ2GR6FsT8q,Domain 'unc.az1.qualtrics.com' doesn't clearly match business name (+2); Ad has been active 14 days - real ongoing spend (+1); Country matches target outreach list (+1)
+49,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+50,2,2,high,high,False,https://rituallyrooted.com/opportunities,Ad has been active 57 days - real ongoing spend (+1); Country matches target outreach list (+1)
+51,4,4,high,high,False,https://show.sendblue.com/,Domain 'show.sendblue.com' doesn't clearly match business name (+2); Ad has been active 22 days - real ongoing spend (+1); Country matches target outreach list (+1)
+52,2,2,high,high,False,https://www.joinmoxie.com/launch,Ad has been active 37 days - real ongoing spend (+1); Country matches target outreach list (+1)
+53,4,4,high,high,False,https://www.gohighlevel.com/ghlaipro/?fp_ref=ghlaipro,Domain 'gohighlevel.com' doesn't clearly match business name (+2); Ad has been active 29 days - real ongoing spend (+1); Country matches target outreach list (+1)
+54,4,4,high,high,False,https://go.vidlead.com/demodemand,Domain 'go.vidlead.com' doesn't clearly match business name (+2); Ad has been active 61 days - real ongoing spend (+1); Country matches target outreach list (+1)
+55,0,2,low,low,True,,Landing page could not be resolved - scrape failed
+56,2,2,high,high,False,https://remarketinglabs.com/claude-code,Ad has been active 72 days - real ongoing spend (+1); Country matches target outreach list (+1)
+57,4,4,high,high,False,https://www.gohighlevel.com/highlevel-bootcamp?fp_ref=crmpros,Domain 'gohighlevel.com' doesn't clearly match business name (+2); Ad has been active 191 days - real ongoing spend (+1); Country matches target outreach list (+1)
+58,2,2,high,high,False,https://uphex.com/features/go-highlevel,Ad has been active 44 days - real ongoing spend (+1); Country matches target outreach list (+1)
+59,2,2,high,high,False,https://boldtrail.com/product-comparison-front-office/,Ad has been active 34 days - real ongoing spend (+1); Country matches target outreach list (+1)

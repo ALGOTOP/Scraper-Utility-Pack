@@ -4,6 +4,13 @@ A Python pipeline that scrapes Meta's public Ad Library for ads matching a keywo
 
 ## Run & Operate
 
+After importing or pulling new changes, run once (this used to fire automatically via a `postMerge` hook, which was removed so it doesn't burn compute on every import — see below):
+
+```bash
+pnpm install --frozen-lockfile
+pnpm --filter db push
+```
+
 The **Project** workflow starts both services in parallel (Replit run button).
 
 | Service | Command | Port |
@@ -54,6 +61,12 @@ This branch adds the full-stack web app (`artifacts/ad-intel` + `artifacts/api-s
 - **Fallback: DOM parser** — anchored on "Library ID:" (policy-mandated disclosure text) not CSS classes. Cards with no outbound link get `needs_review` status, not silent drops.
 - **DOM fallback runs per-URL** — only triggered when GraphQL interception returns nothing for a given URL, so one rate-limited URL doesn't force DOM fallback for the whole session.
 - **Chromium via Nix, not Playwright's downloaded shell** — NixOS doesn't expose FHS-style library paths; `executable_path=shutil.which("chromium")` passed to `p.chromium.launch()`.
+
+## Compute/credit notes
+
+- `playwright-driver` was removed from `.replit`'s `[nix]` packages — it's not used anywhere in the code. The actual Chromium path is `replit.nix`'s `pkgs.chromium`, found via `shutil.which("chromium")` (see Architecture decisions above). Keeping both meant building two overlapping browser environments on every fresh import.
+- `[postMerge]` was removed so `pnpm install` + `pnpm --filter db push` no longer fire automatically on import/pull — run them manually (see Run & Operate above) so a fresh import doesn't spend compute before you've decided to build.
+- `expertMode` is off in `[agent]` — turn it back on only for a specific hard task, not as the default.
 
 ## Gotchas
 

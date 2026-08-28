@@ -1,0 +1,559 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: Meta Ad Library Lead Intelligence API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: jobs
+    description: Scrape job management
+  - name: leads
+    description: Scored lead records
+  - name: saved-searches
+    description: Saved search configurations
+  - name: dashboard
+    description: Dashboard stats and activity
+
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /jobs:
+    get:
+      operationId: listJobs
+      tags: [jobs]
+      summary: List all scrape jobs
+      parameters:
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+        - in: query
+          name: offset
+          schema: { type: integer, default: 0 }
+      responses:
+        "200":
+          description: List of scrape jobs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ScrapeJob"
+
+    post:
+      operationId: createJob
+      tags: [jobs]
+      summary: Trigger a new scrape job
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScrapeJobInput"
+      responses:
+        "201":
+          description: Job queued
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScrapeJob"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /jobs/{id}:
+    get:
+      operationId: getJob
+      tags: [jobs]
+      summary: Get a scrape job with its leads
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Job detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScrapeJobDetail"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /leads:
+    get:
+      operationId: listLeads
+      tags: [leads]
+      summary: List scored leads with optional filters
+      parameters:
+        - in: query
+          name: score_min
+          schema: { type: integer }
+        - in: query
+          name: score_max
+          schema: { type: integer }
+        - in: query
+          name: country
+          schema: { type: string }
+        - in: query
+          name: confidence
+          schema: { type: string, enum: [high, medium, low] }
+        - in: query
+          name: needs_review
+          schema: { type: boolean }
+        - in: query
+          name: review_status
+          schema: { type: string, enum: [pending, approved, rejected] }
+        - in: query
+          name: session_id
+          schema: { type: integer }
+        - in: query
+          name: search
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 100 }
+        - in: query
+          name: offset
+          schema: { type: integer, default: 0 }
+        - in: query
+          name: sort_by
+          schema: { type: string, enum: [score, created_at, advertiser_name], default: score }
+        - in: query
+          name: sort_dir
+          schema: { type: string, enum: [asc, desc], default: desc }
+      responses:
+        "200":
+          description: Filtered list of leads
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadList"
+
+  /leads/export:
+    get:
+      operationId: exportLeads
+      tags: [leads]
+      summary: Export leads as CSV
+      parameters:
+        - in: query
+          name: session_id
+          schema: { type: integer }
+        - in: query
+          name: score_min
+          schema: { type: integer }
+        - in: query
+          name: review_status
+          schema: { type: string, enum: [pending, approved, rejected] }
+        - in: query
+          name: dedupe
+          description: >
+            When set to "business", collapses multiple ads from the same
+            advertiser into a single row (the highest-scoring ad for that
+            business), with an added duplicate_count column showing how
+            many total ads that business had. Omit for the raw, one-row-
+            per-ad export.
+          schema: { type: string, enum: [business] }
+      responses:
+        "200":
+          description: CSV file
+          content:
+            text/csv:
+              schema:
+                type: string
+
+  /leads/{id}:
+    get:
+      operationId: getLead
+      tags: [leads]
+      summary: Get a single lead with full scoring breakdown
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Lead detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lead"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /leads/{id}/review:
+    patch:
+      operationId: reviewLead
+      tags: [leads]
+      summary: Approve or reject a lead under manual review
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeadReviewInput"
+      responses:
+        "200":
+          description: Updated lead
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lead"
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /saved-searches:
+    get:
+      operationId: listSavedSearches
+      tags: [saved-searches]
+      summary: List all saved searches
+      responses:
+        "200":
+          description: Saved searches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SavedSearch"
+
+    post:
+      operationId: createSavedSearch
+      tags: [saved-searches]
+      summary: Save a search configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SavedSearchInput"
+      responses:
+        "201":
+          description: Saved search created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedSearch"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /saved-searches/{id}:
+    delete:
+      operationId: deleteSavedSearch
+      tags: [saved-searches]
+      summary: Delete a saved search
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: integer }
+      responses:
+        "204":
+          description: Deleted
+        "404":
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiError"
+
+  /dashboard/stats:
+    get:
+      operationId: getDashboardStats
+      tags: [dashboard]
+      summary: Dashboard summary stats
+      responses:
+        "200":
+          description: Stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardStats"
+
+  /dashboard/recent:
+    get:
+      operationId: getRecentActivity
+      tags: [dashboard]
+      summary: Recent scrape jobs and top leads
+      responses:
+        "200":
+          description: Recent activity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecentActivity"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required: [status]
+
+    ApiError:
+      type: object
+      properties:
+        error:
+          type: string
+      required: [error]
+
+    ScrapeJobInput:
+      type: object
+      properties:
+        keyword:
+          type: ["string", "null"]
+        page_ids:
+          type: array
+          items:
+            type: string
+          default: []
+        country:
+          type: string
+          description: "ISO 2-letter country code"
+      required: [country]
+
+    ScrapeJob:
+      type: object
+      properties:
+        id:
+          type: integer
+        keyword:
+          type: ["string", "null"]
+        page_ids:
+          type: array
+          items:
+            type: string
+        country:
+          type: string
+        status:
+          type: string
+          enum: [queued, running, done, failed]
+        result_count:
+          type: ["integer", "null"]
+        error_message:
+          type: ["string", "null"]
+        created_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: ["string", "null"]
+          format: date-time
+      required: [id, country, status, page_ids, created_at]
+
+    ScrapeJobDetail:
+      allOf:
+        - $ref: "#/components/schemas/ScrapeJob"
+        - type: object
+          properties:
+            leads:
+              type: array
+              items:
+                $ref: "#/components/schemas/Lead"
+          required: [leads]
+
+    Lead:
+      type: object
+      properties:
+        id:
+          type: integer
+        library_id:
+          type: ["string", "null"]
+        advertiser_name:
+          type: ["string", "null"]
+        final_url:
+          type: ["string", "null"]
+        raw_href:
+          type: ["string", "null"]
+        country:
+          type: string
+        score:
+          type: integer
+        confidence:
+          type: string
+          enum: [high, medium, low]
+        needs_review:
+          type: boolean
+        review_status:
+          type: string
+          enum: [pending, approved, rejected]
+        reasons:
+          type: array
+          items:
+            type: string
+        source:
+          type: ["string", "null"]
+        ad_start_date:
+          type: ["integer", "null"]
+        session_id:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+      required: [id, country, score, confidence, needs_review, review_status, reasons, session_id, created_at]
+
+    LeadList:
+      type: object
+      properties:
+        leads:
+          type: array
+          items:
+            $ref: "#/components/schemas/Lead"
+        total:
+          type: integer
+      required: [leads, total]
+
+    LeadReviewInput:
+      type: object
+      properties:
+        review_status:
+          type: string
+          enum: [approved, rejected]
+      required: [review_status]
+
+    SavedSearchInput:
+      type: object
+      properties:
+        name:
+          type: string
+        keyword:
+          type: ["string", "null"]
+        page_ids:
+          type: array
+          items:
+            type: string
+          default: []
+        countries:
+          type: array
+          items:
+            type: string
+      required: [name, countries]
+
+    SavedSearch:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        keyword:
+          type: ["string", "null"]
+        page_ids:
+          type: array
+          items:
+            type: string
+        countries:
+          type: array
+          items:
+            type: string
+        created_at:
+          type: string
+          format: date-time
+      required: [id, name, countries, page_ids, created_at]
+
+    DashboardStats:
+      type: object
+      properties:
+        total_leads:
+          type: integer
+        avg_score:
+          type: ["number", "null"]
+        needs_review_count:
+          type: integer
+        approved_count:
+          type: integer
+        rejected_count:
+          type: integer
+        total_jobs:
+          type: integer
+        running_jobs:
+          type: integer
+        by_country:
+          type: array
+          items:
+            $ref: "#/components/schemas/CountryStat"
+        by_score_bucket:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScoreBucket"
+      required: [total_leads, needs_review_count, approved_count, rejected_count, total_jobs, running_jobs, by_country, by_score_bucket]
+
+    CountryStat:
+      type: object
+      properties:
+        country:
+          type: string
+        count:
+          type: integer
+        avg_score:
+          type: ["number", "null"]
+      required: [country, count]
+
+    ScoreBucket:
+      type: object
+      properties:
+        label:
+          type: string
+        min:
+          type: integer
+        max:
+          type: integer
+        count:
+          type: integer
+      required: [label, min, max, count]
+
+    RecentActivity:
+      type: object
+      properties:
+        recent_jobs:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScrapeJob"
+        top_leads:
+          type: array
+          items:
+            $ref: "#/components/schemas/Lead"
+      required: [recent_jobs, top_leads]

@@ -1,0 +1,13 @@
+.git
+.github
+.local
+node_modules
+**/node_modules
+**/dist
+**/.tsbuildinfo
+**/__pycache__
+*.pyc
+.cache
+attached_assets
+scraper/leads_export.csv
+scraper/leads_rescored.csv

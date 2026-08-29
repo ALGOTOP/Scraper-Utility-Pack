@@ -13,7 +13,17 @@ import { useToast } from "@/hooks/use-toast";
 const COUNTRIES = ["US", "GB", "AU", "CA", "IE", "NZ", "DE", "NL", "SE", "NO", "DK", "CH", "AE", "SG"];
 
 export function Jobs() {
-  const { data: jobs, isLoading } = useListJobs(undefined, { query: { queryKey: getListJobsQueryKey(), refetchInterval: 5000 } });
+  const { data: jobs, isLoading } = useListJobs(undefined, {
+    query: {
+      queryKey: getListJobsQueryKey(),
+      // Poll only while the server has work in progress. This keeps the
+      // jobs page live without making requests forever when it is idle.
+      refetchInterval: (query) =>
+        query.state.data?.some((job) => job.status === "queued" || job.status === "running")
+          ? 5000
+          : false,
+    },
+  });
   const [keyword, setKeyword] = useState("");
   const [country, setCountry] = useState("US");
   const [pageIds, setPageIds] = useState("");
@@ -53,7 +63,7 @@ export function Jobs() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Scrape Jobs</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Scrape Jobs</h1>
         <p className="text-muted-foreground mt-1 text-sm">Trigger new scraping operations and monitor active runs.</p>
       </div>
 

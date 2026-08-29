@@ -12,7 +12,7 @@ export function Dashboard() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Overview</h1>
         <p className="text-muted-foreground mt-1 text-sm">Ad Intelligence Engine Status & Metrics</p>
       </div>
 

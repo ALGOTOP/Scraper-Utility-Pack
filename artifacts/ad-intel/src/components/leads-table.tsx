@@ -92,7 +92,7 @@ export function LeadsTable({ baseFilters = {}, showReviewActions = false, title,
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">{title}</h1>
           <p className="text-muted-foreground mt-1 text-sm">{description}</p>
         </div>
         <Button variant="outline" onClick={handleExport} className="flex items-center gap-2">

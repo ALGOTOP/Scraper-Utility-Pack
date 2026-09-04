@@ -1,12 +1,11 @@
 # One Railway service for the React frontend, Express API, and Playwright
 # scraper. The repository is a pnpm workspace, so this Dockerfile must be
 # built from the repository root.
-FROM node:20-bookworm-slim
+
+FROM node:22-bookworm-slim
 
 WORKDIR /app
 
-# Chromium is installed from Debian and selected by run_job.py via `which`.
-# This is more reliable here than Playwright's downloaded browser shell.
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     ca-certificates \
@@ -33,7 +32,6 @@ COPY . .
 
 RUN python3 -m pip install --no-cache-dir --break-system-packages -r requirements.txt
 
-# Vite requires these variables even for a production build.
 RUN PORT=3000 BASE_PATH=/ pnpm --filter @workspace/ad-intel run build \
   && pnpm --filter @workspace/api-server run build
 
@@ -46,4 +44,5 @@ ENV FRONTEND_DIST_DIR=/app/artifacts/ad-intel/dist/public
 USER node
 
 EXPOSE 8080
+
 ENTRYPOINT ["./docker-entrypoint.sh"]

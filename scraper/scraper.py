@@ -86,6 +86,14 @@ class ScrapedAd:
     status: str  # 'ok' | 'needs_review' | 'blocked' | 'no_results'
     source: str  # 'graphql' | 'dom_fallback'
     start_date: Optional[int] = None  # unix timestamp, ad delivery start
+    ad_body: Optional[str] = None
+    ad_title: Optional[str] = None
+    caption: Optional[str] = None
+    cta_text: Optional[str] = None
+    cta_type: Optional[str] = None
+    page_categories: list = field(default_factory=list)
+    page_like_count: Optional[int] = None
+    is_active: Optional[bool] = None
 
 
 @dataclass
@@ -111,6 +119,30 @@ def classify_page_text(visible_text: str) -> Optional[str]:
         if marker in low:
             return "no_results"
     return None
+
+
+def _snapshot_text(snapshot: dict, key: str) -> Optional[str]:
+    """Safely extract a text field from Meta snapshot data."""
+    value = snapshot.get(key) if isinstance(snapshot, dict) else None
+    if isinstance(value, dict):
+        value = value.get("text") or value.get("value")
+    return str(value).strip() if value is not None and str(value).strip() else None
+
+
+def _collect_card_body(snapshot: dict) -> Optional[str]:
+    """Combine card body copy without duplicating identical variants."""
+    if not isinstance(snapshot, dict):
+        return None
+    bodies = []
+    for card in snapshot.get("cards") or []:
+        if not isinstance(card, dict):
+            continue
+        body = card.get("body")
+        if isinstance(body, dict):
+            body = body.get("text")
+        if body and str(body).strip() and str(body).strip() not in bodies:
+            bodies.append(str(body).strip())
+    return "\n\n".join(bodies) if bodies else None
 
 
 def _parse_graphql_payload(payload: dict) -> list[ScrapedAd]:
@@ -167,6 +199,33 @@ def _parse_graphql_payload(payload: dict) -> list[ScrapedAd]:
             snapshot = ad.get("snapshot") or {}
             snap_url = snapshot.get("link_url") if isinstance(snapshot, dict) else None
 
+            snapshot_body = _snapshot_text(snapshot, "body")
+            card_body = _collect_card_body(snapshot)
+            body_parts = [v for v in (snapshot_body, card_body) if v and v not in {"{{product.brand}}", "{{product.name}}"}]
+            ad_body = "\n\n".join(dict.fromkeys(body_parts)) or snapshot_body or card_body
+
+            snapshot_title = _snapshot_text(snapshot, "title")
+            card_titles = []
+            for card in snapshot.get("cards") or []:
+                if isinstance(card, dict):
+                    value = card.get("title")
+                    if value and str(value).strip() and str(value).strip() not in card_titles:
+                        card_titles.append(str(value).strip())
+            ad_title_parts = []
+            if snapshot_title and snapshot_title not in {"{{product.name}}", "{{product.brand}}"}:
+                ad_title_parts.append(snapshot_title)
+            ad_title_parts.extend(card_titles)
+            ad_title = " | ".join(dict.fromkeys(ad_title_parts)) or snapshot_title or (card_titles[0] if card_titles else None)
+
+            caption = _snapshot_text(snapshot, "caption")
+            cta_text = _snapshot_text(snapshot, "cta_text")
+            cta_type = _snapshot_text(snapshot, "cta_type")
+            page_categories = snapshot.get("page_categories") or ad.get("categories") or []
+            if isinstance(page_categories, str):
+                page_categories = [page_categories]
+            page_like_count = snapshot.get("page_like_count")
+            is_active = ad.get("is_active")
+
             # Multi-card conflict check: if any card has a different link_url
             # than snapshot.link_url, we can't be sure which is the real CTA —
             # flag needs_review rather than silently picking one.
@@ -190,6 +249,14 @@ def _parse_graphql_payload(payload: dict) -> list[ScrapedAd]:
                     status="needs_review",
                     source="graphql",
                     start_date=start_date,
+                    ad_body=ad_body,
+                    ad_title=ad_title,
+                    caption=caption,
+                    cta_text=cta_text,
+                    cta_type=cta_type,
+                    page_categories=list(page_categories) if isinstance(page_categories, list) else [str(page_categories)],
+                    page_like_count=page_like_count,
+                    is_active=is_active,
                 ))
                 continue
 
@@ -212,6 +279,14 @@ def _parse_graphql_payload(payload: dict) -> list[ScrapedAd]:
                 status=resolved_status,
                 source="graphql",
                 start_date=start_date,
+                ad_body=ad_body,
+                ad_title=ad_title,
+                caption=caption,
+                cta_text=cta_text,
+                cta_type=cta_type,
+                page_categories=list(page_categories) if isinstance(page_categories, list) else [str(page_categories)],
+                page_like_count=page_like_count,
+                is_active=is_active,
             ))
 
     return out
@@ -288,6 +363,14 @@ def _scrape_one_url(url: str, page, rate_limiter: RateLimiter, session: ScrapeSe
                 status=dom_status,
                 source="dom_fallback",
                 start_date=r.get("start_date"),
+                ad_body=r.get("ad_body") or r.get("body"),
+                ad_title=r.get("ad_title") or r.get("title"),
+                caption=r.get("caption"),
+                cta_text=r.get("cta_text"),
+                cta_type=r.get("cta_type"),
+                page_categories=r.get("page_categories") or r.get("categories") or [],
+                page_like_count=r.get("page_like_count"),
+                is_active=r.get("is_active"),
             ))
 
     page.remove_listener("response", on_response)

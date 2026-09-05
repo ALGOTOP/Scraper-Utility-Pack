@@ -1,42 +1,23 @@
 """
 run_job.py — CLI entrypoint for the async job runner.
 
-Called by the Node.js worker as a subprocess:
-  python3 scraper/run_job.py --keyword "solar panels" --country US
-  python3 scraper/run_job.py --country GB --page-ids 123456,789012
+The Node worker invokes this script and expects a JSON array on stdout.
+The scraper now performs buyer-fit qualification for the $499 dedicated
+product landing-page offer before returning records to the database.
 
-Outputs a JSON array to stdout:
-  [{ "library_id", "advertiser_name", "final_url", "raw_href",
-     "status", "source", "start_date",
-     "score", "confidence", "needs_review", "review_status",
-     "reasons", "country" }, ...]
-
-Stderr is used for progress/debug logging (worker captures it separately).
-
-NOTE (fix, 2026-07-27): the previous version of this file called
-run_scrape(keyword=..., country=..., page_ids=...) directly, with no
-Playwright `page` and no `RateLimiter` -- but run_scrape() requires both
-as its first two positional args (see scraper.py). It also treated the
-return value as a dict with a "results" key of plain ad dicts, when
-run_scrape() actually returns a ScrapeSession dataclass whose .results
-are ScrapedAd dataclass instances (no .get()). Both bugs meant every
-job crashed immediately with:
-    run_scrape() missing 2 required positional arguments: 'page' and
-    'rate_limiter'
-This version launches a real browser/rate limiter the same way
-live_capture.py does, converts each ScrapedAd to a dict before scoring,
-and uses scoring_engine's own `confidence` value instead of
-recomputing a second, possibly-inconsistent one.
+Hard ICP exclusions are intentionally NOT inserted into the leads table.
+Ambiguous records are retained as needs_review so a potentially good prospect
+is never silently discarded just because Meta gave us incomplete metadata.
 """
 from __future__ import annotations
+
 import argparse
 import dataclasses
 import json
+import os
 import shutil
 import sys
-import os
 
-# Ensure scraper dir is on path regardless of working directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
@@ -49,28 +30,43 @@ from icp_filter import check_icp_mismatch
 
 def score_session(session: ScrapeSession, country: str) -> list[dict]:
     """
-    Convert a ScrapeSession's ScrapedAd results into scored lead dicts
-    ready for the Node worker to insert into the DB.
+    Convert scraped ads into DB-ready lead records.
 
-    Pure function (no browser/network) so it's directly unit-testable
-    against a ScrapeSession built from a mocked Playwright page --
-    see test_run_job.py.
+    Priority leads and ambiguous review leads are returned. Hard ICP rejects
+    are deliberately omitted from the output so the lead table remains useful
+    for actual prospecting.
     """
     output = []
+    excluded_count = 0
+    review_count = 0
+    priority_count = 0
+
     for ad in session.results:
         ad_dict = dataclasses.asdict(ad)
         try:
             scored_record, _ = adapt_record(
-                ad_dict, session_country=country, target_countries=TARGET_COUNTRIES
+                ad_dict,
+                session_country=country,
+                target_countries=TARGET_COUNTRIES,
             )
             result = score_lead(scored_record)
-            # Separate flag layered on top of the scorer's own output --
-            # does not touch score/confidence/needs_review. Computed from
-            # the same adapted record in the same pass, not a second pass
-            # over the data.
+
+            # Use the same full record for the compatibility ICP flag. This
+            # does not run a second classifier with different inputs.
             icp_mismatch, icp_mismatch_reason = check_icp_mismatch(
-                scored_record.get("business_name"), scored_record.get("landing_url")
+                scored_record.get("business_name"),
+                scored_record.get("landing_url"),
+                ad_record=scored_record,
             )
+
+            buyer_fit_status = result.get("buyer_fit_status", "review")
+            if buyer_fit_status == "excluded":
+                excluded_count += 1
+                continue
+            if buyer_fit_status == "priority":
+                priority_count += 1
+            else:
+                review_count += 1
 
             output.append({
                 "library_id": ad_dict.get("library_id"),
@@ -80,23 +76,20 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
                 "source": ad_dict.get("source"),
                 "ad_start_date": ad_dict.get("start_date"),
                 "country": country,
-                "score": result["score"],
+                "score": int(result["score"]),
                 "confidence": result["confidence"],
-                "needs_review": result["needs_review"],
+                "needs_review": bool(result["needs_review"]),
                 "review_status": "pending",
                 "reasons": result["reasons"],
-                "icp_mismatch": icp_mismatch,
+                "icp_mismatch": bool(icp_mismatch),
                 "icp_mismatch_reason": icp_mismatch_reason,
             })
         except Exception as exc:
-            # Previously this just logged to stderr and skipped the ad
-            # entirely -- meaning a single scoring bug (bad data shape,
-            # an unhandled edge case) could make leads silently vanish
-            # from the output with resultCount quietly undercounting
-            # what the scraper actually found, and nothing in the DB/UI
-            # showing it happened. Surface it as a needs_review record
-            # instead, so a human sees it and nothing is lost silently.
-            print(f"[run_job] Failed to score ad {ad_dict.get('library_id')}: {exc}", file=sys.stderr)
+            print(
+                f"[run_job] Failed to qualify ad {ad_dict.get('library_id')}: {exc}",
+                file=sys.stderr,
+            )
+            # A classifier failure is a review item, never an automatic reject.
             output.append({
                 "library_id": ad_dict.get("library_id"),
                 "advertiser_name": ad_dict.get("advertiser_name"),
@@ -109,17 +102,21 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
                 "confidence": "low",
                 "needs_review": True,
                 "review_status": "pending",
-                "reasons": [f"Scoring failed, needs manual check: {exc}"],
+                "reasons": [f"Buyer-fit qualification failed; manual review required: {exc}"],
                 "icp_mismatch": False,
                 "icp_mismatch_reason": None,
             })
-            continue
 
+    print(
+        f"[run_job] buyer_fit priority={priority_count} review={review_count} "
+        f"excluded={excluded_count} returned={len(output)}",
+        file=sys.stderr,
+    )
     return output
 
 
 def run_job(keyword: str | None, country: str, page_ids: list[str]) -> list[dict]:
-    """Launches a real browser, runs the scrape, and scores the results."""
+    """Launch a browser, scrape Meta, and qualify the results."""
     from playwright.sync_api import sync_playwright
 
     chromium_executable = (
@@ -140,8 +137,18 @@ def run_job(keyword: str | None, country: str, page_ids: list[str]) -> list[dict
                 )
             )
             page = context.new_page()
-            limiter = RateLimiter(min_delay_s=5.0, max_delay_s=10.0, max_requests_per_session=40)
-            session = run_scrape(page, limiter, keyword=keyword, country=country, page_ids=page_ids)
+            limiter = RateLimiter(
+                min_delay_s=5.0,
+                max_delay_s=10.0,
+                max_requests_per_session=40,
+            )
+            session = run_scrape(
+                page,
+                limiter,
+                keyword=keyword,
+                country=country,
+                page_ids=page_ids,
+            )
         finally:
             browser.close()
 
@@ -149,10 +156,9 @@ def run_job(keyword: str | None, country: str, page_ids: list[str]) -> list[dict
         f"[run_job] session_status={session.session_status} "
         f"urls_attempted={session.urls_attempted} urls_blocked={session.urls_blocked} "
         f"graphql_hits={session.graphql_hits} dom_fallback_used={session.dom_fallback_used} "
-        f"total_results={len(session.results)}",
+        f"raw_results={len(session.results)}",
         file=sys.stderr,
     )
-
     return score_session(session, country)
 
 
@@ -160,12 +166,7 @@ def main():
     parser = argparse.ArgumentParser(description="Run a Meta Ad Library scrape job")
     parser.add_argument("--keyword", type=str, default=None, help="Search keyword")
     parser.add_argument("--country", type=str, required=True, help="ISO 2-letter country code")
-    parser.add_argument(
-        "--page-ids",
-        type=str,
-        default="",
-        help="Comma-separated list of Facebook Page IDs",
-    )
+    parser.add_argument("--page-ids", type=str, default="", help="Comma-separated Facebook Page IDs")
     args = parser.parse_args()
 
     keyword = args.keyword or None
@@ -176,7 +177,10 @@ def main():
         print(json.dumps({"error": "Provide at least one of --keyword or --page-ids"}))
         sys.exit(1)
 
-    print(f"[run_job] Starting scrape: keyword={keyword!r} country={country} page_ids={page_ids}", file=sys.stderr)
+    print(
+        f"[run_job] Starting scrape: keyword={keyword!r} country={country} page_ids={page_ids}",
+        file=sys.stderr,
+    )
 
     try:
         output = run_job(keyword, country, page_ids)
@@ -185,7 +189,7 @@ def main():
         print(json.dumps({"error": str(exc)}))
         sys.exit(1)
 
-    print(f"[run_job] Scored {len(output)} leads", file=sys.stderr)
+    print(f"[run_job] Returning {len(output)} prospect records", file=sys.stderr)
     print(json.dumps(output))
 
 

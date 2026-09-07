@@ -17,7 +17,8 @@ def _clean_business_name(raw_name):
 
 
 def ad_active_days_from_start(start_date_unix):
-    if not start_date_unix: return None
+    """Return known ad age in whole days, or None when Meta did not provide it."""
+    if start_date_unix is None or start_date_unix == "": return None
     try: days = (time.time() - float(start_date_unix)) / 86400
     except (TypeError, ValueError): return None
     return max(0, int(days))
@@ -33,7 +34,9 @@ def adapt_record(scraped: dict, session_country: str, target_countries: list = N
         "business_name": _clean_business_name(scraped.get("advertiser_name")),
         "country": (session_country or "").upper(), "landing_url": scraped.get("final_url"),
         "raw_href": scraped.get("raw_href"), "resolution_status": STATUS_MAP.get(scraped.get("status"), "failed"),
-        "ad_active_days": active_days if active_days is not None else 0, "target_countries": target_countries,
+        # Preserve unknown age as None. Zero means a genuinely brand-new ad and
+        # must not be used as a substitute for missing Meta start-date data.
+        "ad_active_days": active_days, "target_countries": target_countries,
         "ad_body": scraped.get("ad_body") or scraped.get("body"), "ad_title": scraped.get("ad_title") or scraped.get("title"),
         "caption": scraped.get("caption"), "cta_text": scraped.get("cta_text"), "cta_type": scraped.get("cta_type"),
         "page_categories": page_categories, "page_like_count": scraped.get("page_like_count"), "is_active": scraped.get("is_active"),

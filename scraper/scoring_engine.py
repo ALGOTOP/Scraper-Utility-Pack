@@ -39,60 +39,27 @@ def score_lead(ad_record):
     target_countries = ad_record.get("target_countries") or []
     country = (ad_record.get("country") or "").upper()
 
-    # Country is a hard outreach constraint, not a quality bonus.
     if target_countries and country not in {str(c).upper() for c in target_countries}:
-        return {
-            "score": 0, "confidence": "high", "reasons": [f"Country {country or '(unknown)'} is outside the approved outreach list"],
-            "needs_review": False, "buyer_fit_status": "excluded",
-            "icp_mismatch": True, "icp_mismatch_reason": "country_outside_target_list",
-            "product_identified": bool(result.get("product_signal") == "specific_product"),
-            "product_evidence": result.get("product_evidence"),
-            "destination_type": result.get("destination_type"),
-            "landing_opportunity": result.get("landing_opportunity"),
-            "sales_reason": None,
-        }
+        return {"score": 0, "confidence": "high", "reasons": [f"Country {country or '(unknown)'} is outside the approved outreach list"], "needs_review": False, "buyer_fit_status": "excluded", "icp_mismatch": True, "icp_mismatch_reason": "country_outside_target_list", "product_identified": bool(result.get("product_signal") == "specific_product"), "product_evidence": result.get("product_evidence"), "destination_type": result.get("destination_type"), "landing_opportunity": result.get("landing_opportunity"), "sales_reason": None}
 
-    # Resolution failure cannot become a sales-ready prospect.
     if ad_record.get("resolution_status") in ("failed", "timeout"):
-        return {
-            "score": 0, "confidence": "low",
-            "reasons": ["Landing page could not be resolved - manual review required"],
-            "needs_review": True, "buyer_fit_status": "review",
-            "icp_mismatch": False, "icp_mismatch_reason": None,
-            "product_identified": bool(result.get("product_signal") == "specific_product"),
-            "product_evidence": result.get("product_evidence"),
-            "destination_type": result.get("destination_type"),
-            "landing_opportunity": result.get("landing_opportunity"),
-            "sales_reason": None,
-        }
+        return {"score": 0, "confidence": "low", "reasons": ["Landing page could not be resolved - manual review required"], "needs_review": True, "buyer_fit_status": "review", "icp_mismatch": False, "icp_mismatch_reason": None, "product_identified": bool(result.get("product_signal") == "specific_product"), "product_evidence": result.get("product_evidence"), "destination_type": result.get("destination_type"), "landing_opportunity": result.get("landing_opportunity"), "sales_reason": None}
 
-    # The classifier owns the primary decision. Secondary metadata may only
-    # tighten it; it may never promote review/excluded records.
     if country and country in {str(c).upper() for c in target_countries}:
         reasons.append("Country is in the approved outreach list")
 
+    # A name/domain mismatch is a verification signal, not proof that the lead is
+    # bad. Parent companies, DBA names and branded storefronts are common.
+    # Only downgrade to review; do not hard-exclude an otherwise strong product lead.
     if domain and domain not in SOCIAL_DOMAINS and business_name:
         similarity = name_domain_similarity(business_name, domain)
-        # Very weak relationship is a hard mismatch. We do not want to sell
-        # against a destination that cannot confidently be tied to the ad's
-        # advertiser. Moderate mismatch is review-only.
-        if similarity < 0.20:
-            return {
-                "score": 0, "confidence": "high", "reasons": reasons + [f"Destination domain '{domain}' is not credibly related to advertiser '{business_name}'"],
-                "needs_review": False, "buyer_fit_status": "excluded",
-                "icp_mismatch": True, "icp_mismatch_reason": "domain_mismatch",
-                "product_identified": bool(result.get("product_signal") == "specific_product"),
-                "product_evidence": result.get("product_evidence"),
-                "destination_type": result.get("destination_type"),
-                "landing_opportunity": result.get("landing_opportunity"),
-                "sales_reason": None,
-            }
         if similarity < 0.40 and status == "priority":
             status = "review"
             reasons.append(f"Advertiser/domain relationship is unclear (similarity {similarity:.2f}); manual verification required")
+        elif similarity < 0.20:
+            reasons.append(f"Advertiser/domain relationship is weak (similarity {similarity:.2f}); verify brand ownership before outreach")
 
-    # Never promote based on domain/country/other secondary signals.
-    if status == "priority" and not result.get("product_signal") == "specific_product":
+    if status == "priority" and result.get("product_signal") != "specific_product":
         status = "review"
         reasons.append("Specific product identity is required for sales-ready qualification")
 
@@ -109,20 +76,7 @@ def score_lead(ad_record):
         needs_review = False
         sales_reason = None
 
-    return {
-        "score": max(0, min(100, score)),
-        "confidence": confidence,
-        "reasons": reasons,
-        "needs_review": needs_review,
-        "buyer_fit_status": status,
-        "icp_mismatch": bool(result.get("exclusion_reason")) or status == "excluded",
-        "icp_mismatch_reason": exclusion_reason,
-        "product_identified": bool(result.get("product_signal") == "specific_product"),
-        "product_evidence": result.get("product_evidence"),
-        "destination_type": result.get("destination_type"),
-        "landing_opportunity": result.get("landing_opportunity"),
-        "sales_reason": sales_reason,
-    }
+    return {"score": max(0, min(100, score)), "confidence": confidence, "reasons": reasons, "needs_review": needs_review, "buyer_fit_status": status, "icp_mismatch": bool(result.get("exclusion_reason")) or status == "excluded", "icp_mismatch_reason": exclusion_reason, "product_identified": bool(result.get("product_signal") == "specific_product"), "product_evidence": result.get("product_evidence"), "destination_type": result.get("destination_type"), "landing_opportunity": result.get("landing_opportunity"), "sales_reason": sales_reason}
 
 
 def _build_sales_reason(ad_record, result):

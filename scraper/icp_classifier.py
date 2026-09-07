@@ -259,10 +259,6 @@ def classify_icp(ad_record):
     # ------------------------------------------------------------------
     # PRODUCT EVIDENCE
     # ------------------------------------------------------------------
-    # Strongest: the ad explicitly names a product OR a product URL exposes a
-    # concrete product slug. URL evidence is especially important because many
-    # Meta ads use creative copy that sells the benefit/offer without naming the
-    # item in the text.
     if specific_hits:
         product_signal = "specific_product"
         product_evidence = "Specific product identified in ad copy"
@@ -300,9 +296,11 @@ def classify_icp(ad_record):
     reasons = []
 
     # 1) ACTIVE AD INTENT / 20
+    # Missing start_date is an unknown signal, not a brand-new ad. Do not turn
+    # missing Meta metadata into an artificial zero-day hard gate.
     if days is None:
         active_points = 4
-        reasons.append("Ad age is unknown; active-spend confidence is limited")
+        reasons.append("Ad age is unknown; active-spend confidence is limited, but the missing date is not treated as a new ad")
     elif days >= 30:
         active_points = 20
         reasons.append(f"Ad has been active about {days} days — strong evidence of ongoing acquisition spend")
@@ -364,8 +362,11 @@ def classify_icp(ad_record):
         opportunity_points = 23
         opportunity_reason = "Ad sends traffic to a collection/category page — a dedicated product page is a clear conversion opportunity"
     elif destination == "product_page":
-        opportunity_points = 10
-        opportunity_reason = "Ad reaches a product page; opportunity is to create a stronger dedicated conversion experience around the advertised offer"
+        # A product page is better than a generic/collection destination, but
+        # it is not automatically a finished funnel. The $499 offer can still
+        # improve message match, offer framing, proof, and conversion flow.
+        opportunity_points = 18
+        opportunity_reason = "Ad reaches a specific product page — there is still a meaningful opportunity for a dedicated conversion-focused landing experience around the advertised offer"
     elif destination == "landing_page":
         opportunity_points = 4
         opportunity_reason = "Ad already uses an offer/landing destination; the $499 opportunity is comparatively weak"
@@ -405,16 +406,16 @@ def classify_icp(ad_record):
 
     landing_opportunity = opportunity_reason
 
-    # Evidence gates remain stricter than score. A high score cannot rescue a
-    # missing product or a weak acquisition signal.
+    # Evidence gates remain stricter than score. Missing age metadata is not an
+    # exclusion signal; a genuinely new ad (<2 days) still is.
     if opportunity_points < 10:
         return _result("review", min(score, 69), destination, "product_business",
                        reasons + ["Landing-page opportunity is too weak for automatic outreach; inspect manually"],
                        product_signal="specific_product_low_opportunity",
                        product_evidence=product_evidence, landing_opportunity=landing_opportunity)
-    if days is None or days < 2:
+    if days is not None and days < 2:
         return _result("review", min(score, 69), destination, "product_business",
-                       reasons + ["Active-spend persistence is not established enough for automatic outreach"],
+                       reasons + ["Ad is genuinely new; active-spend persistence is not established enough for automatic outreach"],
                        product_signal="specific_product_new_ad",
                        product_evidence=product_evidence, landing_opportunity=landing_opportunity)
 

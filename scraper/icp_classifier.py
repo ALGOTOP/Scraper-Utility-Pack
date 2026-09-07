@@ -1,24 +1,16 @@
-"""
-ICP classifier for the $499 dedicated product landing-page offer.
+"""Strict buyer-fit classifier for the $499 product landing-page offer.
 
-The goal is not to decide whether a business is "good" in general. It is to
-answer a much narrower sales question:
+This module is intentionally conservative. A record is not a prospect merely
+because it contains words such as "shop", "sale", or "product". To qualify as
+an outreach prospect we need evidence for the actual sales premise:
 
-    "Would this advertiser be a realistic prospect for a $499 product-specific
-     landing page that improves the conversion path from an existing ad?"
+    an active Meta advertiser + a real product business + a specific product
+    being promoted + a credible landing-page opportunity + a business that is
+    plausible to contact for a $499 implementation.
 
-This module is intentionally deterministic and dependency-free. It combines
-signals already available in Meta Ad Library responses:
-- advertiser/page name
-- ad body/title/caption
-- CTA
-- page categories
-- page like count
-- destination URL
-- ad activity / platforms
-
-Hard exclusions are conservative. Ambiguous cases become `review` rather than
-being silently discarded.
+The classifier uses only fields already captured by the scraper. Search terms
+are discovery context and are deliberately NOT treated as proof of product
+identity.
 """
 from __future__ import annotations
 
@@ -40,15 +32,13 @@ MARKETPLACE_DOMAINS = {
     "alibaba.com", "shein.com", "wish.com", "wayfair.com",
 }
 
-# Known enterprise/marketplace/platform names. Keep this relatively small;
-# the positive fit model below does most of the qualification work.
 LARGE_OR_NON_BUYER_NAME_PATTERNS = [
     r"\bamazon\b", r"\bwalmart\b", r"\btarget\b", r"\bcostco\b",
-    r"\bhome depot\b", r"\blowe'?s\b", r"\bwayfair\b",
-    r"\bebay\b", r"\betsy\b", r"\baliexpress\b", r"\balibaba\b",
-    r"\btemu\b", r"\bshein\b", r"\bshopify\b", r"\bmeta\b",
-    r"\bgoogle\b", r"\bmicrosoft\b", r"\badobe\b", r"\bcanva\b",
-    r"\bhubspot\b", r"\bsemrush\b", r"\bmailchimp\b",
+    r"\bhome depot\b", r"\blowe'?s\b", r"\bwayfair\b", r"\bebay\b",
+    r"\betsy\b", r"\baliexpress\b", r"\balibaba\b", r"\btemu\b",
+    r"\bshein\b", r"\bshopify\b", r"\bmeta\b", r"\bgoogle\b",
+    r"\bmicrosoft\b", r"\badobe\b", r"\bcanva\b", r"\bhubspot\b",
+    r"\bsemrush\b", r"\bmailchimp\b",
 ]
 
 NON_BUYER_PATTERNS = [
@@ -57,53 +47,65 @@ NON_BUYER_PATTERNS = [
     r"\badvertising agency\b", r"\bperformance marketing\b",
     r"\bseo agency\b", r"\bsocial media agency\b", r"\bweb design agency\b",
     r"\bcrm\b", r"\bsaas\b", r"\bsoftware\b", r"\bplatform\b",
-    r"\bapp\b", r"\bmobile app\b", r"\bmarketplace\b",
-    r"\baffiliate\b", r"\blead generation\b", r"\blead gen\b",
+    r"\bmobile app\b", r"\bmarketplace\b", r"\baffiliate\b",
+    r"\blead generation\b", r"\blead gen\b", r"\bdropshipping\b",
 ]
 
-NON_PRODUCT_TEXT_PATTERNS = [
+SERVICE_PATTERNS = [
     r"\bbook a call\b", r"\bbook a discovery call\b", r"\bfree consultation\b",
     r"\bmarketing services?\b", r"\bad management\b", r"\bmedia buying\b",
     r"\bseo services?\b", r"\bweb design services?\b", r"\bcoaching program\b",
-    r"\bconsulting services?\b", r"\bagency services?\b", r"\bfor our clients\b",
-    r"\bour clients\b", r"\bwe manage \S+ (?:in )?monthly ad spend\b",
-    r"\bmanage (?:your|their) ads\b", r"\bmanage .*monthly ad spend\b", r"\bfull amazon team\b", r"\bwork with brands\b",
-    r"\bdiscovery call\b", r"\bclient acquisition\b",
+    r"\bconsulting services?\b", r"\bagency services?\b", r"\bclient acquisition\b",
+    r"\bmonthly ad spend\b", r"\baverage roas\b", r"\bfor \d+\+ brands\b",
+    r"\bour clients\b", r"\bwork with brands\b", r"\bwe manage\b",
 ]
 
-PRODUCT_TEXT_PATTERNS = [
+# These are intentionally WEAK signals. They can support commerce intent but
+# never establish that a specific product is being advertised.
+TRANSACTION_PATTERNS = [
     r"\bshop now\b", r"\bbuy now\b", r"\border now\b", r"\badd to cart\b",
-    r"\badd-to-cart\b", r"\bfree shipping\b", r"\bshipping\b",
-    r"\bnew drop\b", r"\bnew collection\b", r"\bcollection\b",
-    r"\bproduct\b", r"\bshop\b", r"\bstore\b", r"\bsale\b",
-    r"\bdiscount\b", r"\b\d+% off\b", r"\bbundle\b", r"\bset\b",
-    r"\bsize(s)?\b", r"\bcolors?\b", r"\bvariants?\b",
-    r"\bingredients?\b", r"\bformula\b", r"\bserum\b", r"\bcream\b",
-    r"\bshampoo\b", r"\bsupplement\b", r"\bvitamins?\b", r"\bprotein\b",
+    r"\bfree shipping\b", r"\bshipping\b", r"\bnew collection\b",
+    r"\bnew drop\b", r"\bsale\b", r"\bdiscount\b", r"\b\d+% off\b",
+    r"\bbundle\b", r"\bget yours\b", r"\bget offer\b", r"\bshop\b",
+]
+
+# Product identity is the critical gate. These patterns describe concrete
+# product classes or a concrete product + modifier, not generic commerce.
+SPECIFIC_PRODUCT_PATTERNS = [
+    # Beauty / skincare
+    r"\b(?:vitamin\s*c|retinol|hyaluronic|niacinamide|salicylic|glycolic)\b.{0,40}\b(?:serum|cream|cleanser|toner|moisturizer|lotion)\b",
+    r"\b(?:serum|cream|cleanser|toner|moisturizer|lotion|face wash|facial oil)\b",
+    r"\b(?:spf\s*\d+|sunscreen|sunblock|sun screen)\b",
+    r"\b(?:lip balm|lip gloss|lipstick|mascara|foundation|concealer|blush|eyeliner)\b",
+    r"\b(?:shampoo|conditioner|hair mask|hair oil|body wash|deodorant)\b",
+    # Apparel / accessories
+    r"\b(?:running|hiking|trail|basketball|tennis|training)\s+shoes\b",
+    r"\b(?:sneakers?|boots?|sandals?|loafers?)\b",
+    r"\b(?:hoodie|sweatshirt|jacket|coat|leggings|joggers|dress|jeans|t-shirt|shirt)\b",
+    r"\b(?:crossbody|tote|backpack|duffel|handbag|wallet|purse)\b",
+    r"\b(?:necklace|bracelet|earrings?|ring|pendant|watch)\b",
+    # Food / supplements
+    r"\b(?:protein powder|protein shake|creatine|electrolytes?|pre-workout|post-workout)\b",
+    r"\b(?:vitamins?|probiotics?|collagen|omega[- ]?3|fish oil)\b",
+    r"\b(?:coffee beans?|ground coffee|tea|matcha|snack|granola|chocolate)\b",
+    # Home / pet / other consumer products
+    r"\b(?:dog|cat)\s+(?:food|treats?|supplements?)\b",
+    r"\b(?:candle|diffuser|bedding|duvet|pillow|mattress|lamp|rug|blanket)\b",
+    r"\b(?:water bottle|tumbler|backpack|phone case|air purifier|vacuum)\b",
+    r"\b(?:baby carrier|diaper bag|baby monitor|stroller|toys?)\b",
+    # SKU/model-style product naming is strong evidence.
+    r"\b(?:model|sku|style)\s*[#:-]?\s*[a-z0-9-]{2,}\b",
+]
+
+# A product noun on its own is useful but weaker than a clearly identified
+# product. These signals can qualify only when paired with other evidence.
+WEAK_PRODUCT_PATTERNS = [
     r"\bskincare\b", r"\bmakeup\b", r"\bcosmetics?\b", r"\bapparel\b",
-    r"\bjewelry\b", r"\bclothing\b", r"\bshoes\b", r"\bbags?\b",
-    r"\bpet food\b", r"\bpet treats?\b", r"\bcoffee\b", r"\bsnacks?\b",
+    r"\bclothing\b", r"\bjewelry\b", r"\bfootwear\b", r"\baccessories\b",
+    r"\bpet supplies\b", r"\bhome goods\b", r"\bhome decor\b",
+    r"\bconsumer goods\b", r"\bproducts?\b",
 ]
 
-AGENCY_SIGNAL_PATTERNS = [
-    r"\bour clients\b", r"\bwe build\b", r"\bwe manage\b",
-    r"\bmonthly ad spend\b", r"\baverage roas\b", r"\bfree .* audit\b",
-    r"\bdiscovery call\b", r"\bppc\b", r"\bseo\b", r"\basins?\b",
-    r"\bfor \d+\+ brands\b",
-]
-
-STRONG_PRODUCT_PATTERNS = [
-    r"\bshop now\b", r"\bbuy now\b", r"\border now\b", r"\badd to cart\b",
-    r"\bfree shipping\b", r"\bnew collection\b", r"\bnew drop\b",
-    r"\b\d+% off\b", r"\bdiscount\b", r"\bbundle\b",
-    r"\bserum\b", r"\bcream\b", r"\bshampoo\b", r"\bsupplement\b",
-    r"\bskincare\b", r"\bmakeup\b", r"\bcosmetics?\b", r"\bclothing\b",
-    r"\bjewelry\b", r"\bshoes\b", r"\bbags?\b", r"\bcoffee\b",
-]
-
-# Product categories that are especially compatible with a dedicated product
-# landing page. This is a positive list, not a requirement: unknown categories
-# can still qualify if the ad copy strongly indicates a product purchase.
 PRODUCT_CATEGORY_TERMS = {
     "shopping & retail", "retail", "e-commerce", "ecommerce", "clothing",
     "apparel", "beauty", "cosmetics", "health/beauty", "health & beauty",
@@ -112,12 +114,17 @@ PRODUCT_CATEGORY_TERMS = {
     "consumer goods", "product/service", "brand",
 }
 
+PURCHASE_CTA_PATTERNS = [
+    r"\bshop now\b", r"\bbuy now\b", r"\border now\b", r"\badd to cart\b",
+    r"\bget yours\b", r"\bget offer\b",
+]
+
 
 def _domain(url):
     if not url:
         return None
     try:
-        host = urlparse(url).netloc.lower().split("@")[-1].split(":")[0]
+        host = urlparse(str(url)).netloc.lower().split("@")[-1].split(":")[0]
         return host[4:] if host.startswith("www.") else host
     except Exception:
         return None
@@ -128,9 +135,7 @@ def _root_domain(url):
     if not host:
         return None
     parts = host.split(".")
-    if len(parts) >= 2:
-        return ".".join(parts[-2:])
-    return host
+    return ".".join(parts[-2:]) if len(parts) >= 2 else host
 
 
 def _text(*values):
@@ -141,7 +146,6 @@ def _text(*values):
         if isinstance(value, (list, tuple, set)):
             chunks.extend(str(v) for v in value if v is not None)
         elif isinstance(value, dict):
-            # Meta body can be either a dict with text or a plain string.
             if "text" in value:
                 chunks.append(str(value.get("text") or ""))
             else:
@@ -156,15 +160,19 @@ def _matches(text, patterns):
 
 
 def _is_social(domain):
-    return domain in SOCIAL_DOMAINS or any(domain == d or domain.endswith("." + d) for d in SOCIAL_DOMAINS if domain)
+    if not domain:
+        return False
+    return domain in SOCIAL_DOMAINS or any(domain.endswith("." + d) for d in SOCIAL_DOMAINS)
 
 
 def _is_marketplace(domain):
-    return domain in MARKETPLACE_DOMAINS or any(domain == d or domain.endswith("." + d) for d in MARKETPLACE_DOMAINS if domain)
+    if not domain:
+        return False
+    return domain in MARKETPLACE_DOMAINS or any(domain.endswith("." + d) for d in MARKETPLACE_DOMAINS)
 
 
 def _is_app_store(domain):
-    return domain in APP_STORE_DOMAINS
+    return bool(domain and domain in APP_STORE_DOMAINS)
 
 
 def _normalise_categories(categories):
@@ -173,16 +181,6 @@ def _normalise_categories(categories):
     if isinstance(categories, str):
         return [categories.strip().lower()]
     return [str(c).strip().lower() for c in categories if c]
-
-
-def _looks_like_product_business(name, ad_text, categories):
-    category_text = " ".join(categories)
-    product_hits = _matches(ad_text, PRODUCT_TEXT_PATTERNS)
-    category_hits = [c for c in categories if c in PRODUCT_CATEGORY_TERMS or any(t in c for t in PRODUCT_CATEGORY_TERMS)]
-
-    # Strong commerce language is enough even when Meta's category is generic.
-    strong_commerce = any(re.search(p, ad_text, re.I) for p in PRODUCT_TEXT_PATTERNS[:18])
-    return bool(product_hits or category_hits or strong_commerce), product_hits, category_hits
 
 
 def _destination_type(domain, url):
@@ -199,233 +197,303 @@ def _destination_type(domain, url):
     if _is_marketplace(domain):
         return "marketplace"
 
-    path = (urlparse(url).path if url else "").lower()
-    query = (urlparse(url).query if url else "").lower()
-    full = f"{path}?{query}"
+    parsed = urlparse(str(url))
+    full = f"{parsed.path.lower()}?{parsed.query.lower()}"
     if any(x in full for x in ("/products/", "/product/", "/p/", "product=")):
         return "product_page"
     if any(x in full for x in ("/collections/", "/category/", "/shop/", "/catalog")):
         return "collection_page"
-    if any(x in full for x in ("/landing", "/lp/", "/pages/", "/offer", "/promo")):
+    if any(x in full for x in ("/landing", "/lp/", "/offer", "/promo")):
         return "landing_page"
     return "owned_site"
 
 
-def classify_icp(ad_record):
-    """
-    Return a structured qualification result.
+def _result(status, score, destination, business_type, reasons, exclusion_reason=None,
+            product_signal=None):
+    return {
+        "qualified": status == "priority",
+        "status": status,
+        "score": max(0, min(100, int(score))),
+        "destination_type": destination,
+        "business_type": business_type,
+        "product_signal": product_signal,
+        "reasons": reasons,
+        "exclusion_reason": exclusion_reason,
+    }
 
-    Keys:
-      qualified: bool
-      status: 'priority' | 'review' | 'excluded'
-      score: 0-100
-      destination_type
-      business_type
-      reasons: list[str]
-      exclusion_reason: str | None
-    """
+
+def classify_icp(ad_record):
+    """Return conservative, sales-oriented buyer-fit qualification."""
     name = (ad_record.get("business_name") or "").strip()
     url = ad_record.get("landing_url")
     domain = _domain(url)
     root_domain = _root_domain(url)
-    body = ad_record.get("ad_body") or ad_record.get("body")
-    title = ad_record.get("ad_title") or ad_record.get("title")
-    caption = ad_record.get("caption")
-    cta_text = ad_record.get("cta_text")
-    cta_type = ad_record.get("cta_type")
     categories = _normalise_categories(ad_record.get("page_categories") or ad_record.get("categories"))
     likes = ad_record.get("page_like_count")
 
-    ad_text = _text(body, title, caption, cta_text, cta_type)
+    ad_text = _text(
+        ad_record.get("ad_body") or ad_record.get("body"),
+        ad_record.get("ad_title") or ad_record.get("title"),
+        ad_record.get("caption"),
+        ad_record.get("cta_text"),
+        ad_record.get("cta_type"),
+    )
     identity_text = _text(name, categories, domain)
-    combined = _text(identity_text, ad_text)
     destination = _destination_type(domain, url)
-    reasons = []
-    score = 0
 
-    # --- Hard exclusions ---
+    # ------------------------------------------------------------------
+    # HARD GATES: these are not scoreable weaknesses. They invalidate the
+    # sales premise and therefore never become a priority lead.
+    # ------------------------------------------------------------------
     if destination == "app_store":
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "app_or_software",
-                "reasons": ["Ad sends traffic to an app-store listing; no product landing-page opportunity"],
-                "exclusion_reason": "app_store"}
+        return _result("excluded", 0, destination, "app_or_software",
+                       ["Destination is an app-store listing, not a prospect-owned product funnel"],
+                       "app_store")
 
     if destination == "marketplace":
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "marketplace",
-                "reasons": [f"Destination is a marketplace ({root_domain or domain}), not a prospect-owned product funnel"],
-                "exclusion_reason": "marketplace"}
+        return _result("excluded", 0, destination, "marketplace",
+                       [f"Destination is marketplace domain {root_domain or domain}, not an owned prospect funnel"],
+                       "marketplace")
 
     if _matches(identity_text, LARGE_OR_NON_BUYER_NAME_PATTERNS):
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "enterprise_or_platform",
-                "reasons": ["Advertiser appears to be a large platform/marketplace/enterprise buyer outside the $499 target"],
-                "exclusion_reason": "large_or_non_buyer"}
+        return _result("excluded", 0, destination, "enterprise_or_platform",
+                       ["Advertiser appears to be a large platform, marketplace, or enterprise buyer outside the $499 target"],
+                       "large_or_non_buyer")
 
     if _matches(identity_text, NON_BUYER_PATTERNS):
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "agency_or_software",
-                "reasons": ["Advertiser appears to be an agency, software/platform, lead-gen business, or other non-target buyer"],
-                "exclusion_reason": "non_buyer_business_type"}
+        return _result("excluded", 0, destination, "agency_or_software",
+                       ["Advertiser appears to be an agency, software/platform, affiliate, lead-gen, or other non-target business"],
+                       "non_buyer_business_type")
 
-    service_category_terms = ("dating service", "coach", "coaching", "consultant", "consulting", "professional service")
-    service_category = any(any(term in category for term in service_category_terms) for category in categories)
-    service_hits = _matches(ad_text, NON_PRODUCT_TEXT_PATTERNS)
-    if service_category and len(service_hits) >= 1:
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "service_business",
-                "reasons": ["Advertiser appears to sell a service rather than a product suited to the $499 offer"],
-                "exclusion_reason": "service_business"}
+    service_hits = _matches(ad_text, SERVICE_PATTERNS)
+    name_service = re.search(r"\b(coach|coaching|consultant|consulting|agency|marketing)\b", name, re.I)
+    if name_service and not _matches(ad_text, SPECIFIC_PRODUCT_PATTERNS):
+        return _result("excluded", 0, destination, "service_business",
+                       ["Advertiser identity indicates a service/agency business rather than a physical product seller"],
+                       "service_business")
 
-    # Multiple service signals are strong evidence that the advertiser is
-    # selling a service/funnel rather than a product, even if Meta's category
-    # is generic. Requiring two signals avoids rejecting ordinary product copy
-    # that happens to mention a consultation or client.
-    agency_hits = _matches(ad_text, AGENCY_SIGNAL_PATTERNS)
-    if (len(service_hits) >= 2 or len(agency_hits) >= 2) and not _matches(ad_text, STRONG_PRODUCT_PATTERNS):
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "service_business",
-                "reasons": ["Ad contains multiple service/agency signals and no meaningful product-commerce signal"],
-                "exclusion_reason": "service_business"}
+    if len(service_hits) >= 2 and not _matches(ad_text, SPECIFIC_PRODUCT_PATTERNS):
+        return _result("excluded", 0, destination, "service_business",
+                       ["Ad contains multiple service/agency signals without a specific product signal"],
+                       "service_business")
 
-    # Very large pages are usually a poor $499 prospect. Do not reject local
-    # brands purely on follower count unless it is clearly enterprise-scale.
     try:
         likes_int = int(likes) if likes is not None else None
     except (TypeError, ValueError):
         likes_int = None
-    if likes_int is not None and likes_int >= 1000000:
-        return {"qualified": False, "status": "excluded", "score": 0,
-                "destination_type": destination, "business_type": "enterprise_or_platform",
-                "reasons": [f"Page has {likes_int:,} likes; business appears too large for the $499 offer"],
-                "exclusion_reason": "very_large_page"}
 
-    # --- Business/product fit ---
-    looks_product, product_hits, category_hits = _looks_like_product_business(name, ad_text, categories)
-    non_product_hits = _matches(ad_text, NON_PRODUCT_TEXT_PATTERNS)
+    if likes_int is not None and likes_int >= 1_000_000:
+        return _result("excluded", 0, destination, "enterprise_or_platform",
+                       [f"Page has {likes_int:,} likes and appears too large for the $499 offer"],
+                       "very_large_page")
 
-    if not looks_product:
-        # Clear service identities should not become prospects merely because
-        # their ad happens to contain generic commercial words.
-        service_name_terms = ("coaching", "coach", "consulting", "consultant", "agency", "digital marketing", "marketing")
-        if any(term in name.lower() for term in service_name_terms):
-            return {"qualified": False, "status": "excluded", "score": 0,
-                    "destination_type": destination, "business_type": "service_business",
-                    "reasons": ["Advertiser name strongly indicates a service/agency business rather than a product seller"],
-                    "exclusion_reason": "service_business"}
+    if not name or not ad_record.get("landing_url"):
+        return _result("excluded", 0, destination, "unknown",
+                       ["Missing advertiser identity or destination; cannot responsibly make a sales recommendation"],
+                       "missing_core_identity")
 
-        # A social destination can still be useful, but without any product
-        # signal we do not want to pitch a product landing page blindly.
-        if destination in {"instagram", "facebook", "social"}:
-            return {"qualified": False, "status": "review", "score": 35,
-                    "destination_type": destination, "business_type": "unknown",
-                    "reasons": ["Social destination is promising, but the ad does not provide enough product-buying evidence"],
-                    "exclusion_reason": None}
-        return {"qualified": False, "status": "review", "score": 35,
-                "destination_type": destination, "business_type": "unknown",
-                "reasons": ["Could not establish a purchasable product from the available ad data; manual review required"],
-                "exclusion_reason": None}
+    # ------------------------------------------------------------------
+    # PRODUCT IDENTITY GATE
+    # ------------------------------------------------------------------
+    specific_hits = _matches(ad_text, SPECIFIC_PRODUCT_PATTERNS)
+    weak_hits = _matches(ad_text, WEAK_PRODUCT_PATTERNS)
+    transaction_hits = _matches(ad_text, TRANSACTION_PATTERNS)
+    category_hits = [
+        c for c in categories
+        if c in PRODUCT_CATEGORY_TERMS or any(term in c for term in PRODUCT_CATEGORY_TERMS)
+    ]
 
-    score += 35
-    reasons.append("Product/business fit detected")
+    # Generic commerce language is explicitly NOT enough.
+    # Example: "Shop our collection" + Beauty category remains review/excluded.
+    if not specific_hits:
+        if weak_hits and transaction_hits and category_hits:
+            return _result(
+                "review", 48, destination, "possible_product_business",
+                [
+                    "Commerce intent is present, but the ad does not identify a specific product",
+                    "Generic category/commerce language is insufficient for automatic $499 outreach",
+                ],
+                product_signal="weak_category_only",
+            )
+        return _result(
+            "excluded", 0, destination, "unproven_product_business",
+            ["No specific purchasable product is identifiable from the advertiser/ad evidence"],
+            "no_specific_product",
+        )
 
-    if product_hits:
-        score += min(15, len(product_hits) * 3)
-        reasons.append("Ad copy contains direct product/commerce signals")
+    # Social profiles are acceptable as a destination because the offer can
+    # directly fix the missing landing-page path. Owned sites are stronger for
+    # legitimacy and purchase readiness.
+    owned_site = destination not in {"instagram", "facebook", "social", "unknown"}
 
-    if category_hits:
-        score += 10
-        reasons.append("Meta page category supports a product/retail business")
+    # ------------------------------------------------------------------
+    # SCORE: active intent 20 + product fit 20 + size 15 + opportunity 25
+    #        + funnel quality 10 + legitimacy 10.
+    # ------------------------------------------------------------------
+    score = 0
+    reasons = []
 
-    if destination in {"instagram", "facebook", "social"}:
-        score += 25
-        reasons.append("Ad currently sends traffic to a social profile/page — strong landing-page opportunity")
-    elif destination == "owned_site":
-        score += 15
-        reasons.append("Ad sends traffic to an owned site, but not an obvious product-specific page")
-    elif destination == "collection_page":
-        score += 18
-        reasons.append("Ad sends traffic to a collection/category page — dedicated product page is a clear improvement opportunity")
-    elif destination == "product_page":
-        score += 7
-        reasons.append("Ad already reaches a product page — landing-page opportunity exists but is less obvious")
-    elif destination == "landing_page":
-        score += 3
-        reasons.append("Ad already uses a landing/offer page — lower-priority opportunity")
-    else:
-        score += 5
-        reasons.append("Destination could not be classified precisely")
-
-    # Active ad duration is a useful intent/spend proxy.
+    # 1) ACTIVE AD INTENT / 20
     active_days = ad_record.get("ad_active_days")
-    if active_days is not None:
-        try:
-            days = int(active_days)
-        except (TypeError, ValueError):
-            days = 0
-        if days >= 30:
-            score += 8
-            reasons.append(f"Ad has been active about {days} days — strong evidence of ongoing acquisition spend")
-        elif days >= 14:
-            score += 5
-            reasons.append(f"Ad has been active about {days} days — evidence of ongoing acquisition spend")
-        elif days >= 7:
-            score += 2
-            reasons.append(f"Ad has been active about {days} days")
+    try:
+        days = int(active_days) if active_days is not None else None
+    except (TypeError, ValueError):
+        days = None
 
-    # CTA is a useful purchase-intent signal, but do not over-weight it because
-    # Meta localizes CTA text and not every ad exposes it.
-    purchase_ctas = {"shop now", "buy now", "order now", "get offer", "get yours", "learn more"}
-    if (cta_text or "").strip().lower() in purchase_ctas:
-        score += 5
-        reasons.append(f"CTA '{cta_text}' indicates commercial intent")
+    is_active = ad_record.get("is_active")
+    if is_active is False:
+        return _result("excluded", 0, destination, "inactive_product_business",
+                       ["Meta record is marked inactive; offer targets businesses currently buying traffic"],
+                       "inactive_ad")
 
-    if non_product_hits and not product_hits:
-        score -= 15
-        reasons.append("Ad copy contains service/consulting language that weakens product-fit confidence")
+    if days is None:
+        active_points = 4
+        reasons.append("Ad age is unknown; active-spend confidence is limited")
+    elif days >= 30:
+        active_points = 20
+        reasons.append(f"Ad has been active about {days} days — strong evidence of ongoing acquisition spend")
+    elif days >= 14:
+        active_points = 15
+        reasons.append(f"Ad has been active about {days} days — meaningful ongoing acquisition signal")
+    elif days >= 7:
+        active_points = 10
+        reasons.append(f"Ad has been active about {days} days")
+    elif days >= 2:
+        active_points = 6
+        reasons.append(f"Ad has been active about {days} days; spend persistence is not yet proven")
+    else:
+        active_points = 3
+        reasons.append("Ad is very new; ongoing acquisition intent is not yet proven")
+    score += active_points
 
-    # Size signal: enough maturity to spend $499, but not obviously enormous.
-    if likes_int is not None:
-        if 100 <= likes_int <= 100000:
-            score += 5
-            reasons.append(f"Page size ({likes_int:,} likes) is consistent with a small/mid-market advertiser")
-        elif likes_int < 100:
-            score -= 5
-            reasons.append("Very small page footprint — purchasing ability is less certain")
-        elif likes_int > 250000:
-            score -= 8
-            reasons.append(f"Large page footprint ({likes_int:,} likes) lowers fit for the $499 offer")
+    # 2) PRODUCT / COMMERCE FIT / 20
+    if len(specific_hits) >= 2:
+        product_points = 16
+    else:
+        product_points = 12
+    if transaction_hits:
+        product_points += 2
+    if category_hits:
+        product_points += 2
+    product_points = min(20, product_points)
+    score += product_points
+    reasons.append("Ad identifies a specific physical product suitable for a dedicated landing page")
+    if transaction_hits:
+        reasons.append("Ad contains direct purchase/commerce intent")
 
-    # Unknown destination / unresolved URL means we cannot confidently sell the
-    # opportunity. Keep it for review rather than calling it a good lead.
-    if not domain:
-        score = min(score, 59)
-        reasons.append("Destination URL is missing or unresolved — manual review needed")
-        return {"qualified": False, "status": "review", "score": max(0, min(100, score)),
-                "destination_type": "unknown", "business_type": "product_business",
-                "reasons": reasons, "exclusion_reason": None}
+    # 3) BUSINESS SIZE / AFFORDABILITY / 15
+    if likes_int is None:
+        size_points = 7
+        reasons.append("Page-size signal is unavailable; affordability is moderately uncertain")
+    elif 1_000 <= likes_int <= 250_000:
+        size_points = 15
+        reasons.append(f"Page size ({likes_int:,} likes) fits a small/mid-market advertiser")
+    elif 250_001 <= likes_int <= 500_000:
+        size_points = 10
+        reasons.append(f"Page size ({likes_int:,} likes) suggests a larger brand; still plausible, but less aligned to $499")
+    elif 100 <= likes_int < 1_000:
+        size_points = 8
+        reasons.append(f"Page has {likes_int:,} likes; business may be early-stage but is not automatically too small")
+    elif likes_int < 100:
+        size_points = 3
+        reasons.append("Very small page footprint makes $499 purchasing ability less certain")
+    else:
+        size_points = 5
+        reasons.append(f"Page has {likes_int:,} likes; scale lowers fit for the $499 offer")
+    score += size_points
+
+    # 4) LANDING-PAGE OPPORTUNITY / 25
+    if destination in {"instagram", "facebook", "social"}:
+        opportunity_points = 25
+        opportunity_reason = "Ad sends traffic to a social destination — the missing product-specific landing page is an obvious conversion opportunity"
+    elif destination == "owned_site":
+        opportunity_points = 22
+        opportunity_reason = "Ad sends traffic to the business site but not an identifiable product-specific destination"
+    elif destination == "collection_page":
+        opportunity_points = 23
+        opportunity_reason = "Ad sends traffic to a collection/category page — a dedicated product page is a clear conversion opportunity"
+    elif destination == "product_page":
+        opportunity_points = 10
+        opportunity_reason = "Ad already reaches a product page; opportunity exists but is less urgent than a generic/social destination"
+    elif destination == "landing_page":
+        opportunity_points = 4
+        opportunity_reason = "Ad already uses an offer/landing destination; the $499 opportunity is comparatively weak"
+    else:
+        opportunity_points = 0
+        opportunity_reason = "Destination cannot be classified confidently"
+    score += opportunity_points
+    reasons.append(opportunity_reason)
+
+    # 5) WEBSITE / FUNNEL QUALITY / 10
+    if destination in {"instagram", "facebook", "social"}:
+        funnel_points = 4
+        reasons.append("Social destination creates a clear funnel gap, but owned-site quality cannot be verified from the captured URL")
+    elif owned_site:
+        funnel_points = 8
+        if destination in {"owned_site", "collection_page", "product_page"}:
+            funnel_points += 2
+        reasons.append("Resolved owned-domain destination provides a credible commercial funnel")
+    else:
+        funnel_points = 0
+    score += min(10, funnel_points)
+
+    # 6) BUSINESS LEGITIMACY / 10
+    legitimacy_points = 0
+    if owned_site:
+        legitimacy_points += 5
+        reasons.append(f"Destination is an owned commercial domain ({root_domain or domain})")
+    else:
+        legitimacy_points += 3
+        reasons.append("Advertiser has a real social destination rather than a marketplace/app-store destination")
+    if category_hits:
+        legitimacy_points += 2
+    if name and domain:
+        # Exact brand/domain relation is useful, but do not reject legitimate
+        # brands with a founder/company naming difference.
+        name_clean = re.sub(r"[^a-z0-9]", "", name.lower())
+        domain_clean = re.sub(r"[^a-z0-9]", "", (domain.split(".")[0] if domain else "").lower())
+        if name_clean and domain_clean and (name_clean in domain_clean or domain_clean in name_clean):
+            legitimacy_points += 3
+            reasons.append("Advertiser name and destination domain show a direct brand relationship")
+        else:
+            legitimacy_points += 1
+            reasons.append("Advertiser/domain relationship is not exact, so legitimacy confidence is slightly reduced")
+    score += min(10, legitimacy_points)
 
     score = max(0, min(100, score))
 
-    # High = directly pitchable. Medium = potentially useful but inspect first.
-    if score >= 70:
+    # ------------------------------------------------------------------
+    # Final gate: a lead must have a concrete product AND a meaningful
+    # opportunity. Scores cannot compensate for missing sales evidence.
+    # ------------------------------------------------------------------
+    if opportunity_points < 10:
+        return _result("review", min(score, 69), destination, "product_business",
+                       reasons + ["Landing-page opportunity is too weak for automatic outreach; inspect manually"],
+                       product_signal="specific_product_low_opportunity")
+
+    if days is None or days < 2:
+        return _result("review", min(score, 69), destination, "product_business",
+                       reasons + ["Active-spend persistence is not established enough for automatic outreach"],
+                       product_signal="specific_product_new_ad")
+
+    if score >= 90:
         status = "priority"
-        qualified = True
+    elif score >= 80:
+        status = "priority"
+    elif score >= 70:
+        status = "review"
     elif score >= 50:
         status = "review"
-        qualified = False
-        reasons.append("Promising but below the automatic priority threshold")
     else:
         status = "excluded"
-        qualified = False
+
+    if status == "review":
+        reasons.append("Good candidate for review, but evidence is not strong enough for automatic primary outreach")
+    elif status == "excluded":
         reasons.append("Overall buyer-fit is too weak for the $499 offer")
 
-    return {
-        "qualified": qualified,
-        "status": status,
-        "score": score,
-        "destination_type": destination,
-        "business_type": "product_business",
-        "reasons": reasons,
-        "exclusion_reason": None if qualified or status == "review" else "low_buyer_fit",
-    }
+    return _result(
+        status, score, destination, "product_business", reasons,
+        None if status != "excluded" else "low_buyer_fit",
+        product_signal="specific_product",
+    )

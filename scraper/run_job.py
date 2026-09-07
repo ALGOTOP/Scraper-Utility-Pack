@@ -1,10 +1,10 @@
 """CLI entrypoint: scrape Meta and return only sales-ready prospects."""
 from __future__ import annotations
-import argparse, dataclasses, json, os, shutil, sys
+import argparse, collections, dataclasses, json, os, shutil, sys
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from scraper import run_scrape, ScrapeSession
-from rate_limiter import RateLimiter, SessionBudgetExceeded
+from rate_limiter import RateLimiter
 from adapter import adapt_record, TARGET_COUNTRIES
 from scoring_engine import score_lead
 from icp_filter import check_icp_mismatch
@@ -12,6 +12,7 @@ from icp_filter import check_icp_mismatch
 
 def score_session(session: ScrapeSession, country: str) -> list[dict]:
     output=[]; excluded_count=review_count=priority_count=0
+    exclusion_reasons=collections.Counter(); review_reasons=collections.Counter()
     for ad in session.results:
         ad_dict=dataclasses.asdict(ad)
         try:
@@ -19,11 +20,14 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
             result=score_lead(scored_record)
             mismatch,mismatch_reason=check_icp_mismatch(scored_record.get("business_name"), scored_record.get("landing_url"), ad_record=scored_record)
             status=result.get("buyer_fit_status", "excluded")
-            # Primary pool is deliberately quality-first: only a classifier
-            # priority with no mismatch reaches PostgreSQL.
             if status != "priority" or mismatch or result.get("icp_mismatch"):
-                if status == "review": review_count += 1
-                else: excluded_count += 1
+                if status == "review":
+                    review_count += 1
+                    review_reasons[result.get("product_evidence") or (result.get("reasons") or ["unknown"])[-1]] += 1
+                else:
+                    excluded_count += 1
+                    reason = result.get("icp_mismatch_reason") or (result.get("reasons") or ["unknown"])[0]
+                    exclusion_reasons[reason] += 1
                 continue
             priority_count += 1
             output.append({
@@ -39,6 +43,10 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
         except Exception as exc:
             print(f"[run_job] Qualification failed for {ad_dict.get('library_id')}: {exc}", file=sys.stderr)
     print(f"[run_job] buyer_fit priority={priority_count} review={review_count} excluded={excluded_count} returned={len(output)}", file=sys.stderr)
+    if exclusion_reasons:
+        print(f"[run_job] exclusion_reasons={dict(exclusion_reasons.most_common(8))}", file=sys.stderr)
+    if review_reasons:
+        print(f"[run_job] review_reasons={dict(review_reasons.most_common(8))}", file=sys.stderr)
     return output
 
 

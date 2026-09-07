@@ -6,14 +6,9 @@ import './index.css';
 
 const apiUrl = import.meta.env.VITE_API_URL?.trim();
 
-// Production is intentionally frontend-only on Vercel. API traffic must go
-// directly to the Railway service configured through VITE_API_URL.
-if (import.meta.env.PROD && !apiUrl) {
-  throw new Error(
-    'VITE_API_URL is required in the Vercel production environment. Configure it with the public Railway API URL.',
-  );
-}
-
+// Vercel is frontend-only. When configured, API traffic goes directly to the
+// Railway API. Do not throw during startup if the variable is missing: a
+// configuration problem should never turn the entire SPA into a blank screen.
 if (apiUrl) {
   setBaseUrl(apiUrl);
 }

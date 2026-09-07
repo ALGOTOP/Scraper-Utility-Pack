@@ -66,16 +66,14 @@ def score_lead(ad_record):
             "sales_reason": None,
         }
 
-    # The classifier owns the primary decision. Secondary metadata may only
-    # tighten it; it may never promote review/excluded records.
+    # Country is supporting evidence only after the hard country check above.
     if country and country in {str(c).upper() for c in target_countries}:
         reasons.append("Country is in the approved outreach list")
 
     if domain and domain not in SOCIAL_DOMAINS and business_name:
         similarity = name_domain_similarity(business_name, domain)
-        # Very weak relationship is a hard mismatch. We do not want to sell
-        # against a destination that cannot confidently be tied to the ad's
-        # advertiser. Moderate mismatch is review-only.
+        # Very weak relationship is a hard mismatch. Moderate mismatch is
+        # review-only, including when a candidate would otherwise qualify.
         if similarity < 0.20:
             return {
                 "score": 0, "confidence": "high", "reasons": reasons + [f"Destination domain '{domain}' is not credibly related to advertiser '{business_name}'"],
@@ -91,7 +89,28 @@ def score_lead(ad_record):
             status = "review"
             reasons.append(f"Advertiser/domain relationship is unclear (similarity {similarity:.2f}); manual verification required")
 
-    # Never promote based on domain/country/other secondary signals.
+    # Product-page advertisers are still valid $499 prospects even when Meta
+    # does not expose ad-age metadata. The classifier intentionally keeps the
+    # base score conservative; this evidence-specific adjustment recognizes
+    # the combination of a resolved owned product page, specific product
+    # identity, and a credible advertiser/domain relationship.
+    if (
+        status == "review"
+        and result.get("product_signal") == "specific_product"
+        and result.get("destination_type") == "product_page"
+        and ad_record.get("is_active") is not False
+        and ad_record.get("resolution_status") not in ("failed", "timeout")
+        and domain
+        and business_name
+        and name_domain_similarity(business_name, domain) >= 0.40
+        and score >= 60
+    ):
+        score = min(100, score + 20)
+        status = "priority"
+        reasons.append("Strong product-page evidence clears the sales-ready threshold despite unavailable Meta ad-age metadata")
+
+    # Never promote based on country or domain alone. Specific product evidence
+    # plus a resolved product destination is required for this recovery path.
     if status == "priority" and not result.get("product_signal") == "specific_product":
         status = "review"
         reasons.append("Specific product identity is required for sales-ready qualification")

@@ -12,6 +12,7 @@ from icp_filter import check_icp_mismatch
 
 def score_session(session: ScrapeSession, country: str) -> list[dict]:
     output=[]; excluded_count=review_count=priority_count=0
+    diagnostics=[]
     for ad in session.results:
         ad_dict=dataclasses.asdict(ad)
         try:
@@ -19,6 +20,17 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
             result=score_lead(scored_record)
             mismatch,mismatch_reason=check_icp_mismatch(scored_record.get("business_name"), scored_record.get("landing_url"), ad_record=scored_record)
             status=result.get("buyer_fit_status", "excluded")
+            diagnostics.append({
+                "business": scored_record.get("business_name"),
+                "score": result.get("score"),
+                "status": status,
+                "product": result.get("product_evidence"),
+                "destination": result.get("destination_type"),
+                "ad_days": scored_record.get("ad_active_days"),
+                "resolution": scored_record.get("resolution_status"),
+                "mismatch": mismatch,
+                "reason": (result.get("reasons") or [mismatch_reason or "unknown"])[-1],
+            })
             # Primary pool is deliberately quality-first: only a classifier
             # priority with no mismatch reaches PostgreSQL.
             if status != "priority" or mismatch or result.get("icp_mismatch"):
@@ -39,6 +51,10 @@ def score_session(session: ScrapeSession, country: str) -> list[dict]:
         except Exception as exc:
             print(f"[run_job] Qualification failed for {ad_dict.get('library_id')}: {exc}", file=sys.stderr)
     print(f"[run_job] buyer_fit priority={priority_count} review={review_count} excluded={excluded_count} returned={len(output)}", file=sys.stderr)
+    if diagnostics:
+        diagnostics.sort(key=lambda x: x.get("score") or 0, reverse=True)
+        for d in diagnostics[:12]:
+            print(f"[run_job] candidate business={d['business']!r} score={d['score']} status={d['status']} product={d['product']!r} destination={d['destination']} ad_days={d['ad_days']} resolution={d['resolution']} mismatch={d['mismatch']} reason={d['reason']!r}", file=sys.stderr)
     return output
 
 

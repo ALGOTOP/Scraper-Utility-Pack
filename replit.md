@@ -50,7 +50,7 @@ This branch adds the full-stack web app (`artifacts/ad-intel` + `artifacts/api-s
 | `scraper/url_builder.py` | Builds Ad Library search URLs (keyword / page-ID / combined) |
 | `scraper/test_orchestration.py` | 6 mocked orchestration tests |
 | `scraper/live_capture.py` | Live keyword scrape + GraphQL shape inspection |
-| `scraper/live_page_id.py` | Live page-ID scrape |
+| `scraper/live_page_id.py` | Live page-ID search |
 | `scraper/CAPTURE_INSTRUCTIONS.md` | Steps to update GraphQL field paths via DevTools |
 | `scraper/results.json` | Last keyword search output |
 | `scraper/results_page_id.json` | Last page-ID search output |

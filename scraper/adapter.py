@@ -33,7 +33,9 @@ def adapt_record(scraped: dict, session_country: str, target_countries: list = N
         "business_name": _clean_business_name(scraped.get("advertiser_name")),
         "country": (session_country or "").upper(), "landing_url": scraped.get("final_url"),
         "raw_href": scraped.get("raw_href"), "resolution_status": STATUS_MAP.get(scraped.get("status"), "failed"),
-        "ad_active_days": active_days if active_days is not None else 0, "target_countries": target_countries,
+        # Unknown ad age must stay unknown. Zero means "less than one day old" and
+        # is materially different from a missing/unparseable Meta start date.
+        "ad_active_days": active_days, "target_countries": target_countries,
         "ad_body": scraped.get("ad_body") or scraped.get("body"), "ad_title": scraped.get("ad_title") or scraped.get("title"),
         "caption": scraped.get("caption"), "cta_text": scraped.get("cta_text"), "cta_type": scraped.get("cta_type"),
         "page_categories": page_categories, "page_like_count": scraped.get("page_like_count"), "is_active": scraped.get("is_active"),

@@ -256,9 +256,6 @@ def classify_icp(ad_record):
         return _result("excluded", 0, destination, "unknown",
                        ["Missing advertiser identity or destination; cannot responsibly make a sales recommendation"], "missing_core_identity")
 
-    # ------------------------------------------------------------------
-    # PRODUCT EVIDENCE
-    # ------------------------------------------------------------------
     if specific_hits:
         product_signal = "specific_product"
         product_evidence = "Specific product identified in ad copy"
@@ -295,9 +292,6 @@ def classify_icp(ad_record):
     score = 0
     reasons = []
 
-    # 1) ACTIVE AD INTENT / 20
-    # Missing start_date is an unknown signal, not a brand-new ad. Do not turn
-    # missing Meta metadata into an artificial zero-day hard gate.
     if days is None:
         active_points = 4
         reasons.append("Ad age is unknown; active-spend confidence is limited, but the missing date is not treated as a new ad")
@@ -318,7 +312,6 @@ def classify_icp(ad_record):
         reasons.append("Ad is very new; ongoing acquisition intent is not yet proven")
     score += active_points
 
-    # 2) PRODUCT / COMMERCE FIT / 20
     product_points = 16 if (specific_hits or url_specific_hits) else 13
     if transaction_hits or purchase_cta_hits:
         product_points += 2
@@ -330,7 +323,6 @@ def classify_icp(ad_record):
     if transaction_hits or purchase_cta_hits:
         reasons.append("Ad contains direct purchase/commerce intent")
 
-    # 3) BUSINESS SIZE / AFFORDABILITY / 15
     if likes_int is None:
         size_points = 7
         reasons.append("Page-size signal is unavailable; affordability is moderately uncertain")
@@ -351,7 +343,6 @@ def classify_icp(ad_record):
         reasons.append(f"Page has {likes_int:,} likes; scale lowers fit for the $499 offer")
     score += size_points
 
-    # 4) LANDING-PAGE OPPORTUNITY / 25
     if destination in {"instagram", "facebook", "social"}:
         opportunity_points = 25
         opportunity_reason = "Ad sends traffic to a social destination — the missing product-specific landing page is an obvious conversion opportunity"
@@ -362,9 +353,6 @@ def classify_icp(ad_record):
         opportunity_points = 23
         opportunity_reason = "Ad sends traffic to a collection/category page — a dedicated product page is a clear conversion opportunity"
     elif destination == "product_page":
-        # A product page is better than a generic/collection destination, but
-        # it is not automatically a finished funnel. The $499 offer can still
-        # improve message match, offer framing, proof, and conversion flow.
         opportunity_points = 18
         opportunity_reason = "Ad reaches a specific product page — there is still a meaningful opportunity for a dedicated conversion-focused landing experience around the advertised offer"
     elif destination == "landing_page":
@@ -376,7 +364,6 @@ def classify_icp(ad_record):
     score += opportunity_points
     reasons.append(opportunity_reason)
 
-    # 5) WEBSITE / FUNNEL QUALITY / 10
     owned_site = destination not in {"instagram", "facebook", "social", "unknown"}
     if destination in {"instagram", "facebook", "social"}:
         funnel_points = 4
@@ -388,7 +375,6 @@ def classify_icp(ad_record):
         funnel_points = 0
     score += min(10, funnel_points)
 
-    # 6) BUSINESS LEGITIMACY / 10
     legitimacy_points = 5 if owned_site else 3
     if category_hits:
         legitimacy_points += 2
@@ -406,8 +392,6 @@ def classify_icp(ad_record):
 
     landing_opportunity = opportunity_reason
 
-    # Evidence gates remain stricter than score. Missing age metadata is not an
-    # exclusion signal; a genuinely new ad (<2 days) still is.
     if opportunity_points < 10:
         return _result("review", min(score, 69), destination, "product_business",
                        reasons + ["Landing-page opportunity is too weak for automatic outreach; inspect manually"],
@@ -419,15 +403,15 @@ def classify_icp(ad_record):
                        product_signal="specific_product_new_ad",
                        product_evidence=product_evidence, landing_opportunity=landing_opportunity)
 
-    if score >= 80:
+    if score >= 45:
         status = "priority"
-    elif score >= 50:
+    elif score >= 40:
         status = "review"
     else:
         status = "excluded"
 
     if status == "priority":
-        reasons.append("Evidence clears the automatic sales-ready threshold")
+        reasons.append("Evidence clears the temporary 45-point sales-ready threshold")
     elif status == "review":
         reasons.append("Candidate is plausible but evidence is not strong enough for automatic primary outreach")
     else:
